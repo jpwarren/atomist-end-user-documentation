@@ -14,20 +14,20 @@ expose a wide range of functionality in a native-seeming way.
 
 A number of [Rug Language Extensions](globals.html) are currently shipped out of the box including:
 
-*   [CSharpFile](interfaces/csharpfile.html) - C# files
-*   [DockerFile](interfaces/dockerfile.html) - Dockerfiles
-*   [EveryPom](interfaces/everypom.html) - all Maven POM files in a project
-*   [File](interfaces/file.html) - manipulate simple text files
-*   [JavaProject](interfaces/javaproject.html) - Java projects
+*   [CSharpFile](typedoc/interfaces/csharpfile.html) - C# files
+*   [DockerFile](typedoc/interfaces/dockerfile.html) - Dockerfiles
+*   [EveryPom](typedoc/interfaces/everypom.html) - all Maven POM files in a project
+*   [File](typedoc/interfaces/file.html) - manipulate simple text files
+*   [JavaProject](typedoc/interfaces/javaproject.html) - Java projects
 *   [JavaSource](iinterfaces/javasource.html) - Java source files
-*   [JavaType](interfaces/javaptype.html) - Java classes
-*   [Json](interfaces/pair.html) - JSON files
-*   [Line](interfaces/line.html) - manipulate specific lines in a project's files
-*   [Pom](interfaces/pom.html) - projects containing Maven POM files
-*   [Project](interfaces/project.html) - execute operations across a project
-*   [Properties](interfaces/properties.html) - Java properties files
-*   [PythonFile](interfaces/pythonfile.html) - Python source files
-*   [ScalaFile](interfaces/scala.html) - Scala files
-*   [SpringBootProject](interfaces/springbootproject.html) - Spring Boot projects
-*   [Xml](interfaces/xml.html) - XML files
-*   [YamlFile](interfaces/yamlfile.html) - YAML files
+*   [JavaType](typedoc/interfaces/javaptype.html) - Java classes
+*   [Json](typedoc/interfaces/pair.html) - JSON files
+*   [Line](typedoc/interfaces/line.html) - manipulate specific lines in a project's files
+*   [Pom](typedoc/interfaces/pom.html) - projects containing Maven POM files
+*   [Project](typedoc/interfaces/project.html) - execute operations across a project
+*   [Properties](typedoc/interfaces/properties.html) - Java properties files
+*   [PythonFile](typedoc/interfaces/pythonfile.html) - Python source files
+*   [ScalaFile](typedoc/interfaces/scala.html) - Scala files
+*   [SpringBootProject](typedoc/interfaces/springbootproject.html) - Spring Boot projects
+*   [Xml](typedoc/interfaces/xml.html) - XML files
+*   [YamlFile](typedoc/interfaces/yamlfile.html) - YAML files
