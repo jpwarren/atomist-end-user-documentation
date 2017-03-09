@@ -373,8 +373,6 @@ hypotheses and expectations. All those steps are implemented in the
 ```console
 $ rug test
 Resolving dependencies for com.company.rugs:spring-boot-service:0.13.0:local completed
-OpenJDK 64-Bit Server VM warning: You have loaded library /home/sylvain/libj2v8_linux_x86_64.so which might have disabled stack guard. The VM will try to fix the stack guard now.
-It's highly recommended that you fix the library with 'execstack -c <libfile>', or link it with '-z noexecstack'.
 Invoking TypeScript Compiler on ts script sources                                                                                                                                                                
   Created .atomist/tests/Steps.js.map                                                                                                                                                                            
   Created .atomist/tests/Steps.js                                                                                                                                                                                
@@ -396,8 +394,6 @@ with a relevant error message:
 ```console
 $ rug test
 Resolving dependencies for com.company.rugs:spring-boot-service:0.13.0:local completed
-OpenJDK 64-Bit Server VM warning: You have loaded library /home/sylvain/libj2v8_linux_x86_64.so which might have disabled stack guard. The VM will try to fix the stack guard now.
-It's highly recommended that you fix the library with 'execstack -c <libfile>', or link it with '-z noexecstack'.
 Invoking TypeScript Compiler on ts script sources                                                                                                                                                                
   Created .atomist/tests/Steps.js.map                                                                                                                                                                            
   Created .atomist/tests/Steps.js                                                                                                                                                                                

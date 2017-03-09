@@ -14,7 +14,7 @@ Let's suppose however that project is already a Rug project, it would still
 be a running Spring Boot project in its own right. Here is such a project:
 
 ```console
-spring-boot-rest-basic
+~/workspace/spring-boot-rest-basic
     ├── .atomist
     │   ├── editors
     │   │   └── NewSpringBootService.ts
@@ -218,11 +218,9 @@ Then("the controller class has the supplied endpoint", (p: Project) =>
 
 Such a test should pass when executed:
 
-```console hl_lines="14 15"
+```console hl_lines="12 13"
 $ rug test
 Resolving dependencies for com.company.rugs:spring-boot-service:0.13.0:local completed
-OpenJDK 64-Bit Server VM warning: You have loaded library /home/sylvain/libj2v8_linux_x86_64.so which might have disabled stack guard. The VM will try to fix the stack guard now.
-It's highly recommended that you fix the library with 'execstack -c <libfile>', or link it with '-z noexecstack'.
 Invoking TypeScript Compiler on ts script sources                                                                                                                                                                
   Created .atomist/tests/Steps.js.map                                                                                                                                                                            
   Created .atomist/tests/Steps.js                                                                                                                                                                                
