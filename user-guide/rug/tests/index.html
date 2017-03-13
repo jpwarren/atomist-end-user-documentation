@@ -1,0 +1,1738 @@
+
+<!DOCTYPE html>
+<html class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentation for the Atomist Developer Platform">
+      
+      
+      
+        <meta name="author" content="The Atomist Team">
+      
+      
+        <link rel="shortcut icon" href="../../../images/favicon.ico">
+      
+      <meta name="generator" content="mkdocs-0.16.1, mkdocs-material-1.3.0">
+    
+    
+      
+        <title>Tests - The Atomist Documentation</title>
+      
+    
+    
+      <script src="../../../assets/javascripts/modernizr-56ade86843.js"></script>
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/application-1d1da4857d.css">
+      
+        <link rel="stylesheet" href="../../../assets/stylesheets/application-66fa0d9bba.palette.css">
+      
+    
+    
+      
+        
+        
+        
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+    
+  </head>
+  
+  
+  
+  
+    <body data-md-color-primary="green" data-md-color-accent="green">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="drawer">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search">
+    <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <a href="../../.." title="The Atomist Documentation" class="md-logo md-header-nav__button">
+            <img src="../../../images/atomist-logo-horiz-reversed.svg" width="24" height="24">
+          </a>
+        
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <span class="md-flex__ellipsis md-header-nav__title">
+          
+            
+              
+                <span class="md-header-nav__parent">
+                  User Guide
+                </span>
+              
+                <span class="md-header-nav__parent">
+                  Rug
+                </span>
+              
+            
+            Tests
+          
+        </span>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="search"></label>
+          
+<div class="md-search" data-md-component="search">
+  <div class="md-search__overlay"></div>
+  <div class="md-search__inner">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" accesskey="s" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query">
+      <label class="md-icon md-search__icon" for="search"></label>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <div class="md-header-nav__source">
+          
+            
+
+
+  
+
+
+  <a href="https://github.com/atomist/rug" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      Rug
+    </div>
+  </a>
+
+          
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="drawer">
+    
+      <i class="md-logo md-nav__button">
+        <img src="../../../images/atomist-logo-horiz-reversed.svg">
+      </i>
+    
+    The Atomist Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+
+  <a href="https://github.com/atomist/rug" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      Rug
+    </div>
+  </a>
+
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-1" type="checkbox" id="nav-1">
+    
+    <label class="md-nav__link" for="nav-1">
+      Overview
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-1">
+        Overview
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../.." title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../concepts/" title="Concepts" class="md-nav__link">
+      Concepts
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../capabilities/" title="Capabilities" class="md-nav__link">
+      Capabilities
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      Getting Started
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        Getting Started
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../getting-started/" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../getting-started/prerequisites/" title="Prerequisites" class="md-nav__link">
+      Prerequisites
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../getting-started/invite-atomist-to-slack/" title="Invite Atomist to Slack" class="md-nav__link">
+      Invite Atomist to Slack
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../getting-started/connect-atomist-to-github/" title="Connect Atomist to GitHub" class="md-nav__link">
+      Connect Atomist to GitHub
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../getting-started/putting-atomist-to-work/" title="Putting Atomist to Work" class="md-nav__link">
+      Putting Atomist to Work
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../getting-started/connect-atomist-to-ci/" title="Connect Atomist to CI" class="md-nav__link">
+      Connect Atomist to CI
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../getting-started/build-your-own-development-automation/" title="Build Your Own Development Automation" class="md-nav__link">
+      Build Your Own Development Automation
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
+    
+    <label class="md-nav__link" for="nav-3">
+      User Guide
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        User Guide
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../" title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-2" type="checkbox" id="nav-3-2" checked>
+    
+    <label class="md-nav__link" for="nav-3-2">
+      Rug
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-2">
+        Rug
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../" title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../runtime/" title="Runtime" class="md-nav__link">
+      Runtime
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../typescript/" title="TypeScript" class="md-nav__link">
+      TypeScript
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../handlers/" title="Handlers" class="md-nav__link">
+      Handlers
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../commands/" title="Commands" class="md-nav__link">
+      Commands
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../editors/" title="Editors" class="md-nav__link">
+      Editors
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../generators/" title="Generators" class="md-nav__link">
+      Generators
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../reviewers/" title="Reviewers" class="md-nav__link">
+      Reviewers
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../extensions/" title="Extensions" class="md-nav__link">
+      Extensions
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../path-expressions/" title="Path Expressions" class="md-nav__link">
+      Path Expressions
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../microgrammars/" title="Microgrammars" class="md-nav__link">
+      Microgrammars
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../templates/" title="Templates" class="md-nav__link">
+      Templates
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
+    
+      
+    
+    
+    <a href="./" title="Tests" class="md-nav__link md-nav__link--active">
+      Tests
+    </a>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../projects/" title="Projects" class="md-nav__link">
+      Projects
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../archives/" title="Archives" class="md-nav__link">
+      Archives
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../lifecycle/" title="Lifecycle" class="md-nav__link">
+      Lifecycle
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../conventions/" title="Conventions" class="md-nav__link">
+      Conventions
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-3" type="checkbox" id="nav-3-3">
+    
+    <label class="md-nav__link" for="nav-3-3">
+      Integrations
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-3">
+        Integrations
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../integrations/" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../integrations/slack/" title="Slack" class="md-nav__link">
+      Slack
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../integrations/github/" title="GitHub.com" class="md-nav__link">
+      GitHub.com
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../integrations/travis-ci/" title="Travis CI" class="md-nav__link">
+      Travis CI
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../integrations/jenkins/" title="Jenkins" class="md-nav__link">
+      Jenkins
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-4" type="checkbox" id="nav-3-4">
+    
+    <label class="md-nav__link" for="nav-3-4">
+      Interfaces
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-4">
+        Interfaces
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../interfaces/" title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../interfaces/bot/" title="Bot" class="md-nav__link">
+      Bot
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-4-3" type="checkbox" id="nav-3-4-3">
+    
+    <label class="md-nav__link" for="nav-3-4-3">
+      CLI
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-3-4-3">
+        CLI
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../interfaces/cli/" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../interfaces/cli/install/" title="Installation" class="md-nav__link">
+      Installation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../interfaces/cli/using-rugs/" title="Using Rugs" class="md-nav__link">
+      Using Rugs
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../interfaces/cli/developing-rugs/" title="Developing Rugs" class="md-nav__link">
+      Developing Rugs
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      Reference Documentation
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        Reference Documentation
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../reference/" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-2" type="checkbox" id="nav-4-2">
+    
+    <label class="md-nav__link" for="nav-4-2">
+      Rug
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-2">
+        Rug
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../reference/rug/" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-2-2" type="checkbox" id="nav-4-2-2">
+    
+    <label class="md-nav__link" for="nav-4-2-2">
+      Rugs
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-4-2-2">
+        Rugs
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../reference/rug/rugs/" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../reference/rug/editors/" title="Editors" class="md-nav__link">
+      Editors
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../reference/rug/generators/" title="Generators" class="md-nav__link">
+      Generators
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../reference/rug/path-expressions/" title="Path Expressions" class="md-nav__link">
+      Path Expressions
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-2-3" type="checkbox" id="nav-4-2-3">
+    
+    <label class="md-nav__link" for="nav-4-2-3">
+      Language Extensions
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-4-2-3">
+        Language Extensions
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../reference/rug/extensions/" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../reference/rug/extensions/clj-project/" title="CljProject" class="md-nav__link">
+      CljProject
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../reference/rug/extensions/c-sharp-file/" title="CSharpFile" class="md-nav__link">
+      CSharpFile
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../reference/rug/extensions/docker-file/" title="DockerFile" class="md-nav__link">
+      DockerFile
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../reference/rug/extensions/elm-module/" title="ElmModule" class="md-nav__link">
+      ElmModule
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../reference/rug/extensions/every-pom/" title="EveryPom" class="md-nav__link">
+      EveryPom
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../reference/rug/extensions/file/" title="File" class="md-nav__link">
+      File
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../reference/rug/extensions/java-project/" title="JavaProject" class="md-nav__link">
+      JavaProject
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../reference/rug/extensions/java-source/" title="JavaSource" class="md-nav__link">
+      JavaSource
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../reference/rug/extensions/java-type/" title="JavaType" class="md-nav__link">
+      JavaType
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../reference/rug/extensions/json/" title="Json" class="md-nav__link">
+      Json
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../reference/rug/extensions/line/" title="Line" class="md-nav__link">
+      Line
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../reference/rug/extensions/pom/" title="Pom" class="md-nav__link">
+      Pom
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../reference/rug/extensions/project/" title="Project" class="md-nav__link">
+      Project
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../reference/rug/extensions/properties/" title="Properties" class="md-nav__link">
+      Properties
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../reference/rug/extensions/python-file/" title="PythonFile" class="md-nav__link">
+      PythonFile
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../reference/rug/extensions/python-requirements-txt/" title="PythonRequirementsTxt" class="md-nav__link">
+      PythonRequirementsTxt
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../reference/rug/extensions/rug-archive-project/" title="RugArchiveProject" class="md-nav__link">
+      RugArchiveProject
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../reference/rug/extensions/rug-file/" title="RugFile" class="md-nav__link">
+      RugFile
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../reference/rug/extensions/scala-file/" title="ScalaFile" class="md-nav__link">
+      ScalaFile
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../reference/rug/extensions/services/" title="Services" class="md-nav__link">
+      Services
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../reference/rug/extensions/spring-boot-project/" title="SpringBootProject" class="md-nav__link">
+      SpringBootProject
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../reference/rug/extensions/xml/" title="Xml" class="md-nav__link">
+      Xml
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../reference/rug/extensions/yml/" title="Yml" class="md-nav__link">
+      Yml
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-2-4" type="checkbox" id="nav-4-2-4">
+    
+    <label class="md-nav__link" for="nav-4-2-4">
+      DSL
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-4-2-4">
+        DSL
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../reference/rug/dsl/" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../reference/rug/dsl/syntax/" title="Syntax" class="md-nav__link">
+      Syntax
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../reference/rug/dsl/javascript/" title="Using JavaScript" class="md-nav__link">
+      Using JavaScript
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../reference/rug-cli/" title="Rug CLI" class="md-nav__link">
+      Rug CLI
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#a-quick-overview-of-a-rug-test" title="A Quick Overview of a Rug Test" class="md-nav__link">
+    A Quick Overview of a Rug Test
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#when-running-operations" title="When: Running operations" class="md-nav__link">
+    When: Running operations
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#then-assertions" title="Then Assertions" class="md-nav__link">
+    Then Assertions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#worlds" title="Worlds" class="md-nav__link">
+    Worlds
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#validating-parameters-passed-to-operations" title="Validating Parameters Passed to Operations" class="md-nav__link">
+    Validating Parameters Passed to Operations
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#well-known-steps" title="Well-Known Steps" class="md-nav__link">
+    Well-Known Steps
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#debugging-hints" title="Debugging Hints" class="md-nav__link">
+    Debugging Hints
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gaps" title="Gaps" class="md-nav__link">
+    Gaps
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#future-directions" title="Future Directions" class="md-nav__link">
+    Future Directions
+  </a>
+  
+</li>
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  <h1>Tests</h1>
+                
+                <p>Rug provides a testing framework based on <a href="https://en.wikipedia.org/wiki/Behavior-driven_development">BDD</a> concepts. This allows rapid, in-memory testing of Rug generators, reviewers and editors.</p>
+<p>The framework is based on the well known <a href="https://cucumber.io/docs/reference">Gherkin BDD DSL</a> and inspired by solutions built on it, such as <a href="https://github.com/cucumber/cucumber-js">cucumber-js</a>. All logic is coded in TypeScript or JavaScript. If you are familiar with Cucumber (versions of which exist for many languages), you should find the Rug test framework particularly easy to learn; if not, it should still be intuitive.</p>
+<div class="admonition note">
+<p>Rug is designed to support Test Driven Development using the BDD style, and we&rsquo;ve seen the greatest productivity in its early use from those that create test scenarios and then follow the <code>red</code> -&gt; <code>green</code> -&gt; <code>refactor</code> approach.</p>
+</div>
+<h3 id="a-quick-overview-of-a-rug-test">A Quick Overview of a Rug Test<a class="headerlink" href="#a-quick-overview-of-a-rug-test" title="Permanent link">&para;</a></h3>
+<p>Before taking a deeper dive, let&rsquo;s look at an example.</p>
+<p>Consider the following simple editor that will rename a Java file (imports omitted):</p>
+<div class="codehilite"><pre><span></span><span class="kd">@Editor</span><span class="p">(</span><span class="s2">&quot;Renamer&quot;</span><span class="p">,</span> <span class="s2">&quot;Renames Java class&quot;</span><span class="p">)</span>
+<span class="kr">export</span> <span class="kr">class</span> <span class="nx">Renamer</span> <span class="p">{</span>
+
+    <span class="nx">edit</span><span class="p">(</span><span class="nx">project</span>: <span class="kt">Project</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kd">let</span> <span class="nx">eng</span> <span class="o">=</span> <span class="nx">project</span><span class="p">.</span><span class="nx">context</span><span class="p">().</span><span class="nx">pathExpressionEngine</span><span class="p">();</span>
+        <span class="nx">eng</span><span class="p">.</span><span class="kd">with</span><span class="o">&lt;</span><span class="nx">JavaClass</span><span class="o">&gt;</span><span class="p">(</span><span class="nx">project</span><span class="p">,</span> <span class="s2">&quot;//JavaClass()[@name=&#39;Dog&#39;]&quot;</span><span class="p">,</span> <span class="nx">jc</span> <span class="o">=&gt;</span> <span class="p">{</span>
+            <span class="nx">jc</span><span class="p">.</span><span class="nx">rename</span><span class="p">(</span><span class="s2">&quot;Cat&quot;</span><span class="p">);</span>
+    <span class="p">});</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<p>We want to test that the editor works as intended. First, we write a Gherkin <code>.feature</code> file that is an easily readable description of the behaviors we expect. We&rsquo;ll call it <code>Renaming.feature</code> and place it under <code>.atomist/tests</code>. </p>
+<div class="codehilite"><pre><span></span><span class="k">Feature:</span><span class="nf"> Renaming a Java file</span>
+<span class="nf"> Three lines of indented content</span>
+<span class="nf"> to describe the meaning of this feature,</span>
+<span class="nf"> followed by one or more Scenario definitions.</span>
+
+<span class="k">Scenario:</span><span class="nf"> Dogs can be turned into cats</span>
+<span class="k"> Given </span><span class="nf">a file named src/main/java/Dog.java </span>
+<span class="nf"> </span><span class="k">When </span><span class="nf">edit with Renamer</span>
+<span class="nf"> </span><span class="k">Then </span><span class="nf">there should be one file</span>
+<span class="nf"> </span><span class="k">Then </span><span class="nf">the file is now src/main/java/Cat.java</span>
+</pre></div>
+
+
+<p>Walking through this definition:</p>
+<ul>
+<li>The syntax is standard Gherkin. It is human-readable and contains a specification of the desired behavior, but not how that behavior is to be verified. </li>
+<li>A Gherkin <strong>feature</strong> can contain one or more <strong>scenarios</strong>. You can include as many feature files in the <code>.atomist/tests</code> directory as you like.</li>
+<li>Each <strong>scenario</strong> is typically broken down into three blocks of <code>given</code>, <code>when</code>, <code>then</code>, following the BDD style. Each of these is called a <strong>step</strong>. Typically there is a single <code>when</code> step&ndash;the execution of an editor. There are often multiple <code>given</code> and <code>then</code> steps. <code>then</code> steps are assertions, and it is good practice to break them up for clarity, so failures are specific.</li>
+</ul>
+<p>We now have a clear specification of the desired behavior. How does the test infrastructure know how to execute these steps?</p>
+<p>As in <em>cucumber-js</em>, we delegate to JavaScript or TypeScript to execute these steps. In keeping with our general preference for TypeScript, let&rsquo;s see the TypeScript steps corresponding to the above feature:</p>
+<p><div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">Project</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@atomist/rug/model/Core&quot;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">ProjectEditor</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@atomist/rug/operations/ProjectEditor&quot;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">Given</span><span class="p">,</span> <span class="nx">When</span><span class="p">,</span> <span class="nx">Then</span><span class="p">,</span> <span class="nx">Result</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@atomist/rug/test/Core&quot;</span><span class="p">;</span>
+
+<span class="nx">Given</span><span class="p">(</span><span class="s2">&quot;a file named src/main/java/Dog.java&quot;</span><span class="p">,</span> <span class="nx">p</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">p</span><span class="p">.</span><span class="nx">addFile</span><span class="p">(</span><span class="s2">&quot;src/main/java/Dog.java&quot;</span><span class="p">,</span> <span class="s2">&quot;public class Dog {}&quot;</span><span class="p">);</span>
+<span class="p">});</span>
+<span class="nx">When</span><span class="p">(</span><span class="s2">&quot;edit with Renamer&quot;</span><span class="p">,</span> <span class="nx">p</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">p</span><span class="p">.</span><span class="nx">editWith</span><span class="p">(</span><span class="s2">&quot;Renamer&quot;</span><span class="p">);</span>
+<span class="p">});</span>
+<span class="nx">Then</span><span class="p">(</span><span class="s2">&quot;there should be one file&quot;</span><span class="p">,</span> <span class="nx">p</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="nx">p</span><span class="p">.</span><span class="nx">totalFileCount</span><span class="p">()</span> <span class="o">==</span> <span class="mi">1</span><span class="p">;</span>
+<span class="p">});</span>
+<span class="nx">Then</span><span class="p">(</span><span class="s2">&quot;the file is now src/main/java/Cat.java&quot;</span><span class="p">,</span> <span class="nx">p</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">p</span><span class="p">.</span><span class="nx">fileExists</span><span class="p">(</span><span class="s2">&quot;src/main/java/Cat.java&quot;</span><span class="p">);</span>
+<span class="p">});</span>
+</pre></div>
+
+All steps are expressed in terms of the <code>Project</code> type. </p>
+<p>We start by importing <code class="codehilite"><span class="nx">Project</span></code>, and the core test module and its exported <code class="codehilite"><span class="nx">Given</span></code>, <code class="codehilite"><span class="nx">When</span></code> and <code class="codehilite"><span class="nx">Then</span></code> functions.</p>
+<p>Step definitions are linked to the steps in the feature via strings, such as <code class="codehilite"><span class="s2">&quot;a file named src/main/java/Dog.java&quot;</span></code>.</p>
+<p>Step definitions may be provided in any TypeScript or JavaScript file under <code>.atomist/tests</code>. They will be loaded automatically by the test infrastructure.</p>
+<p>Different scenarios and even different features may share step definitions. This is particularly beneficial in the case of common definitions such as Given &ldquo;an empty archive,&rdquo; which can be shared for all users, across an organization or team or across an archive. We&rsquo;ll look at those Atomist provides later in this document.</p>
+<h3 id="when-running-operations"><code class="codehilite"><span class="nx">When</span></code>: Running operations<a class="headerlink" href="#when-running-operations" title="Permanent link">&para;</a></h3>
+<p>Typically there is one <code>when</code> step, invoking a single editor or reviewer is invoked. We&rsquo;ll explain how to do this once we&rsquo;ve covered the important <strong>world</strong> concept.</p>
+<h3 id="then-assertions"><code class="codehilite"><span class="nx">Then</span></code> Assertions<a class="headerlink" href="#then-assertions" title="Permanent link">&para;</a></h3>
+<p>The <code class="codehilite"><span class="nx">then</span></code> block then consists of one or more assertions about the final state of the project. It is good practice for these to be fine-grained so that reports are maximally informative about what succeeded and failed. The code of each failed assertion will be available in the test report.</p>
+<h3 id="worlds">Worlds<a class="headerlink" href="#worlds" title="Permanent link">&para;</a></h3>
+<p>Each scenario has a &ldquo;world&rdquo; associated with it, avaiable to all steps. A world is an isolated context for each scenario execution, which allows:</p>
+<ul>
+<li>The binding and retrieval of arbitrary objects</li>
+<li>Additional context-specific operations provided in the world&rsquo;s implementation</li>
+</ul>
+<p>Currently <code>rug</code> supports only BDD-based tests for generators, editors and reviewers. These use the <code class="codehilite"><span class="nx">ProjectWorld</span></code> type, defined in <code>Core.ts</code>. <code class="codehilite"><span class="nx">ProjectWorld</span></code> allows <code class="codehilite"><span class="nx">then</span></code> blocks to query the number of modifications made, whether or not edit attempts succeeded, and the number of editors run.</p>
+<p>The scenario world is an optional second parameter in all step definitions. For example:</p>
+<div class="codehilite"><pre><span></span><span class="kr">export</span> <span class="kd">function</span> <span class="nx">Given</span><span class="p">(</span><span class="nx">s</span>: <span class="kt">string</span><span class="p">,</span> <span class="nx">f</span><span class="o">:</span> <span class="p">(</span><span class="nx">Project</span><span class="p">,</span> <span class="nx">ScenarioWorld</span><span class="o">?</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="k">void</span><span class="p">);</span>
+</pre></div>
+
+
+<p>While our examples have used only the project, the world can be used as follows:</p>
+<div class="codehilite"><pre><span></span><span class="nx">Then</span><span class="p">(</span><span class="s2">&quot;I&#39;m happy with both project and world&quot;</span><span class="p">,</span> <span class="p">(</span><span class="nx">p</span><span class="p">,</span> <span class="nx">world</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="c1">// Assertion that may reference the world</span>
+<span class="p">});</span>
+</pre></div>
+
+
+<h3 id="validating-parameters-passed-to-operations">Validating Parameters Passed to Operations<a class="headerlink" href="#validating-parameters-passed-to-operations" title="Permanent link">&para;</a></h3>
+<p>To pass parameters to operations and have them validated, use the <code>ProjectWorld.editWith</code> function:</p>
+<p><div class="codehilite"><pre><span></span>When(&quot;politics takes its course&quot;, (p, w) =&gt; {
+  let world = w as ProjectScenarioWorld
+  world.editWith(world.editor(&quot;AlpEditor&quot;), {heir: &quot;Paul&quot;})
+})
+</pre></div>
+
+Parameters are provided in a map (or object).</p>
+<p>In future versions of Rug Test, validation may be possible via instantiating an operation and injecting its properties before invoking its <code>edit</code> or equivalent method. You can do this already if you don&rsquo;t care about validation (because you know the injected properties are valid), and if the operation uses <code>@Parameter</code> injected properties. In this style, the above example would look like this:</p>
+<p><div class="codehilite"><pre><span></span>When(&quot;politics takes its course&quot;, (p, w) =&gt; {
+  let e = new AlpEditor()
+  e.heir = &quot;Paul&quot;
+  e.edit()
+})
+</pre></div>
+
+For this to work, the <code>AlpEditor</code> would need to have been imported like any other TypeScript class.</p>
+<h3 id="well-known-steps">Well-Known Steps<a class="headerlink" href="#well-known-steps" title="Permanent link">&para;</a></h3>
+<p>Certain well-known steps&ndash;most notably, <code>then</code> statements&ndash;can be used in features without the need to define. A full list can be found in <code>@atomist/rug/test/WellKnownSteps.ts</code>. You can use these as a guide to defining your own well-known assertions and steps. The following excerpt from <code>WellKnownSteps.ts</code> includes the most important, and shows how easy such steps are to implement:</p>
+<p><div class="codehilite"><pre><span></span>Given(&quot;an empty project&quot;, p =&gt; {
+    // Nothing to do
+})
+
+Then(&quot;changes were made&quot;, (p, world) =&gt; {
+    return world.modificationsMade()
+})
+
+Then(&quot;no changes were made&quot;, (p, world) =&gt; {
+    return !world.modificationsMade()
+})
+
+Then(&quot;parameters were invalid&quot;, 
+    (p, world) =&gt; world.invalidParameters() != null)
+</pre></div>
+
+Gherkin usage of these steps would be as follows:</p>
+<div class="codehilite"><pre><span></span><span class="k">Scenario:</span><span class="nf"> Some scenario</span>
+<span class="k"> Given </span><span class="nf">an empty project</span>
+<span class="nf"> ... </span>
+<span class="nf"> </span><span class="k">Then </span><span class="nf">changes were made</span>
+</pre></div>
+
+
+<blockquote>
+<p><strong>Note</strong>: If you want your own common steps to be automatically registered, put them in a module and import it, or import a JavaScript file containing them directly. This is necessary as your code does not directly reference them.</p>
+</blockquote>
+<p>In the unlikely event you want to override a common step definition  provided by Atomist or yourself, you can define the same step in your step definitions. Your local definition will take precedence. </p>
+<h3 id="debugging-hints">Debugging Hints<a class="headerlink" href="#debugging-hints" title="Permanent link">&para;</a></h3>
+<p>To see the contents of a file in the output, simply get hold of the file in the project and use <code>console.log</code>. For example:</p>
+<div class="codehilite"><pre><span></span><span class="nx">Then</span><span class="p">(</span><span class="s2">&quot;the file has the right stuff&quot;</span><span class="p">,</span> <span class="nx">p</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="kd">let</span> <span class="nx">filename</span> <span class="o">=</span> <span class="s2">&quot;my/path/to/File.txt&quot;</span><span class="p">;</span>
+    <span class="kd">let</span> <span class="nx">f</span> <span class="o">=</span> <span class="nx">p</span><span class="p">.</span><span class="nx">findFile</span><span class="p">(</span><span class="nx">filename</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">f</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`Contents of </span><span class="si">${</span><span class="nx">filename</span><span class="si">}</span><span class="sb"> are </span><span class="err">\</span><span class="sb">n</span><span class="si">${</span><span class="nx">f</span><span class="p">.</span><span class="nx">content</span><span class="p">()</span><span class="si">}</span><span class="err">\</span><span class="sb">n`</span><span class="p">);</span>
+        <span class="k">return</span> <span class="nx">f</span><span class="p">.</span><span class="nx">content</span><span class="p">().</span><span class="nx">indexOf</span><span class="p">(</span><span class="s2">&quot;stuff i care about&quot;</span><span class="p">)</span> <span class="o">&gt;</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">else</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`</span><span class="si">${</span><span class="nx">filename</span><span class="si">}</span><span class="sb"> not found in archive`</span><span class="p">);</span>
+        <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">});</span>
+</pre></div>
+
+
+<p>To dump the entire archive at any point, use the <code class="codehilite"><span class="nx">Helpers</span></code> module as follows:</p>
+<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="o">*</span> <span class="kr">as</span> <span class="nx">helpers</span> <span class="nx">from</span> <span class="s2">&quot;@atomist/rug/test/Helpers&quot;</span>
+<span class="p">...</span>
+<span class="nx">helpers</span><span class="p">.</span><span class="nx">prettyListFiles</span><span class="p">(</span><span class="nx">project</span><span class="p">)</span>
+</pre></div>
+
+
+<p>To dump the tree in a particular file:</p>
+<p>TODO</p>
+<h3 id="gaps">Gaps<a class="headerlink" href="#gaps" title="Permanent link">&para;</a></h3>
+<p>Rug Test does not yet support the full range of Gherkin functionality. The following features are missing: </p>
+<ul>
+<li>Doc strings</li>
+<li>Data tables</li>
+<li>Tags</li>
+</ul>
+<p>These may be supported in a future version of <code>rug</code>.</p>
+<h3 id="future-directions">Future Directions<a class="headerlink" href="#future-directions" title="Permanent link">&para;</a></h3>
+<ul>
+<li>The need for more than one source file for each feature is both a strength and weakness of Gherkin. It&rsquo;s a strength because each file is in a single, logical, toolable language; it&rsquo;s a weakness because of the level of ceremony required and because of the brittle linkage by a string value. We intend to provide editors that helps with this, automatically creating feature files for editors, and TypeScript files implementing the steps in feature files.</li>
+<li>In a future release, BDD testing support will be extended beyond project operations to event handlers.</li>
+</ul>
+                
+                  
+                
+              
+              
+                
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../templates/" title="Templates" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Templates
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../projects/" title="Projects" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Projects
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            &copy; 2017 Atomist, Inc.
+          </div>
+        
+        powered by
+        <a href="http://www.mkdocs.org" title="MkDocs">MkDocs</a>
+        and
+        <a href="http://squidfunk.github.io/mkdocs-material/" title="Material for MkDocs">
+          Material for MkDocs</a>
+      </div>
+      
+        
+  <div class="md-footer-social">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+      <a href="https://the-composition.com/" class="md-footer-social__link fa fa-medium"></a>
+    
+      <a href="https://github.com/atomist" class="md-footer-social__link fa fa-github"></a>
+    
+      <a href="https://twitter.com/atomist" class="md-footer-social__link fa fa-twitter"></a>
+    
+      <a href="https://join.atomist.com/" class="md-footer-social__link fa fa-slack"></a>
+    
+  </div>
+
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../../assets/javascripts/application-7aa26ad9ec.js"></script>
+      <script>app.initialize({url:{base:"../../.."}})</script>
+      
+    
+    
+      
+      <script>!function(e,t,a,n,o,c,i){e.GoogleAnalyticsObject=o,e[o]=e[o]||function(){(e[o].q=e[o].q||[]).push(arguments)},e[o].l=1*new Date,c=t.createElement(a),i=t.getElementsByTagName(a)[0],c.async=1,c.src=n,i.parentNode.insertBefore(c,i)}(window,document,"script","https://www.google-analytics.com/analytics.js","ga"),ga("create","UA-74966852-1","auto"),ga("set","anonymizeIp",!0),ga("send","pageview");var links=document.getElementsByTagName("a");Array.prototype.map.call(links,function(e){e.host!=document.location.host&&e.addEventListener("click",function(){var t=e.getAttribute("data-md-action")||"follow";ga("send","event","outbound",t,e.href)})});var query=document.forms.search.query;query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})</script>
+      
+    
+  </body>
+</html>

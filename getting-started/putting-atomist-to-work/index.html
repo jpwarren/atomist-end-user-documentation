@@ -1,0 +1,1849 @@
+
+<!DOCTYPE html>
+<html class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentation for the Atomist Developer Platform">
+      
+      
+      
+        <meta name="author" content="The Atomist Team">
+      
+      
+        <link rel="shortcut icon" href="../../images/favicon.ico">
+      
+      <meta name="generator" content="mkdocs-0.16.1, mkdocs-material-1.3.0">
+    
+    
+      
+        <title>Putting Atomist to Work - The Atomist Documentation</title>
+      
+    
+    
+      <script src="../../assets/javascripts/modernizr-56ade86843.js"></script>
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/application-1d1da4857d.css">
+      
+        <link rel="stylesheet" href="../../assets/stylesheets/application-66fa0d9bba.palette.css">
+      
+    
+    
+      
+        
+        
+        
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    
+  </head>
+  
+  
+  
+  
+    <body data-md-color-primary="green" data-md-color-accent="green">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="drawer">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search">
+    <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <a href="../.." title="The Atomist Documentation" class="md-logo md-header-nav__button">
+            <img src="../../images/atomist-logo-horiz-reversed.svg" width="24" height="24">
+          </a>
+        
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <span class="md-flex__ellipsis md-header-nav__title">
+          
+            
+              
+                <span class="md-header-nav__parent">
+                  Getting Started
+                </span>
+              
+            
+            Putting Atomist to Work
+          
+        </span>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="search"></label>
+          
+<div class="md-search" data-md-component="search">
+  <div class="md-search__overlay"></div>
+  <div class="md-search__inner">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" accesskey="s" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query">
+      <label class="md-icon md-search__icon" for="search"></label>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <div class="md-header-nav__source">
+          
+            
+
+
+  
+
+
+  <a href="https://github.com/atomist/rug" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      Rug
+    </div>
+  </a>
+
+          
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="drawer">
+    
+      <i class="md-logo md-nav__button">
+        <img src="../../images/atomist-logo-horiz-reversed.svg">
+      </i>
+    
+    The Atomist Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+
+  <a href="https://github.com/atomist/rug" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      Rug
+    </div>
+  </a>
+
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-1" type="checkbox" id="nav-1">
+    
+    <label class="md-nav__link" for="nav-1">
+      Overview
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-1">
+        Overview
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../concepts/" title="Concepts" class="md-nav__link">
+      Concepts
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../capabilities/" title="Capabilities" class="md-nav__link">
+      Capabilities
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
+    
+    <label class="md-nav__link" for="nav-2">
+      Getting Started
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        Getting Started
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../prerequisites/" title="Prerequisites" class="md-nav__link">
+      Prerequisites
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../invite-atomist-to-slack/" title="Invite Atomist to Slack" class="md-nav__link">
+      Invite Atomist to Slack
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../connect-atomist-to-github/" title="Connect Atomist to GitHub" class="md-nav__link">
+      Connect Atomist to GitHub
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
+    
+      
+    
+    
+    <a href="./" title="Putting Atomist to Work" class="md-nav__link md-nav__link--active">
+      Putting Atomist to Work
+    </a>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../connect-atomist-to-ci/" title="Connect Atomist to CI" class="md-nav__link">
+      Connect Atomist to CI
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../build-your-own-development-automation/" title="Build Your Own Development Automation" class="md-nav__link">
+      Build Your Own Development Automation
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      User Guide
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        User Guide
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../user-guide/" title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-2" type="checkbox" id="nav-3-2">
+    
+    <label class="md-nav__link" for="nav-3-2">
+      Rug
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-2">
+        Rug
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../user-guide/rug/" title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../user-guide/rug/runtime/" title="Runtime" class="md-nav__link">
+      Runtime
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../user-guide/rug/typescript/" title="TypeScript" class="md-nav__link">
+      TypeScript
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../user-guide/rug/handlers/" title="Handlers" class="md-nav__link">
+      Handlers
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../user-guide/rug/commands/" title="Commands" class="md-nav__link">
+      Commands
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../user-guide/rug/editors/" title="Editors" class="md-nav__link">
+      Editors
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../user-guide/rug/generators/" title="Generators" class="md-nav__link">
+      Generators
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../user-guide/rug/reviewers/" title="Reviewers" class="md-nav__link">
+      Reviewers
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../user-guide/rug/extensions/" title="Extensions" class="md-nav__link">
+      Extensions
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../user-guide/rug/path-expressions/" title="Path Expressions" class="md-nav__link">
+      Path Expressions
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../user-guide/rug/microgrammars/" title="Microgrammars" class="md-nav__link">
+      Microgrammars
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../user-guide/rug/templates/" title="Templates" class="md-nav__link">
+      Templates
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../user-guide/rug/tests/" title="Tests" class="md-nav__link">
+      Tests
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../user-guide/rug/projects/" title="Projects" class="md-nav__link">
+      Projects
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../user-guide/rug/archives/" title="Archives" class="md-nav__link">
+      Archives
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../user-guide/rug/lifecycle/" title="Lifecycle" class="md-nav__link">
+      Lifecycle
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../user-guide/rug/conventions/" title="Conventions" class="md-nav__link">
+      Conventions
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-3" type="checkbox" id="nav-3-3">
+    
+    <label class="md-nav__link" for="nav-3-3">
+      Integrations
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-3">
+        Integrations
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../user-guide/integrations/" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../user-guide/integrations/slack/" title="Slack" class="md-nav__link">
+      Slack
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../user-guide/integrations/github/" title="GitHub.com" class="md-nav__link">
+      GitHub.com
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../user-guide/integrations/travis-ci/" title="Travis CI" class="md-nav__link">
+      Travis CI
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../user-guide/integrations/jenkins/" title="Jenkins" class="md-nav__link">
+      Jenkins
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-4" type="checkbox" id="nav-3-4">
+    
+    <label class="md-nav__link" for="nav-3-4">
+      Interfaces
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-4">
+        Interfaces
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../user-guide/interfaces/" title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../user-guide/interfaces/bot/" title="Bot" class="md-nav__link">
+      Bot
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-4-3" type="checkbox" id="nav-3-4-3">
+    
+    <label class="md-nav__link" for="nav-3-4-3">
+      CLI
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-3-4-3">
+        CLI
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../user-guide/interfaces/cli/" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../user-guide/interfaces/cli/install/" title="Installation" class="md-nav__link">
+      Installation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../user-guide/interfaces/cli/using-rugs/" title="Using Rugs" class="md-nav__link">
+      Using Rugs
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../user-guide/interfaces/cli/developing-rugs/" title="Developing Rugs" class="md-nav__link">
+      Developing Rugs
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      Reference Documentation
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        Reference Documentation
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../reference/" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-2" type="checkbox" id="nav-4-2">
+    
+    <label class="md-nav__link" for="nav-4-2">
+      Rug
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-2">
+        Rug
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../reference/rug/" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-2-2" type="checkbox" id="nav-4-2-2">
+    
+    <label class="md-nav__link" for="nav-4-2-2">
+      Rugs
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-4-2-2">
+        Rugs
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../reference/rug/rugs/" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../reference/rug/editors/" title="Editors" class="md-nav__link">
+      Editors
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../reference/rug/generators/" title="Generators" class="md-nav__link">
+      Generators
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../reference/rug/path-expressions/" title="Path Expressions" class="md-nav__link">
+      Path Expressions
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-2-3" type="checkbox" id="nav-4-2-3">
+    
+    <label class="md-nav__link" for="nav-4-2-3">
+      Language Extensions
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-4-2-3">
+        Language Extensions
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../reference/rug/extensions/" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../reference/rug/extensions/clj-project/" title="CljProject" class="md-nav__link">
+      CljProject
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../reference/rug/extensions/c-sharp-file/" title="CSharpFile" class="md-nav__link">
+      CSharpFile
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../reference/rug/extensions/docker-file/" title="DockerFile" class="md-nav__link">
+      DockerFile
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../reference/rug/extensions/elm-module/" title="ElmModule" class="md-nav__link">
+      ElmModule
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../reference/rug/extensions/every-pom/" title="EveryPom" class="md-nav__link">
+      EveryPom
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../reference/rug/extensions/file/" title="File" class="md-nav__link">
+      File
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../reference/rug/extensions/java-project/" title="JavaProject" class="md-nav__link">
+      JavaProject
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../reference/rug/extensions/java-source/" title="JavaSource" class="md-nav__link">
+      JavaSource
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../reference/rug/extensions/java-type/" title="JavaType" class="md-nav__link">
+      JavaType
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../reference/rug/extensions/json/" title="Json" class="md-nav__link">
+      Json
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../reference/rug/extensions/line/" title="Line" class="md-nav__link">
+      Line
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../reference/rug/extensions/pom/" title="Pom" class="md-nav__link">
+      Pom
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../reference/rug/extensions/project/" title="Project" class="md-nav__link">
+      Project
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../reference/rug/extensions/properties/" title="Properties" class="md-nav__link">
+      Properties
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../reference/rug/extensions/python-file/" title="PythonFile" class="md-nav__link">
+      PythonFile
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../reference/rug/extensions/python-requirements-txt/" title="PythonRequirementsTxt" class="md-nav__link">
+      PythonRequirementsTxt
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../reference/rug/extensions/rug-archive-project/" title="RugArchiveProject" class="md-nav__link">
+      RugArchiveProject
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../reference/rug/extensions/rug-file/" title="RugFile" class="md-nav__link">
+      RugFile
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../reference/rug/extensions/scala-file/" title="ScalaFile" class="md-nav__link">
+      ScalaFile
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../reference/rug/extensions/services/" title="Services" class="md-nav__link">
+      Services
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../reference/rug/extensions/spring-boot-project/" title="SpringBootProject" class="md-nav__link">
+      SpringBootProject
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../reference/rug/extensions/xml/" title="Xml" class="md-nav__link">
+      Xml
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../reference/rug/extensions/yml/" title="Yml" class="md-nav__link">
+      Yml
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-2-4" type="checkbox" id="nav-4-2-4">
+    
+    <label class="md-nav__link" for="nav-4-2-4">
+      DSL
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-4-2-4">
+        DSL
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../reference/rug/dsl/" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../reference/rug/dsl/syntax/" title="Syntax" class="md-nav__link">
+      Syntax
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../reference/rug/dsl/javascript/" title="Using JavaScript" class="md-nav__link">
+      Using JavaScript
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../reference/rug-cli/" title="Rug CLI" class="md-nav__link">
+      Rug CLI
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#use-atomist-to-create-a-new-project" title="Use Atomist to create a new project" class="md-nav__link">
+    Use Atomist to create a new project
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#connecting-atomist-to-github" title="Connecting Atomist to GitHub" class="md-nav__link">
+    Connecting Atomist to GitHub
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#add-the-atomist-webhook-to-your-github-organization" title="Add the Atomist webhook to your GitHub organization" class="md-nav__link">
+    Add the Atomist webhook to your GitHub organization
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#add-the-atomist-webhook-to-your-individual-repositories" title="Add the Atomist webhook to your individual repositories" class="md-nav__link">
+    Add the Atomist webhook to your individual repositories
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#seeing-github-events-in-slack" title="Seeing GitHub events in Slack" class="md-nav__link">
+    Seeing GitHub events in Slack
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-github-in-slack" title="Using GitHub in Slack" class="md-nav__link">
+    Using GitHub in Slack
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-atomist-on-an-existing-project" title="Using Atomist on an existing project" class="md-nav__link">
+    Using Atomist on an existing project
+  </a>
+  
+</li>
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  <h1>Putting Atomist to Work</h1>
+                
+                <p>Atomist can now be put to work, creating projects, editing code,
+managing issues, and generally tying your whole development process
+together.  Let&rsquo;s kick things off by having the Atomist Bot create a
+new project for us.</p>
+<h3 id="use-atomist-to-create-a-new-project">Use Atomist to create a new project<a class="headerlink" href="#use-atomist-to-create-a-new-project" title="Permanent link">&para;</a></h3>
+<p>You can ask the Atomist Bot to create a new project for you either
+through a direct message or by addressing the Bot in a channel it has
+been invited to.  For our purposes, we will assume you are starting
+the conversation in your Slack team&rsquo;s <code>#general</code> channel.  In the
+<code>#general</code> channel, type the following message.</p>
+<div class="codehilite"><pre><span></span>@atomist generators
+</pre></div>
+
+
+<p>The Atomist Bot will reply with a list of project generators that it
+can use on your behalf to create a new project in GitHub.  The Atomist
+Bot will respond with a list of project generators something like the
+following.</p>
+<div class="ss-container">
+  <img src="../images/project-generators-list.png" alt="List of project generators" class="ss-medium">
+</div>
+
+<div class="admonition note">
+<p>You can create your own generators.  Creating your own generators
+will soon be added as a <a href="../../guides/">Quick Start</a>.</p>
+</div>
+<p>While the full list of project generators <em>can</em> be useful if you are
+just browsing, we want to create a <a href="https://projects.spring.io/spring-boot/">Spring Boot</a> REST service, so we can
+narrow down the list by providing a search term, <code>spring</code> in this
+case.</p>
+<div class="codehilite"><pre><span></span>@atomist generators spring
+</pre></div>
+
+
+<p>This time the Atomist Bot should respond with a list of project
+generators that includes the <em>NewSpringBootRestService</em> generator.</p>
+<div class="ss-container">
+  <img src="../images/spring-boot-rest-service-generator-button.png" alt="Entry for the NewSpringBootRestService" class="ss-medium">
+</div>
+
+<p>Click on the &ldquo;Generate project&rdquo; button to begin the process of
+creating your new project.</p>
+<div class="ss-container">
+  <img src="../images/creating-a-new-project-start.png" alt="Starting a dialogue with Atomist to create a new project" class="ss-medium">
+</div>
+
+<p>The Atomist Bot will respond with a message telling you what project
+generator you created and then create a <a href="https://get.slack.help/hc/en-us/articles/115000769927-Message-threads">thread</a> off that message to
+gather the information it needs to create the project.  Click now on
+the &ldquo;1 reply&rdquo; link below the message to open up the thread in Slack.
+You will see that the Atomist Bot has asked you a question in the
+thread.</p>
+<div class="ss-container">
+  <img src="../images/project-creation-thread-start.png" alt="Project creation thread with Atomist" class="ss-small">
+</div>
+
+<p>Type in a name for your new project and press <Enter>.  The project
+name must be a valid GitHub repository name, containing only letters,
+numbers, dashes (<code>-</code>), and underscores (<code>_</code>).  Since the project name
+is the only required input parameter for the
+<em>NewSpringBootRestService</em> generator, the Atomist Bot will respond
+with a message showing the project name you entered and the default
+values for all the other input parameters.</p>
+<div class="ss-container">
+  <img src="../images/create-project-parameters.png" alt="Project parameters all set" class="ss-small">
+</div>
+
+<p>You can change the value for any of the parameters by typing in <code>set
+&lt;parameter&gt; &lt;value&gt;</code> before you click on <code>Generate project</code>.</p>
+<p>Now click on <code>Generate project</code> and you&rsquo;ll see several things happen:</p>
+<ul>
+<li>In the thread, the Atomist Bot will announce &ldquo;One moment while I
+    run the generator.&rdquo;</li>
+<li>Atomist will go and create the repository for you in the GitHub
+    account you previously authorized.</li>
+<li>The Atomist Bot will announce that it has &ldquo;Successfully generated
+    your project&rdquo; back in the main channel where the project creation
+    thread was started in, in our case that would be <code>#general</code>.  The
+    announcement will contain a link to the newly created project.</li>
+<li>Atomist will create a new channel in your Slack team for the new
+    project, that will also be associated with the project&rsquo;s
+    repository so when you want to work on that project, you do it in
+    that channel.</li>
+</ul>
+<div class="ss-container">
+  <img src="../images/project-creation-response.png" alt="Project creation response from Atomist" class="ss-medium">
+</div>
+
+<p>Click on the project link to see your project in GitHub.</p>
+<div class="ss-container">
+  <img src="../images/github-project.png" alt="GitHub Project page" class="ss-small">
+</div>
+
+<p>Clone your new repository from GitHub and you will have a new, working
+project courtesy of Atomist.</p>
+<h3 id="connecting-atomist-to-github">Connecting Atomist to GitHub<a class="headerlink" href="#connecting-atomist-to-github" title="Permanent link">&para;</a></h3>
+<p>In addition to creating and editing projects, Atomist can react to
+events that occur on your repositories as well.  For example, Atomist
+can send messages when <a href="https://help.github.com/articles/about-pull-requests/">pull requests</a> are created or assign
+someone to an <a href="https://help.github.com/articles/about-issues/">issue</a>.</p>
+<p>GitHub notifies external systems like Atomist about repository and
+organization events using <a href="https://help.github.com/articles/about-webhooks/">webhooks</a>.  To enable GitHub events to
+promulgate into Atomist you need to add the Atomist webhook URL in the
+settings of
+the <a href="../connect-atomist-to-github/#github-account-authorization">GitHub account you previously authorized</a>.  The
+next two sections provide instructions for each of the GitHub account
+authorization options: organization and individual.  You should only
+work through the instructions for the account authorization option</p>
+<h4 id="add-the-atomist-webhook-to-your-github-organization">Add the Atomist webhook to your GitHub organization<a class="headerlink" href="#add-the-atomist-webhook-to-your-github-organization" title="Permanent link">&para;</a></h4>
+<p>If you added Atomist to a GitHub organization when you performed the
+account authorization, navigate to that GitHub organization&rsquo;s page,
+click on &ldquo;Settings&rdquo;, and select &ldquo;Webhooks&rdquo; from the left menu.</p>
+<div class="ss-container">
+  <img src="../images/gh-org-settings-for-atomist-webhook.png" alt="Settings page for GitHub organization webhooks" class="ss-large">
+</div>
+
+<p>Click the &ldquo;Add webhook&rdquo; button and fill in the details as shown below.</p>
+<div class="ss-container">
+  <img src="../images/add-atomist-gh-webhook.png" alt="Filled form for adding the Atomist webhook to your organization" class="ss-medium">
+</div>
+
+<p>When you have filled in the webhook form, click the &ldquo;Add webhook&rdquo;
+button at the bottom of the form.  You should then see that the
+webhook has been added to the list of webhooks for your organization.</p>
+<div class="ss-container">
+  <img src="../images/atomist-webhook-added.png" alt="Atomist Webhook successfully added!" class="ss-medium">
+</div>
+
+<h4 id="add-the-atomist-webhook-to-your-individual-repositories">Add the Atomist webhook to your individual repositories<a class="headerlink" href="#add-the-atomist-webhook-to-your-individual-repositories" title="Permanent link">&para;</a></h4>
+<p>If you added Atomist to an individual account when you performed the
+account authorization, adding webhooks is not as convenient.  GitHub
+does not support webhooks on an individual account.  Therefore, you
+need to add the Atomist webhook to every repository you want Atomist
+to receive events from.  Fortunately, the process of adding the
+webhook is the same for each repository.  For each repository, go to
+the repository&rsquo;s GitHub page, click on &ldquo;Settings&rdquo;, and select
+&ldquo;Webhooks&rdquo; from the left menu.</p>
+<div class="ss-container">
+  <img src="../images/gh-repo-settings-webhooks.png" alt="Settings page for GitHub repository webhooks" class="ss-large">
+</div>
+
+<p>From here, the process for adding each repository webhook is identical
+to adding an organization webhook.  Fill out the webhook form just as
+we showed above and click the &ldquo;Add webhook&rdquo; button at the bottom of
+the form.</p>
+<div class="ss-container">
+  <img src="../images/add-atomist-gh-webhook.png" alt="Filled form for adding the Atomist webhook to your organization" class="ss-medium">
+</div>
+
+<h3 id="seeing-github-events-in-slack">Seeing GitHub events in Slack<a class="headerlink" href="#seeing-github-events-in-slack" title="Permanent link">&para;</a></h3>
+<p>Now that you have added the Atomist webhook to your GitHub
+configuration and events are flowing from GitHub into Atomist, these
+events will begin to show up in Slack.  To see your new webhook in
+action, and how those events get interpreted in <code>@atomist</code>, make a
+small edit to one of the files in your repository (the <code>README.md</code> is
+usually a good candidate to make a small, inconseqential edit) either
+through the GitHub user interface or through a commit/push from a
+local edit.</p>
+<p>When you have done the commit/push to master you should see those
+events happily appearing in your project&rsquo;s channel, <code>#sprockets</code> in
+our example here:</p>
+<div class="ss-container">
+  <img src="../images/push-event-appearing-in-repo-channel.png" alt="Push event appearing in your project's channel" class="ss-large">
+</div>
+
+<h3 id="using-github-in-slack">Using GitHub in Slack<a class="headerlink" href="#using-github-in-slack" title="Permanent link">&para;</a></h3>
+<p>Getting well-formatted message in Slack about what is happening to
+your project on GitHub is nice, but it only scratches the surface of
+what Atomist can do.  In addition to passively receiving and then
+displaying GitHub events, Atomist can create and modify code, issues,
+and PRs on GitHub, all without you ever having to leave Slack.  Let&rsquo;s
+use the Atomist Bot to create a GitHub Issues for us.</p>
+<p>Before we can create GitHub issues in Slack, we have to enable the
+functionality in the Atomist Bot.  We do this by registering the
+appropriate command, <code>CreateIssue</code> in this case, with the Atomist Bot
+in your Slack.  In other words, we are going to teach <em>your</em> Atomist
+Bot a new trick.  Send the following message to your Atomist Bot.</p>
+<div class="codehilite"><pre><span></span>@atomist register command
+</pre></div>
+
+
+<p>Your Atomist Bot will respond by creating a thread and ask you some
+questions about the command you want to register.</p>
+<div class="ss-container">
+  <img src="../images/start-to-register-a-command.png" alt="Registering a Command with Atomist" class="ss-small">
+</div>
+
+<p>After you answer all the questions, you will see a summary of the
+command registration information.</p>
+<div class="ss-container">
+  <img src="../images/command-registration-summary.png" alt="Summary of new Command registration" class="ss-small">
+</div>
+
+<p>Click the &ldquo;Submit&rdquo; button and your Atomist Bot will respond back in
+the original channel, saying it has successfully registered a new
+command.</p>
+<div class="ss-container">
+  <img src="../images/command-registered-successfully.png" alt="Registering a Command with Atomist" class="ss-medium">
+</div>
+
+<p>Your Atomist Bot will now be able to create new issues for you in
+GitHub.  Let&rsquo;s try it out.  Send the following message in the
+<code>#sprocket</code> channel that&rsquo;s associated with the <code>sprocket</code> project on
+GitHub.</p>
+<div class="codehilite"><pre><span></span>@atomist create issue
+</pre></div>
+
+
+<p>As usual, your Atomist Bot will start a thread to collect all the
+information necessary it needs to complete the request, creating a new
+issue on the <code>sprocket</code> project.</p>
+<div class="ss-container">
+  <img src="../images/create-issue-flow.png" alt="Creating an Issue" class="ss-small">
+</div>
+
+<p>Once you have entered all the needed information, your Atomist Bot
+will respond with a summary and the option to submit or cancel.</p>
+<div class="ss-container">
+  <img src="../images/create-issue-dialog.png" alt="Issue Summary" class="ss-small">
+</div>
+
+<p>Click the &ldquo;Submit&rdquo; button and Atomist will create the issue and then
+respond back in the main <code>#sprocket</code> channel.</p>
+<div class="ss-container">
+  <img src="../images/successfully-created-issue-response.png" alt="Issue Created" class="ss-medium">
+</div>
+
+<p>But that&rsquo;s not where the interaction stops. You Atomist Bot will also
+post a message in the <code>#sprocket</code> channel containing a summary of the
+newly created issue <em>and</em> some buttons for common actions taken on
+issues: assign it someone, add a label, add a comment, etc.</p>
+<div class="ss-container">
+  <img src="../images/new-issue-follow-on-buttons.png" alt="Issue Created" class="ss-medium">
+</div>
+
+<p>Go ahead and click on the link to see the issue on GitHub.</p>
+<div class="ss-container">
+  <img src="../images/new-issue-in-github.png" alt="Issue in GitHub" class="ss-large">
+</div>
+
+<p>Now head back to the <code>#sprocket</code> channel in Slack and click on the
+&ldquo;Bug&rdquo; button to add the &ldquo;bug&rdquo; label to the issue:</p>
+<div class="ss-container">
+  <img src="../images/issue-labelled-as-bug-response.png" alt="Issue labelled as a Bug" class="ss-medium">
+</div>
+
+<p>We see the Atomist Bot responding that it has successfully edited the
+issue.  Let&rsquo;s make sure.  Click on the link to open up the issue in
+GitHub.</p>
+<div class="ss-container">
+  <img src="../images/issue-in-github.png" alt="Issue in GitHub" class="ss-large">
+</div>
+
+<p>We can see that Atomist, as us, has labeled the issue a bug, just as
+we asked.</p>
+<p>Now imagine that you are another team member who has noticed this new
+issue and wants to add a comment from inside GitHub.  Using the GitHub
+web interface, add a comment and click the &ldquo;Comment&rdquo; button.</p>
+<div class="ss-container">
+  <img src="../images/new-issue-comment-in-github.png" alt="New comment on issue in GitHub" class="ss-large">
+</div>
+
+<p>You will see a new message in the <code>#sprocket</code> channel from your
+Atomist Bot notifying you that the issue has been updated.</p>
+<div class="ss-container">
+  <img src="../images/new-comment-notification-in-slack.png" alt="New comment notification in Slack" class="ss-medium">
+</div>
+
+<p>The circle is complete!  After connecting Atomist and GitHub, we can
+see GitHub events in Slack, take action on them, and see the result in
+GitHub and Slack.</p>
+<h3 id="using-atomist-on-an-existing-project">Using Atomist on an existing project<a class="headerlink" href="#using-atomist-on-an-existing-project" title="Permanent link">&para;</a></h3>
+<p>You almost certainly have many existing projects that you would like
+Atomist&rsquo;s help keeping track of.  To get Atomist&rsquo;s help with existing
+GitHub repositories, simply invite the Atomist Bot to a channel with
+the same name as the repository.  You can invite the Atomist Bot to a
+channel just as you would invite any other user, e.g., by using the
+<code>/invite @atomist</code> command.  Once the Atomist Bot is in the channel,
+it will begin reporting on activity in the associated repository and
+you can interact with the repository, creating and assigning issues,
+etc., just as you do with channels the Atomist Bot creates when it
+creates the repositories.</p>
+<p>If you prefer not to have the channel and repository have the same
+name, you can tell the Atomist Bot what repository to associate with a
+channel by sending the message <code>repo</code> to the Atomist Bot in that
+channel.</p>
+<div class="codehilite"><pre><span></span>@atomist repo REPOSITORY_NAME
+</pre></div>
+
+
+<p>Replace <code>REPOSITORY_NAME</code> in the above command with the name of the
+repository you want the Atomist Bot to associate with the current
+channel.  At any time you can ask the Atomist Bot to tell you what
+repository is associated with the current channel by sending it the
+<code>repo</code> command without an argument.</p>
+<div class="codehilite"><pre><span></span>@atomist repo
+</pre></div>
+
+
+<p>Click Next at the bottom-right of this page to continue.</p>
+                
+                  
+                
+              
+              
+                
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../connect-atomist-to-github/" title="Connect Atomist to GitHub" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Connect Atomist to GitHub
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../connect-atomist-to-ci/" title="Connect Atomist to CI" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Connect Atomist to CI
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            &copy; 2017 Atomist, Inc.
+          </div>
+        
+        powered by
+        <a href="http://www.mkdocs.org" title="MkDocs">MkDocs</a>
+        and
+        <a href="http://squidfunk.github.io/mkdocs-material/" title="Material for MkDocs">
+          Material for MkDocs</a>
+      </div>
+      
+        
+  <div class="md-footer-social">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+      <a href="https://the-composition.com/" class="md-footer-social__link fa fa-medium"></a>
+    
+      <a href="https://github.com/atomist" class="md-footer-social__link fa fa-github"></a>
+    
+      <a href="https://twitter.com/atomist" class="md-footer-social__link fa fa-twitter"></a>
+    
+      <a href="https://join.atomist.com/" class="md-footer-social__link fa fa-slack"></a>
+    
+  </div>
+
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/application-7aa26ad9ec.js"></script>
+      <script>app.initialize({url:{base:"../.."}})</script>
+      
+    
+    
+      
+      <script>!function(e,t,a,n,o,c,i){e.GoogleAnalyticsObject=o,e[o]=e[o]||function(){(e[o].q=e[o].q||[]).push(arguments)},e[o].l=1*new Date,c=t.createElement(a),i=t.getElementsByTagName(a)[0],c.async=1,c.src=n,i.parentNode.insertBefore(c,i)}(window,document,"script","https://www.google-analytics.com/analytics.js","ga"),ga("create","UA-74966852-1","auto"),ga("set","anonymizeIp",!0),ga("send","pageview");var links=document.getElementsByTagName("a");Array.prototype.map.call(links,function(e){e.host!=document.location.host&&e.addEventListener("click",function(){var t=e.getAttribute("data-md-action")||"follow";ga("send","event","outbound",t,e.href)})});var query=document.forms.search.query;query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})</script>
+      
+    
+  </body>
+</html>

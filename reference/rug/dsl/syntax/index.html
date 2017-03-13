@@ -1,0 +1,1869 @@
+
+<!DOCTYPE html>
+<html class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentation for the Atomist Developer Platform">
+      
+      
+      
+        <meta name="author" content="The Atomist Team">
+      
+      
+        <link rel="shortcut icon" href="../../../../images/favicon.ico">
+      
+      <meta name="generator" content="mkdocs-0.16.1, mkdocs-material-1.3.0">
+    
+    
+      
+        <title>Syntax - The Atomist Documentation</title>
+      
+    
+    
+      <script src="../../../../assets/javascripts/modernizr-56ade86843.js"></script>
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/application-1d1da4857d.css">
+      
+        <link rel="stylesheet" href="../../../../assets/stylesheets/application-66fa0d9bba.palette.css">
+      
+    
+    
+      
+        
+        
+        
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    
+    
+      <link rel="stylesheet" href="../../../../stylesheets/extra.css">
+    
+    
+  </head>
+  
+  
+  
+  
+    <body data-md-color-primary="green" data-md-color-accent="green">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="drawer">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search">
+    <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <a href="../../../.." title="The Atomist Documentation" class="md-logo md-header-nav__button">
+            <img src="../../../../images/atomist-logo-horiz-reversed.svg" width="24" height="24">
+          </a>
+        
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <span class="md-flex__ellipsis md-header-nav__title">
+          
+            
+              
+                <span class="md-header-nav__parent">
+                  Rug
+                </span>
+              
+                <span class="md-header-nav__parent">
+                  DSL
+                </span>
+              
+            
+            Syntax
+          
+        </span>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="search"></label>
+          
+<div class="md-search" data-md-component="search">
+  <div class="md-search__overlay"></div>
+  <div class="md-search__inner">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" accesskey="s" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query">
+      <label class="md-icon md-search__icon" for="search"></label>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <div class="md-header-nav__source">
+          
+            
+
+
+  
+
+
+  <a href="https://github.com/atomist/rug" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      Rug
+    </div>
+  </a>
+
+          
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="drawer">
+    
+      <i class="md-logo md-nav__button">
+        <img src="../../../../images/atomist-logo-horiz-reversed.svg">
+      </i>
+    
+    The Atomist Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+
+  <a href="https://github.com/atomist/rug" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      Rug
+    </div>
+  </a>
+
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-1" type="checkbox" id="nav-1">
+    
+    <label class="md-nav__link" for="nav-1">
+      Overview
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-1">
+        Overview
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../.." title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../concepts/" title="Concepts" class="md-nav__link">
+      Concepts
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../capabilities/" title="Capabilities" class="md-nav__link">
+      Capabilities
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      Getting Started
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        Getting Started
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../getting-started/" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../getting-started/prerequisites/" title="Prerequisites" class="md-nav__link">
+      Prerequisites
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../getting-started/invite-atomist-to-slack/" title="Invite Atomist to Slack" class="md-nav__link">
+      Invite Atomist to Slack
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../getting-started/connect-atomist-to-github/" title="Connect Atomist to GitHub" class="md-nav__link">
+      Connect Atomist to GitHub
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../getting-started/putting-atomist-to-work/" title="Putting Atomist to Work" class="md-nav__link">
+      Putting Atomist to Work
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../getting-started/connect-atomist-to-ci/" title="Connect Atomist to CI" class="md-nav__link">
+      Connect Atomist to CI
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../getting-started/build-your-own-development-automation/" title="Build Your Own Development Automation" class="md-nav__link">
+      Build Your Own Development Automation
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      User Guide
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        User Guide
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../user-guide/" title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-2" type="checkbox" id="nav-3-2">
+    
+    <label class="md-nav__link" for="nav-3-2">
+      Rug
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-2">
+        Rug
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../user-guide/rug/" title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../user-guide/rug/runtime/" title="Runtime" class="md-nav__link">
+      Runtime
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../user-guide/rug/typescript/" title="TypeScript" class="md-nav__link">
+      TypeScript
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../user-guide/rug/handlers/" title="Handlers" class="md-nav__link">
+      Handlers
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../user-guide/rug/commands/" title="Commands" class="md-nav__link">
+      Commands
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../user-guide/rug/editors/" title="Editors" class="md-nav__link">
+      Editors
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../user-guide/rug/generators/" title="Generators" class="md-nav__link">
+      Generators
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../user-guide/rug/reviewers/" title="Reviewers" class="md-nav__link">
+      Reviewers
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../user-guide/rug/extensions/" title="Extensions" class="md-nav__link">
+      Extensions
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../user-guide/rug/path-expressions/" title="Path Expressions" class="md-nav__link">
+      Path Expressions
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../user-guide/rug/microgrammars/" title="Microgrammars" class="md-nav__link">
+      Microgrammars
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../user-guide/rug/templates/" title="Templates" class="md-nav__link">
+      Templates
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../user-guide/rug/tests/" title="Tests" class="md-nav__link">
+      Tests
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../user-guide/rug/projects/" title="Projects" class="md-nav__link">
+      Projects
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../user-guide/rug/archives/" title="Archives" class="md-nav__link">
+      Archives
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../user-guide/rug/lifecycle/" title="Lifecycle" class="md-nav__link">
+      Lifecycle
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../user-guide/rug/conventions/" title="Conventions" class="md-nav__link">
+      Conventions
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-3" type="checkbox" id="nav-3-3">
+    
+    <label class="md-nav__link" for="nav-3-3">
+      Integrations
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-3">
+        Integrations
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../user-guide/integrations/" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../user-guide/integrations/slack/" title="Slack" class="md-nav__link">
+      Slack
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../user-guide/integrations/github/" title="GitHub.com" class="md-nav__link">
+      GitHub.com
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../user-guide/integrations/travis-ci/" title="Travis CI" class="md-nav__link">
+      Travis CI
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../user-guide/integrations/jenkins/" title="Jenkins" class="md-nav__link">
+      Jenkins
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-4" type="checkbox" id="nav-3-4">
+    
+    <label class="md-nav__link" for="nav-3-4">
+      Interfaces
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-4">
+        Interfaces
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../user-guide/interfaces/" title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../user-guide/interfaces/bot/" title="Bot" class="md-nav__link">
+      Bot
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-4-3" type="checkbox" id="nav-3-4-3">
+    
+    <label class="md-nav__link" for="nav-3-4-3">
+      CLI
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-3-4-3">
+        CLI
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../user-guide/interfaces/cli/" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../user-guide/interfaces/cli/install/" title="Installation" class="md-nav__link">
+      Installation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../user-guide/interfaces/cli/using-rugs/" title="Using Rugs" class="md-nav__link">
+      Using Rugs
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../user-guide/interfaces/cli/developing-rugs/" title="Developing Rugs" class="md-nav__link">
+      Developing Rugs
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" checked>
+    
+    <label class="md-nav__link" for="nav-4">
+      Reference Documentation
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        Reference Documentation
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-2" type="checkbox" id="nav-4-2" checked>
+    
+    <label class="md-nav__link" for="nav-4-2">
+      Rug
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-2">
+        Rug
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-2-2" type="checkbox" id="nav-4-2-2">
+    
+    <label class="md-nav__link" for="nav-4-2-2">
+      Rugs
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-4-2-2">
+        Rugs
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../rugs/" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../editors/" title="Editors" class="md-nav__link">
+      Editors
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../generators/" title="Generators" class="md-nav__link">
+      Generators
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../path-expressions/" title="Path Expressions" class="md-nav__link">
+      Path Expressions
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-2-3" type="checkbox" id="nav-4-2-3">
+    
+    <label class="md-nav__link" for="nav-4-2-3">
+      Language Extensions
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-4-2-3">
+        Language Extensions
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../extensions/" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../extensions/clj-project/" title="CljProject" class="md-nav__link">
+      CljProject
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../extensions/c-sharp-file/" title="CSharpFile" class="md-nav__link">
+      CSharpFile
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../extensions/docker-file/" title="DockerFile" class="md-nav__link">
+      DockerFile
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../extensions/elm-module/" title="ElmModule" class="md-nav__link">
+      ElmModule
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../extensions/every-pom/" title="EveryPom" class="md-nav__link">
+      EveryPom
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../extensions/file/" title="File" class="md-nav__link">
+      File
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../extensions/java-project/" title="JavaProject" class="md-nav__link">
+      JavaProject
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../extensions/java-source/" title="JavaSource" class="md-nav__link">
+      JavaSource
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../extensions/java-type/" title="JavaType" class="md-nav__link">
+      JavaType
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../extensions/json/" title="Json" class="md-nav__link">
+      Json
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../extensions/line/" title="Line" class="md-nav__link">
+      Line
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../extensions/pom/" title="Pom" class="md-nav__link">
+      Pom
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../extensions/project/" title="Project" class="md-nav__link">
+      Project
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../extensions/properties/" title="Properties" class="md-nav__link">
+      Properties
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../extensions/python-file/" title="PythonFile" class="md-nav__link">
+      PythonFile
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../extensions/python-requirements-txt/" title="PythonRequirementsTxt" class="md-nav__link">
+      PythonRequirementsTxt
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../extensions/rug-archive-project/" title="RugArchiveProject" class="md-nav__link">
+      RugArchiveProject
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../extensions/rug-file/" title="RugFile" class="md-nav__link">
+      RugFile
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../extensions/scala-file/" title="ScalaFile" class="md-nav__link">
+      ScalaFile
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../extensions/services/" title="Services" class="md-nav__link">
+      Services
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../extensions/spring-boot-project/" title="SpringBootProject" class="md-nav__link">
+      SpringBootProject
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../extensions/xml/" title="Xml" class="md-nav__link">
+      Xml
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../extensions/yml/" title="Yml" class="md-nav__link">
+      Yml
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-2-4" type="checkbox" id="nav-4-2-4" checked>
+    
+    <label class="md-nav__link" for="nav-4-2-4">
+      DSL
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-4-2-4">
+        DSL
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
+    
+      
+    
+    
+    <a href="./" title="Syntax" class="md-nav__link md-nav__link--active">
+      Syntax
+    </a>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../javascript/" title="Using JavaScript" class="md-nav__link">
+      Using JavaScript
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../rug-cli/" title="Rug CLI" class="md-nav__link">
+      Rug CLI
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#case-conventions" title="Case conventions" class="md-nav__link">
+    Case conventions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reserved-words" title="Reserved words" class="md-nav__link">
+    Reserved words
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rug-symbols" title="Rug Symbols" class="md-nav__link">
+    Rug Symbols
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#string-literals" title="String Literals" class="md-nav__link">
+    String Literals
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#annotations" title="Annotations" class="md-nav__link">
+    Annotations
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#comments-in-rug" title="Comments in Rug" class="md-nav__link">
+    Comments in Rug
+  </a>
+  
+</li>
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  <h1>Syntax</h1>
+                
+                <div class="admonition caution">
+<p class="admonition-title">The Rug DSL is deprecated</p>
+<p>The primary supported language for developing Rugs is now TypeScript.</p>
+</div>
+<p>Below is a detailed tour of Rug syntax.</p>
+<h4 id="case-conventions">Case conventions<a class="headerlink" href="#case-conventions" title="Permanent link">&para;</a></h4>
+<p>Rug identifiers must observe the following case conventions.</p>
+<ul>
+<li><em>Type names</em>, such as editors and reviewer names: Same convention
+    as for valid Java identifiers, except that they must begin with a
+    capital letter.</li>
+<li><em>Function names</em>, such as <code>append</code> in the earlier examples: Same
+    convention as for valid Java identifiers, except that they must
+    begin with a lower case letter.</li>
+</ul>
+<h4 id="reserved-words">Reserved words<a class="headerlink" href="#reserved-words" title="Permanent link">&para;</a></h4>
+<p>Reserved words may not be used as identifiers. The following are Rug
+reserved words:</p>
+<table>
+<thead>
+<tr>
+<th>Reserved word</th>
+<th>Purpose</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>editor</code>, <code>reviewer</code></td>
+<td>Identify program</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>param</code></td>
+<td>Parameter declaration</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>uses</code></td>
+<td>Identify imported editor or reviewer</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>precondition</code></td>
+<td>Predicate that should hold for the editor be applicable or run</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>postcondition</code></td>
+<td>Predicate that should hold after the editor has run. Including this makes an editor more robust, as it will fail rather than make any updates if the postcondition does not hold.</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>with</code></td>
+<td>Specifies a with block</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>do</code></td>
+<td>Begins an action within a with block</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>run</code></td>
+<td>Specifies an action within a with block that executes another project operation.</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>begin</code> - <code>end</code></td>
+<td>Group a sequence of actions within a with block. Actions can include <code>do</code>, a nested <code>with</code> block, or <code>run</code>. Each action will see the context in the state it was left in by the last action.</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="rug-symbols">Rug Symbols<a class="headerlink" href="#rug-symbols" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Symbol</th>
+<th>Purpose</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>@</code></td>
+<td>Prefixes an <em>annotation</em> or a pre-packaged Rug variable lookup when using on declared parameters. Annotations are used to describe program elements.</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>{}</code></td>
+<td>Surrounds a JavaScript block. The JavaScript expression(s) in the block are evaluated, and the return value can be used as a function argument.</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>=</code></td>
+<td>Equality test</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="string-literals">String Literals<a class="headerlink" href="#string-literals" title="Permanent link">&para;</a></h4>
+<p>Rug supports three types of string literals:</p>
+<table>
+<thead>
+<tr>
+<th>String type</th>
+<th>Notes</th>
+<th>Examples</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Double quoted</td>
+<td>As supported in Java, including escaping via <code>\</code></td>
+<td><code>&quot;Donny&quot; &quot;Walter\n&quot; &quot;Jeff Bridges is the \&quot;Dude\&quot;&quot;</code></td>
+</tr>
+<tr>
+<td>Single quoted</td>
+<td>As in Python or JavaScript. However, does not support escaping</td>
+<td><code>'This is a test'</code></td>
+</tr>
+<tr>
+<td>Triple quoted</td>
+<td>Can span linebreaks, as in Python or Scala. Unlike in Python, only double quotes are allowed</td>
+<td><code>&quot;&quot;&quot;This content could span many lines&quot;&quot;&quot;</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="annotations">Annotations<a class="headerlink" href="#annotations" title="Permanent link">&para;</a></h4>
+<p><em>Annotations</em> are used to describe the following program elements:
+editors, reviewers and parameters. For example:</p>
+<div class="codehilite"><pre><span></span><span class="nd">@description</span><span class="w"> </span><span class="s">&quot;Takes EJBs and delivers a roundhouse kick to them&quot;</span><span class="w"></span>
+<span class="kn">editor</span> <span class="nn">RemoveEJB</span><span class="w"></span>
+
+<span class="nd">@default</span> <span class="s">&#39;This is a default value&#39;</span><span class="w"></span>
+<span class="nd">@description</span><span class="w"> </span><span class="s">&#39;A magical parameter&#39;</span><span class="w"></span>
+<span class="nd">@validInput</span><span class="w"> </span><span class="s">&#39;Valid input looks like this: Foo&#39;</span><span class="w"></span>
+<span class="kn">param</span> <span class="nv">name</span><span class="o">:</span> <span class="sr">^.*$</span><span class="w"></span>
+
+<span class="kn">with</span> <span class="kt">File</span> <span class="vi">f</span><span class="w"> </span><span class="kn">when</span> <span class="vi">isJava</span> <span class="kn">and</span> <span class="nf">imports</span> <span class="s">&quot;javax.ejb&quot;</span><span class="w"></span>
+<span class="w">  </span><span class="kn">do</span> <span class="nf">setContent</span> <span class="s">&quot;Now this won&#39;t compile, will it!&quot;</span><span class="w"></span>
+</pre></div>
+
+
+<p>The permitted values are consistent with parameter definitions used
+extensively in Atomist components.</p>
+<table>
+<thead>
+<tr>
+<th>Annotation</th>
+<th>Applies to</th>
+<th>Argument Type</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>@description</code></td>
+<td>editor, reviewer or parameter</td>
+<td>String</td>
+<td>Describes the parameter</td>
+</tr>
+<tr>
+<td><code>@optional</code></td>
+<td>parameter</td>
+<td>None</td>
+<td>Whether the parameter is required. Default is required.</td>
+</tr>
+<tr>
+<td><code>@default</code></td>
+<td>parameter</td>
+<td>String</td>
+<td>Default value for parameter.</td>
+</tr>
+<tr>
+<td><code>@validInput</code></td>
+<td>parameter</td>
+<td>String</td>
+<td>Description of valid input, such as &ldquo;A valid email address&rdquo; or &ldquo;3-10 alphanumeric characters&rdquo;</td>
+</tr>
+<tr>
+<td><code>@hide</code></td>
+<td>parameter</td>
+<td>None</td>
+<td>Indicates that this parameter is only for use by programs and should not be displayed to users.</td>
+</tr>
+<tr>
+<td><code>@displayName</code></td>
+<td>parameter</td>
+<td>String</td>
+<td>UI friendly name for parameter.</td>
+</tr>
+<tr>
+<td><code>@maxLength</code></td>
+<td>parameter</td>
+<td>Integer</td>
+<td>Maximum length of a parameter&rsquo;s string value.</td>
+</tr>
+<tr>
+<td><code>@minLength</code></td>
+<td>parameter</td>
+<td>Integer</td>
+<td>Minimum length of a parameter&rsquo;s string value.</td>
+</tr>
+</tbody>
+</table>
+<p>String arguments to annotations, like other strings in Rug, are either
+double-quoted strings or triple double-quoted strings.  Triple
+double-quoted strings can include special characters like newlines.</p>
+<p><code>@</code> Annotations are also used to look up pre-packaged variables that
+are supplied to your script for use when declaring editor parameter
+patterns, for example:</p>
+<div class="codehilite"><pre><span></span><span class="kn">editor</span> <span class="nn">ClassRenamer</span><span class="w"></span>
+
+<span class="kn">param</span> <span class="nv">old_class</span><span class="o">:</span> <span class="no">@java_class</span><span class="w"></span>
+<span class="kn">param</span> <span class="nv">new_class</span><span class="o">:</span> <span class="no">@java_class</span><span class="w"></span>
+</pre></div>
+
+
+<p>Currently pre-packaged variables that can be looked up in this manner
+for parameter pattern declarations specifically include the following:</p>
+<table>
+<thead>
+<tr>
+<th>Annotation</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>@artifact_id</code></td>
+<td>Regular Expression</td>
+<td>Maven artifact identifier</td>
+</tr>
+<tr>
+<td><code>@group_name</code></td>
+<td>Regular Expression</td>
+<td>Maven group name</td>
+</tr>
+<tr>
+<td><code>@java_class</code></td>
+<td>Regular Expression</td>
+<td>Java class name</td>
+</tr>
+<tr>
+<td><code>@java_identifier</code></td>
+<td>Regular Expression</td>
+<td>Java identifier</td>
+</tr>
+<tr>
+<td><code>@java_package</code></td>
+<td>Regular Expression</td>
+<td>Java package name</td>
+</tr>
+<tr>
+<td><code>@project_name</code></td>
+<td>Regular Expression</td>
+<td>GitHub repository name</td>
+</tr>
+<tr>
+<td><code>@port</code></td>
+<td>Regular Expression</td>
+<td>IP port</td>
+</tr>
+<tr>
+<td><code>@ruby_class</code></td>
+<td>Regular Expression</td>
+<td>Ruby class name</td>
+</tr>
+<tr>
+<td><code>@ruby_identifier</code></td>
+<td>Regular Expression</td>
+<td>Ruby identifier</td>
+</tr>
+<tr>
+<td><code>@semantic_version</code></td>
+<td>Regular Expression</td>
+<td><a href="http://semver.org">Semantic version</a></td>
+</tr>
+<tr>
+<td><code>@url</code></td>
+<td>Regular Expression</td>
+<td>URL</td>
+</tr>
+<tr>
+<td><code>@uuid</code></td>
+<td>Regular Expression</td>
+<td>UUID</td>
+</tr>
+</tbody>
+</table>
+<h4 id="comments-in-rug">Comments in Rug<a class="headerlink" href="#comments-in-rug" title="Permanent link">&para;</a></h4>
+<p>Any content on a line after <code>#</code> is a comment. For example:</p>
+<div class="codehilite"><pre><span></span><span class="kn">editor</span> <span class="nn">Foo</span><span class="w"></span>
+
+<span class="kn">with</span> <span class="kt">File</span> <span class="vi">f</span><span class="w"> </span><span class="c c-Singleline"># Do something with this file</span><span class="w"></span>
+<span class="w">  </span><span class="kn">do</span><span class="w"></span>
+<span class="w">    </span><span class="c c-Singleline"># This is not something we&#39;d want to do in real life</span><span class="w"></span>
+<span class="w">    </span><span class="nf">setContent</span> <span class="s">&quot;Something else&quot;</span><span class="w"></span>
+</pre></div>
+
+
+<p>C style multi-line comments are supported:</p>
+<div class="codehilite"><pre><span></span><span class="cm">/*</span>
+<span class="cm">    This is a comment that goes on so long</span>
+<span class="cm">    that we need line breaks.</span>
+<span class="cm">*/</span><span class="w"></span>
+<span class="nf">editor</span> <span class="nn">Sample</span> <span class="err">...</span>
+</pre></div>
+                
+                  
+                
+              
+              
+                
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../" title="Overview" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Overview
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../javascript/" title="Using JavaScript" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Using JavaScript
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            &copy; 2017 Atomist, Inc.
+          </div>
+        
+        powered by
+        <a href="http://www.mkdocs.org" title="MkDocs">MkDocs</a>
+        and
+        <a href="http://squidfunk.github.io/mkdocs-material/" title="Material for MkDocs">
+          Material for MkDocs</a>
+      </div>
+      
+        
+  <div class="md-footer-social">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+      <a href="https://the-composition.com/" class="md-footer-social__link fa fa-medium"></a>
+    
+      <a href="https://github.com/atomist" class="md-footer-social__link fa fa-github"></a>
+    
+      <a href="https://twitter.com/atomist" class="md-footer-social__link fa fa-twitter"></a>
+    
+      <a href="https://join.atomist.com/" class="md-footer-social__link fa fa-slack"></a>
+    
+  </div>
+
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../../../assets/javascripts/application-7aa26ad9ec.js"></script>
+      <script>app.initialize({url:{base:"../../../.."}})</script>
+      
+    
+    
+      
+      <script>!function(e,t,a,n,o,c,i){e.GoogleAnalyticsObject=o,e[o]=e[o]||function(){(e[o].q=e[o].q||[]).push(arguments)},e[o].l=1*new Date,c=t.createElement(a),i=t.getElementsByTagName(a)[0],c.async=1,c.src=n,i.parentNode.insertBefore(c,i)}(window,document,"script","https://www.google-analytics.com/analytics.js","ga"),ga("create","UA-74966852-1","auto"),ga("set","anonymizeIp",!0),ga("send","pageview");var links=document.getElementsByTagName("a");Array.prototype.map.call(links,function(e){e.host!=document.location.host&&e.addEventListener("click",function(){var t=e.getAttribute("data-md-action")||"follow";ga("send","event","outbound",t,e.href)})});var query=document.forms.search.query;query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})</script>
+      
+    
+  </body>
+</html>

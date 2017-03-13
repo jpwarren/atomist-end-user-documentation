@@ -1,0 +1,2162 @@
+
+<!DOCTYPE html>
+<html class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentation for the Atomist Developer Platform">
+      
+      
+      
+        <meta name="author" content="The Atomist Team">
+      
+      
+        <link rel="shortcut icon" href="../../../images/favicon.ico">
+      
+      <meta name="generator" content="mkdocs-0.16.1, mkdocs-material-1.3.0">
+    
+    
+      
+        <title>Conventions - The Atomist Documentation</title>
+      
+    
+    
+      <script src="../../../assets/javascripts/modernizr-56ade86843.js"></script>
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/application-1d1da4857d.css">
+      
+        <link rel="stylesheet" href="../../../assets/stylesheets/application-66fa0d9bba.palette.css">
+      
+    
+    
+      
+        
+        
+        
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+    
+  </head>
+  
+  
+  
+  
+    <body data-md-color-primary="green" data-md-color-accent="green">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="drawer">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search">
+    <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <a href="../../.." title="The Atomist Documentation" class="md-logo md-header-nav__button">
+            <img src="../../../images/atomist-logo-horiz-reversed.svg" width="24" height="24">
+          </a>
+        
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <span class="md-flex__ellipsis md-header-nav__title">
+          
+            
+              
+                <span class="md-header-nav__parent">
+                  User Guide
+                </span>
+              
+                <span class="md-header-nav__parent">
+                  Rug
+                </span>
+              
+            
+            Conventions
+          
+        </span>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="search"></label>
+          
+<div class="md-search" data-md-component="search">
+  <div class="md-search__overlay"></div>
+  <div class="md-search__inner">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" accesskey="s" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query">
+      <label class="md-icon md-search__icon" for="search"></label>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <div class="md-header-nav__source">
+          
+            
+
+
+  
+
+
+  <a href="https://github.com/atomist/rug" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      Rug
+    </div>
+  </a>
+
+          
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="drawer">
+    
+      <i class="md-logo md-nav__button">
+        <img src="../../../images/atomist-logo-horiz-reversed.svg">
+      </i>
+    
+    The Atomist Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+
+  <a href="https://github.com/atomist/rug" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      Rug
+    </div>
+  </a>
+
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-1" type="checkbox" id="nav-1">
+    
+    <label class="md-nav__link" for="nav-1">
+      Overview
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-1">
+        Overview
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../.." title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../concepts/" title="Concepts" class="md-nav__link">
+      Concepts
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../capabilities/" title="Capabilities" class="md-nav__link">
+      Capabilities
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      Getting Started
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        Getting Started
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../getting-started/" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../getting-started/prerequisites/" title="Prerequisites" class="md-nav__link">
+      Prerequisites
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../getting-started/invite-atomist-to-slack/" title="Invite Atomist to Slack" class="md-nav__link">
+      Invite Atomist to Slack
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../getting-started/connect-atomist-to-github/" title="Connect Atomist to GitHub" class="md-nav__link">
+      Connect Atomist to GitHub
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../getting-started/putting-atomist-to-work/" title="Putting Atomist to Work" class="md-nav__link">
+      Putting Atomist to Work
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../getting-started/connect-atomist-to-ci/" title="Connect Atomist to CI" class="md-nav__link">
+      Connect Atomist to CI
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../getting-started/build-your-own-development-automation/" title="Build Your Own Development Automation" class="md-nav__link">
+      Build Your Own Development Automation
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
+    
+    <label class="md-nav__link" for="nav-3">
+      User Guide
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        User Guide
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../" title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-2" type="checkbox" id="nav-3-2" checked>
+    
+    <label class="md-nav__link" for="nav-3-2">
+      Rug
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-2">
+        Rug
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../" title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../runtime/" title="Runtime" class="md-nav__link">
+      Runtime
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../typescript/" title="TypeScript" class="md-nav__link">
+      TypeScript
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../handlers/" title="Handlers" class="md-nav__link">
+      Handlers
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../commands/" title="Commands" class="md-nav__link">
+      Commands
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../editors/" title="Editors" class="md-nav__link">
+      Editors
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../generators/" title="Generators" class="md-nav__link">
+      Generators
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../reviewers/" title="Reviewers" class="md-nav__link">
+      Reviewers
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../extensions/" title="Extensions" class="md-nav__link">
+      Extensions
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../path-expressions/" title="Path Expressions" class="md-nav__link">
+      Path Expressions
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../microgrammars/" title="Microgrammars" class="md-nav__link">
+      Microgrammars
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../templates/" title="Templates" class="md-nav__link">
+      Templates
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../tests/" title="Tests" class="md-nav__link">
+      Tests
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../projects/" title="Projects" class="md-nav__link">
+      Projects
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../archives/" title="Archives" class="md-nav__link">
+      Archives
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../lifecycle/" title="Lifecycle" class="md-nav__link">
+      Lifecycle
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="toc">
+        Conventions
+      </label>
+    
+    <a href="./" title="Conventions" class="md-nav__link md-nav__link--active">
+      Conventions
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#rug-conventions-best-practices" title="Rug Conventions &amp; Best Practices" class="md-nav__link">
+    Rug Conventions &amp; Best Practices
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exemplar" title="Exemplar" class="md-nav__link">
+    Exemplar
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rug-projects" title="Rug Projects" class="md-nav__link">
+    Rug Projects
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rug-project-repositories" title="Rug Project Repositories" class="md-nav__link">
+    Rug Project Repositories
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rug-dsl-and-typescript-files" title="Rug DSL and TypeScript Files" class="md-nav__link">
+    Rug DSL and TypeScript Files
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rug-naming" title="Rug Naming" class="md-nav__link">
+    Rug Naming
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rug-project-configuration" title="Rug Project Configuration" class="md-nav__link">
+    Rug Project Configuration
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rug-project-naming" title="Rug Project Naming" class="md-nav__link">
+    Rug Project Naming
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rug-dsl-tag-annotations" title="Rug DSL tag Annotations" class="md-nav__link">
+    Rug DSL tag Annotations
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rug-dsl-description-annotations" title="Rug DSL description Annotations" class="md-nav__link">
+    Rug DSL description Annotations
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameters" title="Parameters" class="md-nav__link">
+    Parameters
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-mandatory-project_name-parameter-in-rug-generators" title="The Mandatory project_name Parameter in Rug Generators" class="md-nav__link">
+    The Mandatory project_name Parameter in Rug Generators
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameter-descriptions-and-display-names" title="Parameter Descriptions and Display Names" class="md-nav__link">
+    Parameter Descriptions and Display Names
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameter-validation" title="Parameter Validation" class="md-nav__link">
+    Parameter Validation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mandatory-and-optional-parameters" title="Mandatory and Optional Parameters" class="md-nav__link">
+    Mandatory and Optional Parameters
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#typescript-decorators" title="TypeScript Decorators" class="md-nav__link">
+    TypeScript Decorators
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rug-dsl-let-declarations" title="Rug DSL: let Declarations" class="md-nav__link">
+    Rug DSL: let Declarations
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rug-dsl-avoiding-begin-and-end-when-there-is-only-a-single-do-action" title="Rug DSL: Avoiding Begin and End when there is only a Single do Action" class="md-nav__link">
+    Rug DSL: Avoiding Begin and End when there is only a Single do Action
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rug-dsl-indenting-blocks-with-begin-and-end" title="Rug DSL: Indenting Blocks with Begin and End" class="md-nav__link">
+    Rug DSL: Indenting Blocks with Begin and End
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rug-dsl-labelling-selections-only-when-they-are-used" title="Rug DSL: Labelling Selections Only When They Are Used" class="md-nav__link">
+    Rug DSL: Labelling Selections Only When They Are Used
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rug-dsl-comments" title="Rug DSL: Comments" class="md-nav__link">
+    Rug DSL: Comments
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-3" type="checkbox" id="nav-3-3">
+    
+    <label class="md-nav__link" for="nav-3-3">
+      Integrations
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-3">
+        Integrations
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../integrations/" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../integrations/slack/" title="Slack" class="md-nav__link">
+      Slack
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../integrations/github/" title="GitHub.com" class="md-nav__link">
+      GitHub.com
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../integrations/travis-ci/" title="Travis CI" class="md-nav__link">
+      Travis CI
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../integrations/jenkins/" title="Jenkins" class="md-nav__link">
+      Jenkins
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-4" type="checkbox" id="nav-3-4">
+    
+    <label class="md-nav__link" for="nav-3-4">
+      Interfaces
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-4">
+        Interfaces
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../interfaces/" title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../interfaces/bot/" title="Bot" class="md-nav__link">
+      Bot
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-4-3" type="checkbox" id="nav-3-4-3">
+    
+    <label class="md-nav__link" for="nav-3-4-3">
+      CLI
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-3-4-3">
+        CLI
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../interfaces/cli/" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../interfaces/cli/install/" title="Installation" class="md-nav__link">
+      Installation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../interfaces/cli/using-rugs/" title="Using Rugs" class="md-nav__link">
+      Using Rugs
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../interfaces/cli/developing-rugs/" title="Developing Rugs" class="md-nav__link">
+      Developing Rugs
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      Reference Documentation
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        Reference Documentation
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../reference/" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-2" type="checkbox" id="nav-4-2">
+    
+    <label class="md-nav__link" for="nav-4-2">
+      Rug
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-2">
+        Rug
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../reference/rug/" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-2-2" type="checkbox" id="nav-4-2-2">
+    
+    <label class="md-nav__link" for="nav-4-2-2">
+      Rugs
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-4-2-2">
+        Rugs
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../reference/rug/rugs/" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../reference/rug/editors/" title="Editors" class="md-nav__link">
+      Editors
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../reference/rug/generators/" title="Generators" class="md-nav__link">
+      Generators
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../reference/rug/path-expressions/" title="Path Expressions" class="md-nav__link">
+      Path Expressions
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-2-3" type="checkbox" id="nav-4-2-3">
+    
+    <label class="md-nav__link" for="nav-4-2-3">
+      Language Extensions
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-4-2-3">
+        Language Extensions
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../reference/rug/extensions/" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../reference/rug/extensions/clj-project/" title="CljProject" class="md-nav__link">
+      CljProject
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../reference/rug/extensions/c-sharp-file/" title="CSharpFile" class="md-nav__link">
+      CSharpFile
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../reference/rug/extensions/docker-file/" title="DockerFile" class="md-nav__link">
+      DockerFile
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../reference/rug/extensions/elm-module/" title="ElmModule" class="md-nav__link">
+      ElmModule
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../reference/rug/extensions/every-pom/" title="EveryPom" class="md-nav__link">
+      EveryPom
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../reference/rug/extensions/file/" title="File" class="md-nav__link">
+      File
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../reference/rug/extensions/java-project/" title="JavaProject" class="md-nav__link">
+      JavaProject
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../reference/rug/extensions/java-source/" title="JavaSource" class="md-nav__link">
+      JavaSource
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../reference/rug/extensions/java-type/" title="JavaType" class="md-nav__link">
+      JavaType
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../reference/rug/extensions/json/" title="Json" class="md-nav__link">
+      Json
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../reference/rug/extensions/line/" title="Line" class="md-nav__link">
+      Line
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../reference/rug/extensions/pom/" title="Pom" class="md-nav__link">
+      Pom
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../reference/rug/extensions/project/" title="Project" class="md-nav__link">
+      Project
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../reference/rug/extensions/properties/" title="Properties" class="md-nav__link">
+      Properties
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../reference/rug/extensions/python-file/" title="PythonFile" class="md-nav__link">
+      PythonFile
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../reference/rug/extensions/python-requirements-txt/" title="PythonRequirementsTxt" class="md-nav__link">
+      PythonRequirementsTxt
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../reference/rug/extensions/rug-archive-project/" title="RugArchiveProject" class="md-nav__link">
+      RugArchiveProject
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../reference/rug/extensions/rug-file/" title="RugFile" class="md-nav__link">
+      RugFile
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../reference/rug/extensions/scala-file/" title="ScalaFile" class="md-nav__link">
+      ScalaFile
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../reference/rug/extensions/services/" title="Services" class="md-nav__link">
+      Services
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../reference/rug/extensions/spring-boot-project/" title="SpringBootProject" class="md-nav__link">
+      SpringBootProject
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../reference/rug/extensions/xml/" title="Xml" class="md-nav__link">
+      Xml
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../reference/rug/extensions/yml/" title="Yml" class="md-nav__link">
+      Yml
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-2-4" type="checkbox" id="nav-4-2-4">
+    
+    <label class="md-nav__link" for="nav-4-2-4">
+      DSL
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-4-2-4">
+        DSL
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../reference/rug/dsl/" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../reference/rug/dsl/syntax/" title="Syntax" class="md-nav__link">
+      Syntax
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../reference/rug/dsl/javascript/" title="Using JavaScript" class="md-nav__link">
+      Using JavaScript
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../reference/rug-cli/" title="Rug CLI" class="md-nav__link">
+      Rug CLI
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#rug-conventions-best-practices" title="Rug Conventions &amp; Best Practices" class="md-nav__link">
+    Rug Conventions &amp; Best Practices
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exemplar" title="Exemplar" class="md-nav__link">
+    Exemplar
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rug-projects" title="Rug Projects" class="md-nav__link">
+    Rug Projects
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rug-project-repositories" title="Rug Project Repositories" class="md-nav__link">
+    Rug Project Repositories
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rug-dsl-and-typescript-files" title="Rug DSL and TypeScript Files" class="md-nav__link">
+    Rug DSL and TypeScript Files
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rug-naming" title="Rug Naming" class="md-nav__link">
+    Rug Naming
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rug-project-configuration" title="Rug Project Configuration" class="md-nav__link">
+    Rug Project Configuration
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rug-project-naming" title="Rug Project Naming" class="md-nav__link">
+    Rug Project Naming
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rug-dsl-tag-annotations" title="Rug DSL tag Annotations" class="md-nav__link">
+    Rug DSL tag Annotations
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rug-dsl-description-annotations" title="Rug DSL description Annotations" class="md-nav__link">
+    Rug DSL description Annotations
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameters" title="Parameters" class="md-nav__link">
+    Parameters
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-mandatory-project_name-parameter-in-rug-generators" title="The Mandatory project_name Parameter in Rug Generators" class="md-nav__link">
+    The Mandatory project_name Parameter in Rug Generators
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameter-descriptions-and-display-names" title="Parameter Descriptions and Display Names" class="md-nav__link">
+    Parameter Descriptions and Display Names
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameter-validation" title="Parameter Validation" class="md-nav__link">
+    Parameter Validation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mandatory-and-optional-parameters" title="Mandatory and Optional Parameters" class="md-nav__link">
+    Mandatory and Optional Parameters
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#typescript-decorators" title="TypeScript Decorators" class="md-nav__link">
+    TypeScript Decorators
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rug-dsl-let-declarations" title="Rug DSL: let Declarations" class="md-nav__link">
+    Rug DSL: let Declarations
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rug-dsl-avoiding-begin-and-end-when-there-is-only-a-single-do-action" title="Rug DSL: Avoiding Begin and End when there is only a Single do Action" class="md-nav__link">
+    Rug DSL: Avoiding Begin and End when there is only a Single do Action
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rug-dsl-indenting-blocks-with-begin-and-end" title="Rug DSL: Indenting Blocks with Begin and End" class="md-nav__link">
+    Rug DSL: Indenting Blocks with Begin and End
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rug-dsl-labelling-selections-only-when-they-are-used" title="Rug DSL: Labelling Selections Only When They Are Used" class="md-nav__link">
+    Rug DSL: Labelling Selections Only When They Are Used
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rug-dsl-comments" title="Rug DSL: Comments" class="md-nav__link">
+    Rug DSL: Comments
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  <h1>Conventions</h1>
+                
+                <h2 id="rug-conventions-best-practices">Rug Conventions &amp; Best Practices<a class="headerlink" href="#rug-conventions-best-practices" title="Permanent link">&para;</a></h2>
+<p>Rug <em>is</em> the Atomist API and is implemented in its own <a href="https://en.wikipedia.org/wiki/Domain-specific_language">Domain Specific Language (DSL)</a> as well as TypeScript variants. Rug is currently used to define
+project <a href="../generators/">generators</a>, <a href="../editors/">editors</a>,
+reviewers (coming soon) and <a href="../tests/">tests</a>.
+In addition, the Rug runtime exposes these concepts to JavaScript
+(with first class support for <a href="https://www.typescriptlang.org/">TypeScript</a>) for those classes of problems
+for which the DSL is too constraining.</p>
+<p>As with any language and environment, there is a set of idioms and
+common practices that will turn your Rug from <code>nice</code> to <code>great</code> (and
+in some contexts from <strong><em>not working</em></strong> to
+<strong><em>working</em></strong>). Collectively these are the <em>Rug Conventions</em>.</p>
+<h3 id="exemplar">Exemplar<a class="headerlink" href="#exemplar" title="Permanent link">&para;</a></h3>
+<p>The <a href="https://github.com/atomist-rugs/travis-editors">atomist/travis-editors</a> Rug repository is
+a good example repository.  We strive to keep that repository up to
+date with these conventions.  It has good documentation and examples
+of both a Rug DSL and TypeScript editors.  When going through the
+conventions below, we encourage you to reference that repository for
+concrete examples.</p>
+<h3 id="rug-projects">Rug Projects<a class="headerlink" href="#rug-projects" title="Permanent link">&para;</a></h3>
+<p>A <em>Rug project</em> is simply any project that contains a conforming
+<code>.atomist</code> directory and a <code>manifest.yml</code> description of the project. A minimal
+ directory layout would only contain:</p>
+<div class="codehilite"><pre><span></span>.atomist/
+  manifest.yml
+</pre></div>
+
+
+<p>A fuller example directory layout for a larger collection of Rug artifacts would be:</p>
+<div class="codehilite"><pre><span></span>.atomist/
+  editors/
+  handlers/
+  reviewers/
+  templates/
+  tests/
+  manifest.yml
+</pre></div>
+
+
+<p>The <code>manifest.yml</code> file should contain the following general information and formatting:</p>
+<div class="codehilite"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">group</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">atomist-rugs</span>
+<span class="l l-Scalar l-Scalar-Plain">artifact</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">travis-editors</span>
+<span class="l l-Scalar l-Scalar-Plain">version</span><span class="p p-Indicator">:</span> <span class="s">&quot;0.12.2&quot;</span>
+<span class="l l-Scalar l-Scalar-Plain">requires</span><span class="p p-Indicator">:</span> <span class="s">&quot;[0.11.0,1.0.0)&quot;</span>
+<span class="l l-Scalar l-Scalar-Plain">dependencies</span><span class="p p-Indicator">:</span>
+<span class="l l-Scalar l-Scalar-Plain">extensions</span><span class="p p-Indicator">:</span>
+</pre></div>
+
+
+<p>There is a <a href="https://github.com/atomist-rugs/rug-archive">Rug generator available</a> that will create a minimal Rug project for you.</p>
+<h3 id="rug-project-repositories">Rug Project Repositories<a class="headerlink" href="#rug-project-repositories" title="Permanent link">&para;</a></h3>
+<p>Rug project source code repositories should have a good <code>README.md</code>
+containing the following information at minimum:</p>
+<ul>
+<li>A general description of the intent of the Rugs in the project,
+    i.e., what ties them all together, at the top of the README.</li>
+<li>A section named <strong>Rugs</strong> that has a subsection for each Rug.</li>
+<li>A section for each Rug in the project with<ul>
+<li>An explanation of what the Rug does, e.g., how will the
+    source code be changed after running the editor.</li>
+<li>A subsection named <em>Prerequisites</em> describing what must be in
+    place before running the Rug.</li>
+<li>A subsection named <em>Parameters</em> describing the Rug&rsquo;s input
+    parameters, including examples of valid input values.</li>
+<li>A subsection named <em>Running</em> describing how to run the Rug and
+    providing examples of how to run the Rug.</li>
+</ul>
+</li>
+<li>A <strong>Support</strong> section providing information on how to get help
+    with the Rugs in the project.</li>
+<li>A <strong>Development</strong> section providing information on how one would
+    modify and test the Rugs.</li>
+</ul>
+<p>Public Rug repositories should be automatically built, tested
+and deployed using <a href="https://travis-ci.org/">Travis CI</a>.  The Travis CI build status
+badge and the Slack badge for the Atomist Community should be placed
+in the <code>README.md</code> between the page title and the general description.
+Here is the Markdown text to add the Slack badge:</p>
+<div class="codehilite"><pre><span></span>[![Slack Status](https://join.atomist.com/badge.svg)](https://join.atomist.com)
+</pre></div>
+
+
+<p>Rug repositories should have a change log in
+the <a href="http://keepachangelog.com/"><code>CHANGELOG.md</code> format</a>.</p>
+<h3 id="rug-dsl-and-typescript-files">Rug DSL and TypeScript Files<a class="headerlink" href="#rug-dsl-and-typescript-files" title="Permanent link">&para;</a></h3>
+<p>Rug files should have the <code>.rug</code> extension when written using the
+DSL and the standard TypeScript <code>.ts</code> extension when written in
+TypeScript.  You can safely intermix Rug DSL and TypeScript Rugs in
+the same project.  Rug files should placed in the following locations
+within a <em>Rug project</em>.  Rug editors and generators should be in
+<code>.atomist/editors</code> and Rug reviewers should be in <code>.atomist/reviewers</code>.</p>
+<p>BDD-style tests for your Rugs are strongly recommended and should be
+located within a <code>.atomist/tests</code> directory and have the <code>.rt</code>
+extension.</p>
+<p>If your Rugs, typically editors, use any templates, they are placed in
+the <code>.atomist/templates</code> directory.</p>
+<h3 id="rug-naming">Rug Naming<a class="headerlink" href="#rug-naming" title="Permanent link">&para;</a></h3>
+<p>Rug editors, generators, reviewers should have their names
+formatted using <a href="http://wiki.c2.com/?UpperCamelCase">UpperCamelCase</a>.</p>
+<p>Following the rule of making implicit concepts explicit, the name of
+your Rug should correspond to a complete and specific description of
+the purpose of the Rug.</p>
+<p>For example, <code>AddDocker</code> is a good name if the Rug adds Docker to
+anything, but <code>AddDockerToMavenProjects</code> is better if the intention of
+the Rug is to only work with projects that follow Maven conventions.</p>
+<p>While a Rug <code>.rug</code> file can contain many different editors,
+generators and reviewers, the Rug runtime
+enforces that the first Rug definition in a <code>.rug</code> file should match
+the name of the file itself. Therefore Rug files should be formatted
+using UpperCamelCase to match the name of the first Rug definition in
+the file.</p>
+<p>Further, Rugs within the same file are conventionally understood to be
+in support of the main and initial Rug in the file.</p>
+<h3 id="rug-project-configuration">Rug Project Configuration<a class="headerlink" href="#rug-project-configuration" title="Permanent link">&para;</a></h3>
+<p>Rug project configuration is stored in a file in the <code>.atomist</code>
+directory.  Rug projects that contain Rug DSL Rugs have their
+configuration stored in <code>.atomist/manifest.yml</code>.  Rug projects using
+TypeScript should also include a <code>.atomist/package.json</code> describing
+any dependencies</p>
+<p>The Rug <code>.atomist/manifest.yml</code> should describe the Rug project
+according to the following rules:</p>
+<ul>
+<li>
+<p><code>group</code>: The organisation behind this Rug project. Most commonly
+    the GitHub organisation in which they reside.</p>
+</li>
+<li>
+<p><code>artifact</code>: Name of the Rug archive (see next section)</p>
+</li>
+<li>
+<p><code>version</code>: <a href="http://semver.org/">Semantic version</a> of this Rug project</p>
+</li>
+<li>
+<p><code>requires</code>: Specify the exact, or bounded, version of the Rug
+    language that your Rug project has been tested against.</p>
+</li>
+</ul>
+<p>If you are using the Rug TypeScript approach, then the corresponding
+<code>package.json</code> in the <code>.atomist</code> is only used for dependencies and any other
+metadata require by the TypeScript compiler. The Atomist typings are added as
+follows:</p>
+<ul>
+<li><code>dependencies</code>: At a minimum specifies the version of the Rug
+    typings module that your Rug project has been tested against in the form
+    <code>{ &quot;@atomist/rug&quot;: &quot;&lt;rug-version&gt;&quot; }</code></li>
+</ul>
+<p><em>NOTE: Adding the typings above does <em>not</em> control the version of Rug itself. The manifest.yml file does this</em></p>
+<h4 id="rug-project-naming">Rug Project Naming<a class="headerlink" href="#rug-project-naming" title="Permanent link">&para;</a></h4>
+<p>A Rug project name should be hyphenated and start with the technology
+stack being targeted, such as <code>spring-boot</code>, followed by <code>-editors</code> if
+this is a Rug project with a collection of useful editors or reviewers.</p>
+<p>If the main purpose of a Rug project is to be a generator, then ending
+the name of the type of project it will generate would be most
+appropriate.  For example if your Rug projects&rsquo;s main purpose was to be
+a generator for a Spring Boot Rest Service then
+<code>spring-boot-rest-service</code> or even <code>java-spring-boot-rest-service</code>
+would be appropriate. If your Rug projects&rsquo;s main purpose was simply to
+generate a valid Maven project then <code>maven-project</code> would be appropriate.</p>
+<h3 id="rug-dsl-tag-annotations">Rug DSL <code>tag</code> Annotations<a class="headerlink" href="#rug-dsl-tag-annotations" title="Permanent link">&para;</a></h3>
+<p>Your Rugs should be annotated with a collection of <code>tag</code> annotations
+to optimise their discoverability. For example if you were to
+create an editor that affected the <code>readme</code> <code>documentation</code> then the
+following <code>tag</code> annotations would be applicable.</p>
+<div class="codehilite"><pre><span></span><span class="nd">@tag</span> <span class="s">&quot;readme&quot;</span><span class="w"></span>
+<span class="nd">@tag</span> <span class="s">&quot;documentation&quot;</span><span class="w"></span>
+</pre></div>
+
+
+<p>Tag values should consist of only lower case letters, numbers, and
+dashes (<code>-</code>).</p>
+<p>Please try to make sure at least one of the tags on your Rug maps to
+an image.  The following tags currently have images: <code>docker</code>,
+<code>github</code>, <code>travis-ci</code>, <code>apache</code>, <code>git</code>, <code>spring-boot</code>, <code>spring</code>,
+<code>clojure</code>, <code>go</code>, <code>java</code>, <code>python</code>, <code>scala</code>, and <code>documentation</code>.</p>
+<h3 id="rug-dsl-description-annotations">Rug DSL <code>description</code> Annotations<a class="headerlink" href="#rug-dsl-description-annotations" title="Permanent link">&para;</a></h3>
+<p>Rug editors, generators, reviewers and parameters can have an
+accompanying <code>description</code> annotation such as:</p>
+<div class="codehilite"><pre><span></span><span class="nd">@description</span><span class="w"> </span><span class="s">&quot;adds a project specific README&quot;</span><span class="w"></span>
+</pre></div>
+
+
+<p>A good description states exactly what the purpose of the Rug is
+<strong><em>without capitalisation on the sentence</em></strong> and <strong><em>without a closing
+period</em></strong>. The reason for avoiding sentence punctuation is that the
+description is often used by the Atomist Bot and the grammar of its
+usage is context-driven at that point.  Ideally the <code>description</code>
+should be a sentence fragment and as short as possible.</p>
+<h3 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h3>
+<p>Rug parameters are part of the public contract for invoking that
+Rug. They should follow <a href="https://en.wikipedia.org/wiki/Snake_case">snake_case</a> rules and describe, as
+explicitly as possible, what the parameter is to contain.</p>
+<h4 id="the-mandatory-project_name-parameter-in-rug-generators">The Mandatory <code>project_name</code> Parameter in Rug Generators<a class="headerlink" href="#the-mandatory-project_name-parameter-in-rug-generators" title="Permanent link">&para;</a></h4>
+<p>The <code>project_name</code> parameter is special when declared inside a
+<code>generator</code> and so must be included otherwise your Rug will likely
+fail to run.</p>
+<p>It is recommended that you limit the <code>project_name</code> parameter to 21
+characters in length as the new project name will often be used by
+Atomist to construct a corresponding Slack channel and if the project
+name is longer than 21 characters then some character-loss will occur.</p>
+<h4 id="parameter-descriptions-and-display-names">Parameter Descriptions and Display Names<a class="headerlink" href="#parameter-descriptions-and-display-names" title="Permanent link">&para;</a></h4>
+<p>As Rug parameters are part of the public contract to the editor,
+generator, reviewers, executor or predicate it is recommended that a
+human-readable description and display name always be applied using
+the <code>@description</code> and <code>@displayName</code> annotations.</p>
+<p>See the <a href="#rug-description-annotations">description annotation</a> section
+above for information on the content of the parameter <code>@description</code>
+annotation.  The <code>@displayName</code> annotation value should be three words
+or less and use Title Case.</p>
+<h4 id="parameter-validation">Parameter Validation<a class="headerlink" href="#parameter-validation" title="Permanent link">&para;</a></h4>
+<p>It is recommended that all parameters should be restricted using the
+most explicit and constraining regular expression that is appropriate
+for the corresponding parameter.  In addition, you should provide a
+meaningful value for the <code>@validInput</code> parameter annotation so, when
+people provide an invalid value, they are provided with a useful error
+message.</p>
+<h4 id="mandatory-and-optional-parameters">Mandatory and Optional Parameters<a class="headerlink" href="#mandatory-and-optional-parameters" title="Permanent link">&para;</a></h4>
+<p>If a parameter is optionally provided on invocation, using the
+<code>@optional</code> annotation, then it is recommended to supply a valid
+<code>@default</code> annotation also so that there is some predictability of how
+the Rug will function if no parameter is supplied.</p>
+<h3 id="typescript-decorators">TypeScript Decorators<a class="headerlink" href="#typescript-decorators" title="Permanent link">&para;</a></h3>
+<p>There are TypeScript equivalents to the Rug DSL annotations described above, and
+they follow the same conventions:</p>
+<p><div class="codehilite"><pre><span></span><span class="p">...</span>
+<span class="kd">@Editor</span><span class="p">(</span><span class="s2">&quot;Simple&quot;</span><span class="p">,</span> <span class="s2">&quot;My simple editor&quot;</span><span class="p">)</span>
+<span class="kd">@Tags</span><span class="p">(</span><span class="s2">&quot;simple&quot;</span><span class="p">,</span> <span class="s2">&quot;decorators&quot;</span><span class="p">)</span>
+<span class="kr">class</span> <span class="nx">SimpleEditor</span> <span class="p">{</span>
+    <span class="kd">@Parameter</span><span class="p">({</span><span class="nx">description</span><span class="o">:</span> <span class="s2">&quot;The name&quot;</span><span class="p">,</span> <span class="nx">pattern</span><span class="o">:</span> <span class="s2">&quot;^.*$$&quot;</span><span class="p">})</span>
+    <span class="nx">name</span>: <span class="kt">string</span> <span class="o">=</span> <span class="s2">&quot;Not reserved&quot;</span>
+<span class="p">...</span>
+</pre></div>
+
+The <code>@Editir</code> decorator labels the class as an <code>editor</code>, with <code>name</code> and <code>description</code>
+as its two parameters respectively. <code>@Generator</code> and <code>@Reviewer</code> are the TypeScript
+decorator equivalents of the <code>generator</code> and <code>reviewer</code> DSL keywords. The <code>@Tags</code> decorator takes a variable number of strings and <code>@Parameter</code> is used to declare parameters. TypeScript parameter declarations support the equivalent fields as Rug DSL and conform to the following
+interface:</p>
+<p><div class="codehilite"><pre><span></span><span class="kr">interface</span> <span class="nx">Parameter</span> <span class="p">{</span>
+  <span class="nx">pattern</span>: <span class="kt">string</span>
+  <span class="nx">required?</span>: <span class="kt">boolean</span>
+  <span class="nx">description?</span>: <span class="kt">string</span>
+  <span class="nx">displayName?</span>: <span class="kt">string</span>
+  <span class="nx">validInput?</span>: <span class="kt">string</span>
+  <span class="nx">displayable?</span>: <span class="kt">boolean</span>
+  <span class="nx">maxLength?</span>: <span class="kt">number</span>
+  <span class="nx">minLength?</span>: <span class="kt">number</span>
+  <span class="nx">tags?</span>: <span class="kt">string</span><span class="p">[]</span>
+<span class="p">}</span>
+</pre></div>
+
+The name and default value of a parameter are taken from the code itself.</p>
+<h3 id="rug-dsl-let-declarations">Rug DSL: <code>let</code> Declarations<a class="headerlink" href="#rug-dsl-let-declarations" title="Permanent link">&para;</a></h3>
+<p>Rug DSL <code>let</code> declarations can be used to initialise some labels with
+a corresponding value. It is recommended that these labels should be
+formatted according
+to <a href="https://en.wikipedia.org/wiki/Snake_case">snake_case</a> rules
+similarly to Rug parameters.</p>
+<h3 id="rug-dsl-avoiding-begin-and-end-when-there-is-only-a-single-do-action">Rug DSL: Avoiding <code>Begin</code> and <code>End</code> when there is only a Single <code>do</code> Action<a class="headerlink" href="#rug-dsl-avoiding-begin-and-end-when-there-is-only-a-single-do-action" title="Permanent link">&para;</a></h3>
+<p>If your <code>with</code> statement only has a single corresponding <code>do</code> action
+then you should omit the <code>begin</code> and <code>end</code> block demarcations.</p>
+<p>For example the following is legal but the <code>begin</code> and <code>end</code>
+statements are not required:</p>
+<div class="codehilite"><pre><span></span><span class="kn">with</span> <span class="kt">file</span> <span class="vi">when</span><span class="w"> </span><span class="nv">path</span> <span class="o">=</span> <span class="s">&quot;README.md&quot;</span><span class="w"></span>
+<span class="w">  </span><span class="kn">begin</span><span class="w"></span>
+<span class="w">    </span><span class="kn">do</span> <span class="nf">replace</span> <span class="s">&quot;{{creation_date}}&quot;</span><span class="w"> </span><span class="err">{</span><span class="w"> </span><span class="nf">new</span> <span class="nn">Date</span><span class="err">().toISOString().split(&#39;T&#39;)[0] }</span>
+<span class="w">  </span><span class="kn">end</span><span class="w"></span>
+</pre></div>
+
+
+<p>It is preferable to omit the <code>begin</code> and <code>end</code> statements entirely
+when there is only a single associated <code>do</code> action:</p>
+<div class="codehilite"><pre><span></span>with file when path = &quot;README.md&quot;
+  do replace &quot;{{creation_date}}&quot; { new Date().toISOString().split(&#39;T&#39;)[0] }
+</pre></div>
+
+
+<h3 id="rug-dsl-indenting-blocks-with-begin-and-end">Rug DSL: Indenting Blocks with <code>Begin</code> and <code>End</code><a class="headerlink" href="#rug-dsl-indenting-blocks-with-begin-and-end" title="Permanent link">&para;</a></h3>
+<p>When multiple actions are being applied it is important to nest those
+<code>do</code> actions within a <code>begin</code> and <code>end</code> block.  It is conventional to
+place the <code>begin</code> indented two spaces on the next line and then to
+indent the <code>do</code> statements two more spaces before a closing <code>end</code>
+statement indented at the same level as the <code>begin</code>:</p>
+<div class="codehilite"><pre><span></span><span class="kn">with</span> <span class="kt">pom</span> <span class="vi">p</span><span class="w"> </span><span class="kn">when</span> <span class="vi">path</span> <span class="err">=</span><span class="w"> </span><span class="s">&quot;pom.xml&quot;</span><span class="w"></span>
+<span class="w">  </span><span class="kn">begin</span><span class="w"></span>
+<span class="w">    </span><span class="kn">do</span> <span class="nf">setArtifactId</span>  <span class="vi">artifact_id</span><span class="w"></span>
+<span class="w">    </span><span class="kn">do</span> <span class="nf">setGroupId</span> <span class="vi">group_id</span><span class="w"></span>
+<span class="w">    </span><span class="kn">do</span> <span class="nf">setVersion</span> <span class="vi">version</span><span class="w"></span>
+<span class="w">    </span><span class="kn">do</span> <span class="nf">setProjectName</span> <span class="vi">name</span><span class="w"></span>
+<span class="w">    </span><span class="kn">do</span> <span class="nf">setDescription</span> <span class="vi">description</span><span class="w"></span>
+<span class="w">  </span><span class="kn">end</span><span class="w"></span>
+</pre></div>
+
+
+<h3 id="rug-dsl-labelling-selections-only-when-they-are-used">Rug DSL: Labelling Selections Only When They Are Used<a class="headerlink" href="#rug-dsl-labelling-selections-only-when-they-are-used" title="Permanent link">&para;</a></h3>
+<p>Sometimes when selecting a particular Rug Type, such as <code>pom</code> or
+<code>file</code>, it is important to expose what has been selected using a
+label, such as <code>p</code>. For example:</p>
+<div class="codehilite"><pre><span></span><span class="kn">with</span> <span class="kt">file</span> <span class="vi">f</span><span class="w"> </span><span class="kn">when</span> <span class="vi">path</span> <span class="err">=</span><span class="w"> </span><span class="s">&quot;README.md&quot;</span><span class="w"></span>
+<span class="w">  </span><span class="kn">do</span> <span class="nf">replace</span> <span class="s">&quot;{{creation_date}}&quot; { f.name() + &quot;</span> <span class="vi">created</span><span class="w"> </span><span class="nf">on</span> <span class="s">&quot; + new Date().toISOString().split(&#39;</span><span class="nf">T</span><span class="s">&#39;)[0] }</span>
+</pre></div>
+
+
+<p>However if the selected type is not being used then the label should
+be omitted as it will not be used, for example:</p>
+<div class="codehilite"><pre><span></span><span class="kn">with</span> <span class="kt">file</span> <span class="vi">when</span><span class="w"> </span><span class="nv">path</span> <span class="o">=</span> <span class="s">&quot;README.md&quot;</span><span class="w"></span>
+<span class="w">  </span><span class="kn">do</span> <span class="nf">replace</span> <span class="s">&quot;{{creation_date}}&quot;</span><span class="w"> </span><span class="err">{</span><span class="w"> </span><span class="nf">new</span> <span class="nn">Date</span><span class="err">().toISOString().split(&#39;T&#39;)[0] }</span>
+</pre></div>
+
+
+<p>In the above example you can see that the <code>f</code> label for the selected
+file is not required as it is never used.s</p>
+<h3 id="rug-dsl-comments">Rug DSL: Comments<a class="headerlink" href="#rug-dsl-comments" title="Permanent link">&para;</a></h3>
+<p>Comments should be used only when they add something that the Rug code
+itself doesn&rsquo;t state.  Self-documenting code is preferable over
+separate documentation if the code can be better made to express what
+would have been put in the documentation anyway.</p>
+                
+                  
+                
+              
+              
+                
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../lifecycle/" title="Lifecycle" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Lifecycle
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../../integrations/" title="Overview" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Overview
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            &copy; 2017 Atomist, Inc.
+          </div>
+        
+        powered by
+        <a href="http://www.mkdocs.org" title="MkDocs">MkDocs</a>
+        and
+        <a href="http://squidfunk.github.io/mkdocs-material/" title="Material for MkDocs">
+          Material for MkDocs</a>
+      </div>
+      
+        
+  <div class="md-footer-social">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+      <a href="https://the-composition.com/" class="md-footer-social__link fa fa-medium"></a>
+    
+      <a href="https://github.com/atomist" class="md-footer-social__link fa fa-github"></a>
+    
+      <a href="https://twitter.com/atomist" class="md-footer-social__link fa fa-twitter"></a>
+    
+      <a href="https://join.atomist.com/" class="md-footer-social__link fa fa-slack"></a>
+    
+  </div>
+
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../../assets/javascripts/application-7aa26ad9ec.js"></script>
+      <script>app.initialize({url:{base:"../../.."}})</script>
+      
+    
+    
+      
+      <script>!function(e,t,a,n,o,c,i){e.GoogleAnalyticsObject=o,e[o]=e[o]||function(){(e[o].q=e[o].q||[]).push(arguments)},e[o].l=1*new Date,c=t.createElement(a),i=t.getElementsByTagName(a)[0],c.async=1,c.src=n,i.parentNode.insertBefore(c,i)}(window,document,"script","https://www.google-analytics.com/analytics.js","ga"),ga("create","UA-74966852-1","auto"),ga("set","anonymizeIp",!0),ga("send","pageview");var links=document.getElementsByTagName("a");Array.prototype.map.call(links,function(e){e.host!=document.location.host&&e.addEventListener("click",function(){var t=e.getAttribute("data-md-action")||"follow";ga("send","event","outbound",t,e.href)})});var query=document.forms.search.query;query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})</script>
+      
+    
+  </body>
+</html>

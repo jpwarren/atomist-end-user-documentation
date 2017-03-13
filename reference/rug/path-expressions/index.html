@@ -1,0 +1,2730 @@
+
+<!DOCTYPE html>
+<html class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentation for the Atomist Developer Platform">
+      
+      
+      
+        <meta name="author" content="The Atomist Team">
+      
+      
+        <link rel="shortcut icon" href="../../../images/favicon.ico">
+      
+      <meta name="generator" content="mkdocs-0.16.1, mkdocs-material-1.3.0">
+    
+    
+      
+        <title>Path Expressions - The Atomist Documentation</title>
+      
+    
+    
+      <script src="../../../assets/javascripts/modernizr-56ade86843.js"></script>
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/application-1d1da4857d.css">
+      
+        <link rel="stylesheet" href="../../../assets/stylesheets/application-66fa0d9bba.palette.css">
+      
+    
+    
+      
+        
+        
+        
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+    
+  </head>
+  
+  
+  
+  
+    <body data-md-color-primary="green" data-md-color-accent="green">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="drawer">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search">
+    <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <a href="../../.." title="The Atomist Documentation" class="md-logo md-header-nav__button">
+            <img src="../../../images/atomist-logo-horiz-reversed.svg" width="24" height="24">
+          </a>
+        
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <span class="md-flex__ellipsis md-header-nav__title">
+          
+            
+              
+                <span class="md-header-nav__parent">
+                  Rug
+                </span>
+              
+                <span class="md-header-nav__parent">
+                  Rugs
+                </span>
+              
+            
+            Path Expressions
+          
+        </span>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="search"></label>
+          
+<div class="md-search" data-md-component="search">
+  <div class="md-search__overlay"></div>
+  <div class="md-search__inner">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" accesskey="s" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query">
+      <label class="md-icon md-search__icon" for="search"></label>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <div class="md-header-nav__source">
+          
+            
+
+
+  
+
+
+  <a href="https://github.com/atomist/rug" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      Rug
+    </div>
+  </a>
+
+          
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="drawer">
+    
+      <i class="md-logo md-nav__button">
+        <img src="../../../images/atomist-logo-horiz-reversed.svg">
+      </i>
+    
+    The Atomist Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+
+  <a href="https://github.com/atomist/rug" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      Rug
+    </div>
+  </a>
+
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-1" type="checkbox" id="nav-1">
+    
+    <label class="md-nav__link" for="nav-1">
+      Overview
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-1">
+        Overview
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../.." title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../concepts/" title="Concepts" class="md-nav__link">
+      Concepts
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../capabilities/" title="Capabilities" class="md-nav__link">
+      Capabilities
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      Getting Started
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        Getting Started
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../getting-started/" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../getting-started/prerequisites/" title="Prerequisites" class="md-nav__link">
+      Prerequisites
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../getting-started/invite-atomist-to-slack/" title="Invite Atomist to Slack" class="md-nav__link">
+      Invite Atomist to Slack
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../getting-started/connect-atomist-to-github/" title="Connect Atomist to GitHub" class="md-nav__link">
+      Connect Atomist to GitHub
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../getting-started/putting-atomist-to-work/" title="Putting Atomist to Work" class="md-nav__link">
+      Putting Atomist to Work
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../getting-started/connect-atomist-to-ci/" title="Connect Atomist to CI" class="md-nav__link">
+      Connect Atomist to CI
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../getting-started/build-your-own-development-automation/" title="Build Your Own Development Automation" class="md-nav__link">
+      Build Your Own Development Automation
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      User Guide
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        User Guide
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../user-guide/" title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-2" type="checkbox" id="nav-3-2">
+    
+    <label class="md-nav__link" for="nav-3-2">
+      Rug
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-2">
+        Rug
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../user-guide/rug/" title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../user-guide/rug/runtime/" title="Runtime" class="md-nav__link">
+      Runtime
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../user-guide/rug/typescript/" title="TypeScript" class="md-nav__link">
+      TypeScript
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../user-guide/rug/handlers/" title="Handlers" class="md-nav__link">
+      Handlers
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../user-guide/rug/commands/" title="Commands" class="md-nav__link">
+      Commands
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../user-guide/rug/editors/" title="Editors" class="md-nav__link">
+      Editors
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../user-guide/rug/generators/" title="Generators" class="md-nav__link">
+      Generators
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../user-guide/rug/reviewers/" title="Reviewers" class="md-nav__link">
+      Reviewers
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../user-guide/rug/extensions/" title="Extensions" class="md-nav__link">
+      Extensions
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../user-guide/rug/path-expressions/" title="Path Expressions" class="md-nav__link">
+      Path Expressions
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../user-guide/rug/microgrammars/" title="Microgrammars" class="md-nav__link">
+      Microgrammars
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../user-guide/rug/templates/" title="Templates" class="md-nav__link">
+      Templates
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../user-guide/rug/tests/" title="Tests" class="md-nav__link">
+      Tests
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../user-guide/rug/projects/" title="Projects" class="md-nav__link">
+      Projects
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../user-guide/rug/archives/" title="Archives" class="md-nav__link">
+      Archives
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../user-guide/rug/lifecycle/" title="Lifecycle" class="md-nav__link">
+      Lifecycle
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../user-guide/rug/conventions/" title="Conventions" class="md-nav__link">
+      Conventions
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-3" type="checkbox" id="nav-3-3">
+    
+    <label class="md-nav__link" for="nav-3-3">
+      Integrations
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-3">
+        Integrations
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../user-guide/integrations/" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../user-guide/integrations/slack/" title="Slack" class="md-nav__link">
+      Slack
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../user-guide/integrations/github/" title="GitHub.com" class="md-nav__link">
+      GitHub.com
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../user-guide/integrations/travis-ci/" title="Travis CI" class="md-nav__link">
+      Travis CI
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../user-guide/integrations/jenkins/" title="Jenkins" class="md-nav__link">
+      Jenkins
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-4" type="checkbox" id="nav-3-4">
+    
+    <label class="md-nav__link" for="nav-3-4">
+      Interfaces
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-4">
+        Interfaces
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../user-guide/interfaces/" title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../user-guide/interfaces/bot/" title="Bot" class="md-nav__link">
+      Bot
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-4-3" type="checkbox" id="nav-3-4-3">
+    
+    <label class="md-nav__link" for="nav-3-4-3">
+      CLI
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-3-4-3">
+        CLI
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../user-guide/interfaces/cli/" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../user-guide/interfaces/cli/install/" title="Installation" class="md-nav__link">
+      Installation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../user-guide/interfaces/cli/using-rugs/" title="Using Rugs" class="md-nav__link">
+      Using Rugs
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../user-guide/interfaces/cli/developing-rugs/" title="Developing Rugs" class="md-nav__link">
+      Developing Rugs
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" checked>
+    
+    <label class="md-nav__link" for="nav-4">
+      Reference Documentation
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        Reference Documentation
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-2" type="checkbox" id="nav-4-2" checked>
+    
+    <label class="md-nav__link" for="nav-4-2">
+      Rug
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-2">
+        Rug
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-2-2" type="checkbox" id="nav-4-2-2" checked>
+    
+    <label class="md-nav__link" for="nav-4-2-2">
+      Rugs
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-4-2-2">
+        Rugs
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../rugs/" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../editors/" title="Editors" class="md-nav__link">
+      Editors
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../generators/" title="Generators" class="md-nav__link">
+      Generators
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="toc">
+        Path Expressions
+      </label>
+    
+    <a href="./" title="Path Expressions" class="md-nav__link md-nav__link--active">
+      Path Expressions
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" title="Introduction" class="md-nav__link">
+    Introduction
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#location-paths" title="Location Paths" class="md-nav__link">
+    Location Paths
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#location-steps" title="Location Steps" class="md-nav__link">
+    Location Steps
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#axes" title="Axes" class="md-nav__link">
+    Axes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#node-tests" title="Node Tests" class="md-nav__link">
+    Node Tests
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#predicates" title="Predicates" class="md-nav__link">
+    Predicates
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#abbreviated-syntax" title="Abbreviated Syntax" class="md-nav__link">
+    Abbreviated Syntax
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#expressions" title="Expressions" class="md-nav__link">
+    Expressions
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#basics" title="Basics" class="md-nav__link">
+    Basics
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#function-calls" title="Function Calls" class="md-nav__link">
+    Function Calls
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#node-sets" title="Node-sets" class="md-nav__link">
+    Node-sets
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#booleans" title="Booleans" class="md-nav__link">
+    Booleans
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#numbers" title="Numbers" class="md-nav__link">
+    Numbers
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#strings" title="Strings" class="md-nav__link">
+    Strings
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lexical-structure" title="Lexical Structure" class="md-nav__link">
+    Lexical Structure
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#core-function-library" title="Core Function Library" class="md-nav__link">
+    Core Function Library
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#node-set-functions" title="Node Set Functions" class="md-nav__link">
+    Node Set Functions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#string-functions" title="String Functions" class="md-nav__link">
+    String Functions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#boolean-functions" title="Boolean Functions" class="md-nav__link">
+    Boolean Functions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#number-functions" title="Number Functions" class="md-nav__link">
+    Number Functions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#object-function" title="Object Function" class="md-nav__link">
+    Object Function
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-model" title="Data Model" class="md-nav__link">
+    Data Model
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#root-node" title="Root Node" class="md-nav__link">
+    Root Node
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#object-nodes" title="Object Nodes" class="md-nav__link">
+    Object Nodes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#property-nodes" title="Property Nodes" class="md-nav__link">
+    Property Nodes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#namespace-nodes" title="Namespace Nodes" class="md-nav__link">
+    Namespace Nodes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#processing-instruction-nodes" title="Processing Instruction Nodes" class="md-nav__link">
+    Processing Instruction Nodes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comment-nodes" title="Comment Nodes" class="md-nav__link">
+    Comment Nodes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#text-nodes" title="Text Nodes" class="md-nav__link">
+    Text Nodes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conformance" title="Conformance" class="md-nav__link">
+    Conformance
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#appendix" title="Appendix" class="md-nav__link">
+    Appendix
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#differences-with-xpath" title="Differences with XPath" class="md-nav__link">
+    Differences with XPath
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#legacy-content" title="Legacy Content" class="md-nav__link">
+    Legacy Content
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exposure-in-typescript" title="Exposure in TypeScript" class="md-nav__link">
+    Exposure in TypeScript
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#possible-futures" title="Possible Futures" class="md-nav__link">
+    Possible Futures
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-2-3" type="checkbox" id="nav-4-2-3">
+    
+    <label class="md-nav__link" for="nav-4-2-3">
+      Language Extensions
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-4-2-3">
+        Language Extensions
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../extensions/" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../extensions/clj-project/" title="CljProject" class="md-nav__link">
+      CljProject
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../extensions/c-sharp-file/" title="CSharpFile" class="md-nav__link">
+      CSharpFile
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../extensions/docker-file/" title="DockerFile" class="md-nav__link">
+      DockerFile
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../extensions/elm-module/" title="ElmModule" class="md-nav__link">
+      ElmModule
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../extensions/every-pom/" title="EveryPom" class="md-nav__link">
+      EveryPom
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../extensions/file/" title="File" class="md-nav__link">
+      File
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../extensions/java-project/" title="JavaProject" class="md-nav__link">
+      JavaProject
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../extensions/java-source/" title="JavaSource" class="md-nav__link">
+      JavaSource
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../extensions/java-type/" title="JavaType" class="md-nav__link">
+      JavaType
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../extensions/json/" title="Json" class="md-nav__link">
+      Json
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../extensions/line/" title="Line" class="md-nav__link">
+      Line
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../extensions/pom/" title="Pom" class="md-nav__link">
+      Pom
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../extensions/project/" title="Project" class="md-nav__link">
+      Project
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../extensions/properties/" title="Properties" class="md-nav__link">
+      Properties
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../extensions/python-file/" title="PythonFile" class="md-nav__link">
+      PythonFile
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../extensions/python-requirements-txt/" title="PythonRequirementsTxt" class="md-nav__link">
+      PythonRequirementsTxt
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../extensions/rug-archive-project/" title="RugArchiveProject" class="md-nav__link">
+      RugArchiveProject
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../extensions/rug-file/" title="RugFile" class="md-nav__link">
+      RugFile
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../extensions/scala-file/" title="ScalaFile" class="md-nav__link">
+      ScalaFile
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../extensions/services/" title="Services" class="md-nav__link">
+      Services
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../extensions/spring-boot-project/" title="SpringBootProject" class="md-nav__link">
+      SpringBootProject
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../extensions/xml/" title="Xml" class="md-nav__link">
+      Xml
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../extensions/yml/" title="Yml" class="md-nav__link">
+      Yml
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-2-4" type="checkbox" id="nav-4-2-4">
+    
+    <label class="md-nav__link" for="nav-4-2-4">
+      DSL
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-4-2-4">
+        DSL
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../dsl/" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../dsl/syntax/" title="Syntax" class="md-nav__link">
+      Syntax
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../dsl/javascript/" title="Using JavaScript" class="md-nav__link">
+      Using JavaScript
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../rug-cli/" title="Rug CLI" class="md-nav__link">
+      Rug CLI
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" title="Introduction" class="md-nav__link">
+    Introduction
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#location-paths" title="Location Paths" class="md-nav__link">
+    Location Paths
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#location-steps" title="Location Steps" class="md-nav__link">
+    Location Steps
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#axes" title="Axes" class="md-nav__link">
+    Axes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#node-tests" title="Node Tests" class="md-nav__link">
+    Node Tests
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#predicates" title="Predicates" class="md-nav__link">
+    Predicates
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#abbreviated-syntax" title="Abbreviated Syntax" class="md-nav__link">
+    Abbreviated Syntax
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#expressions" title="Expressions" class="md-nav__link">
+    Expressions
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#basics" title="Basics" class="md-nav__link">
+    Basics
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#function-calls" title="Function Calls" class="md-nav__link">
+    Function Calls
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#node-sets" title="Node-sets" class="md-nav__link">
+    Node-sets
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#booleans" title="Booleans" class="md-nav__link">
+    Booleans
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#numbers" title="Numbers" class="md-nav__link">
+    Numbers
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#strings" title="Strings" class="md-nav__link">
+    Strings
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lexical-structure" title="Lexical Structure" class="md-nav__link">
+    Lexical Structure
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#core-function-library" title="Core Function Library" class="md-nav__link">
+    Core Function Library
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#node-set-functions" title="Node Set Functions" class="md-nav__link">
+    Node Set Functions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#string-functions" title="String Functions" class="md-nav__link">
+    String Functions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#boolean-functions" title="Boolean Functions" class="md-nav__link">
+    Boolean Functions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#number-functions" title="Number Functions" class="md-nav__link">
+    Number Functions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#object-function" title="Object Function" class="md-nav__link">
+    Object Function
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-model" title="Data Model" class="md-nav__link">
+    Data Model
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#root-node" title="Root Node" class="md-nav__link">
+    Root Node
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#object-nodes" title="Object Nodes" class="md-nav__link">
+    Object Nodes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#property-nodes" title="Property Nodes" class="md-nav__link">
+    Property Nodes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#namespace-nodes" title="Namespace Nodes" class="md-nav__link">
+    Namespace Nodes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#processing-instruction-nodes" title="Processing Instruction Nodes" class="md-nav__link">
+    Processing Instruction Nodes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comment-nodes" title="Comment Nodes" class="md-nav__link">
+    Comment Nodes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#text-nodes" title="Text Nodes" class="md-nav__link">
+    Text Nodes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conformance" title="Conformance" class="md-nav__link">
+    Conformance
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#appendix" title="Appendix" class="md-nav__link">
+    Appendix
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#differences-with-xpath" title="Differences with XPath" class="md-nav__link">
+    Differences with XPath
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#legacy-content" title="Legacy Content" class="md-nav__link">
+    Legacy Content
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exposure-in-typescript" title="Exposure in TypeScript" class="md-nav__link">
+    Exposure in TypeScript
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#possible-futures" title="Possible Futures" class="md-nav__link">
+    Possible Futures
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="rug-path-expression-version-01">Rug Path Expression Version 0.1<a class="headerlink" href="#rug-path-expression-version-01" title="Permanent link">&para;</a></h1>
+<h2 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h2>
+<p>Rug Path Expressions are used to obtain tree nodes from structured
+data, including:</p>
+<ul>
+<li>Projects</li>
+<li>Files (going into AST or other internal structure if understood)</li>
+<li>Structured parameters, such as JSON or other file formats</li>
+<li>The Atomist service model representing project data such as
+    builds, commits and chat teams</li>
+<li>Existing trees</li>
+</ul>
+<p>All data sources are viewed as trees, and results are always tree
+nodes.  All tree nodes have a <em>node type</em>, <em>name</em>, and <em>object type</em>.
+Unlike XML elements, tree nodes also may have methods.  Rug tree
+expressions add a rich set of <em>object types</em> from the underlying typed
+model they traverse.  Types that are globally searchable
+use <a href="http://wiki.c2.com/?UpperCamelCase">UpperCamelCase</a>.  Private types, i.e., those only accessible
+under a global type, use <a href="http://wiki.c2.com/?LowerCamelCase">lowerCamelCase</a>.</p>
+<p>The syntax is inspired by sources including <a href="https://en.wikipedia.org/wiki/XPath#Syntax_and_semantics_.28XPath_1.0.29">XPath 1.0</a> (the
+primary influence) and <a href="http://goessner.net/articles/JsonPath/index.html#e2)">JSONPath</a> (which shows how the same
+core ideas can be applied to non XML data structures).</p>
+<p>A path expression navigates a series of nodes and relationships in a
+graph.  Each path element in a path element acts on results returned
+by the previous path element.  Think of it as a &ldquo;<a href="http://martinfowler.com/articles/collection-pipeline/flat-map.html">flatMap</a>&rdquo;
+operation on a collection in a functional language: it returns a new
+collection.</p>
+<p>Beause of the close relationship to XPath, the remainder of this
+document mirrors the organization of
+the <a href="https://www.w3.org/TR/xpath/">XPath Version 1.0 specification</a>.
+An <a href="https://github.com/antlr/grammars-v4/blob/master/xpath/xpath.g4">ANTLR grammar</a> for XPath 1.0 is available.</p>
+<h2 id="location-paths">Location Paths<a class="headerlink" href="#location-paths" title="Permanent link">&para;</a></h2>
+<p>Rug Path Expressions are location paths consisting of one or more
+sequential <strong>Location Steps</strong>.  A location path is one or
+more <a href="#location-steps">location steps</a> separated by forward slashes,
+(<code>/</code>).</p>
+<p>All location paths should be absolute, i.e., begin with a forward
+slash (<code>/</code>).  The actual root context for location paths
+differs depending on where the path location is being used:</p>
+<table>
+<thead>
+<tr>
+<th>Rug</th>
+<th>Root Context</th>
+<th>Context Object Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Editor/Reviewer</td>
+<td>Project</td>
+<td>File</td>
+</tr>
+<tr>
+<td>Executor</td>
+<td>Service</td>
+<td>Service</td>
+</tr>
+<tr>
+<td>Handler</td>
+<td>object passed to Handler</td>
+<td>object passed to handler type</td>
+</tr>
+</tbody>
+</table>
+<p>This is analogous to the root context of an XPath location path being
+the root of the document it is acting on.</p>
+<p>The context object type is the implicit object type that the initial
+location step has.  For example, in an Editor the root context is a
+Project and the context object type of the path step under the root
+context is File, allowing one to traverse the project&rsquo;s file system
+hierarchy from the project root using directory and file names as in
+<code>/src/main/java</code> or <code>/LICENSE</code>.</p>
+<h3 id="location-steps">Location Steps<a class="headerlink" href="#location-steps" title="Permanent link">&para;</a></h3>
+<p>A location step has three parts:</p>
+<ul>
+<li>an <strong>axis</strong>, which specifies the tree relationship between the nodes
+    selected by the location step and the context node,</li>
+<li>a <strong>node test</strong>, which specifies the node object type and name of
+    the nodes selected by the location step, and</li>
+<li>zero or more <strong>predicates</strong>, which use arbitrary expressions to
+    further refine the set of nodes selected by the location step.</li>
+</ul>
+<p>The syntax for a location step is the axis name and node test
+separated by a double colon, followed by zero or more expressions each
+in square brackets. For example, in <code>child::comment[position()=1]</code>,
+<code>child</code> is the name of the axis, <code>comment</code> is the node test and
+<code>[position()=1]</code> is a predicate.</p>
+<p>The node-set selected by the location step is the node-set that
+results from generating an initial node-set from the axis and
+node-test, and then filtering that node-set by each of the predicates
+in turn.</p>
+<p>The initial node-set consists of the nodes having the relationship to
+the context node specified by the axis, and having the node object
+type and name specified by the node test.  For example, a location
+step <code>raisedBy::GitHubUserID()</code> selects the GitHub user ID that has a
+raisedBy relationship with the context node: <code>raisedBy</code>, the axis,
+specifies the relationship with the context node; <code>GitHubUserID()</code>
+specifies that each node in the initial node-set must be an object of
+type <code>GitHubUserID</code>.  The available axes are described
+in <a href="#axes">Axes</a>. The available node tests are described
+in <a href="#node-tests">Node Tests</a>. The meaning of some node tests is
+dependent on the axis.</p>
+<p>The initial node-set is filtered by the first predicate to generate a
+new node-set; this new node-set is then filtered using the second
+predicate, and so on. The final node-set is the node-set selected by
+the location step. The axis affects how the expression in each
+predicate is evaluated and so the semantics of a predicate is defined
+with respect to an axis. See <a href="#predicates">Predicates</a>.</p>
+<h3 id="axes">Axes<a class="headerlink" href="#axes" title="Permanent link">&para;</a></h3>
+<p>Axes define the relationship between a location step and the previous
+location step, i.e., its node context.  Axes available in all contexts
+are:</p>
+<ul>
+<li>
+<p>the <code>child</code> axis contains the children of the context node,
+    which are all nodes with a direct relationship in the graph
+    to the context node</p>
+</li>
+<li>
+<p>the <code>property</code> axis contains the properties of the context node;
+    the axis will be empty unless the context node is an object</p>
+</li>
+<li>
+<p>the <code>self</code> axis contains just the context node itself</p>
+</li>
+<li>
+<p>the <code>descendant</code> axis contains the descendants of the context
+    node; a descendant is a child or a child of a child and so on;
+    thus the descendant axis never contains property or namespace
+    nodes</p>
+</li>
+</ul>
+<p>Certain object types have relationships with other object types.  Some
+examples are shown in the table below.  When the previous step
+contains the type in the left column, the axis in the middle column
+can be used prior to a node test for the type in the right column.
+This is not an exhaustive list of relationships in the model graph.</p>
+<table>
+<thead>
+<tr>
+<th>Context Object Type</th>
+<th>Axis</th>
+<th>Node-set Object Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Build</td>
+<td>on</td>
+<td>Repo</td>
+</tr>
+<tr>
+<td>Commit</td>
+<td>on</td>
+<td>Repo</td>
+</tr>
+<tr>
+<td>Issue</td>
+<td>belongsTo</td>
+<td>Repo</td>
+</tr>
+<tr>
+<td>Push</td>
+<td>hasBuild</td>
+<td>Build</td>
+</tr>
+<tr>
+<td>Push</td>
+<td>contains</td>
+<td>Commit</td>
+</tr>
+<tr>
+<td>Push</td>
+<td>after</td>
+<td>Commit</td>
+</tr>
+<tr>
+<td>ChatId</td>
+<td>memberOf</td>
+<td>ChatChannel</td>
+</tr>
+<tr>
+<td>Issue</td>
+<td>resolvedBy</td>
+<td>Commit</td>
+</tr>
+<tr>
+<td>Commit</td>
+<td>author</td>
+<td>GitHubId</td>
+</tr>
+<tr>
+<td>Person</td>
+<td>hasChatIdentiy</td>
+<td>SlackId</td>
+</tr>
+<tr>
+<td>Person</td>
+<td>hasGithubIdentiy</td>
+<td>GitHubId</td>
+</tr>
+<tr>
+<td>SlackTeam</td>
+<td>hasChannel</td>
+<td>Channel</td>
+</tr>
+<tr>
+<td>Repo</td>
+<td>channel</td>
+<td>Channel</td>
+</tr>
+<tr>
+<td>SlackId</td>
+<td>memberOf</td>
+<td>SlackTeam</td>
+</tr>
+</tbody>
+</table>
+<h3 id="node-tests">Node Tests<a class="headerlink" href="#node-tests" title="Permanent link">&para;</a></h3>
+<p>Every axis has a principal node type, which is different than the
+node&rsquo;s object type.  The node type is directly analogous to XPath node
+types.  If an axis can contain objects, then the principal node type
+is object; otherwise, it is the type of the nodes that the axis can
+contain.  Thus,</p>
+<ul>
+<li>For the property axis, the principal node type is property.</li>
+<li>For other axes, the principal node type is object.</li>
+</ul>
+<p>A node test that is a <code>stuff</code>, called a node name test, will select
+all object nodes with the name &ldquo;stuff&rdquo; of the principal node type.
+For example, <code>child::src</code> will select the object node named &ldquo;src&rdquo; that
+is a child of the context node.  Node name tests can only contain
+alphanumeric, underscore (<code>_</code>), dash (<code>-</code>), period (<code>.</code>), asterisk
+(<code>*</code>), and question mark (<code>?</code>) characters.  The asterisk and question
+mark have the same special meaning they have in shell globbing
+patterns, asterisk matches zero of more characters and question mark
+matches any single character.  To select nodes with names having other
+characters, use the <code>@name</code> attribute in a predicate, e.g.,
+<code>/*[@name='cømPℓ€×']</code>.</p>
+<p>A node test <code>*</code> is true for any node of the principal node type. For
+example, <code>child::*</code> will select all object children of the context
+node, and <code>property::*</code> will select all properties of the context
+node.</p>
+<p>A node test of the form <code>Kind()</code> will select all object nodes with
+the object type &ldquo;Kind&rdquo;, <em>effectively switching the default node object
+type for the current and subsequent location steps to &ldquo;Kind&rdquo;</em>.  For
+example, <code>belongsTo::Issue()</code> will select all object nodes of object
+type &ldquo;Issue&rdquo; belonging to the context node.  Note that not all object
+types are related to all other types.  In this example, if the context
+node is a GitHub repository, a relationship exists.  If the context
+node is a Slack channel, there is no direct relationship to type
+Issue.</p>
+<h3 id="predicates">Predicates<a class="headerlink" href="#predicates" title="Permanent link">&para;</a></h3>
+<p>A predicate filters a node-set with respect to an axis to produce a
+new node-set. For each node in the node-set to be filtered, the
+PredicateExpr is evaluated with that node as the context node, with
+the number of nodes in the node-set as the context size, and with the
+proximity position of the node in the node-set with respect to the
+axis as the context position; if PredicateExpr evaluates to true for
+that node, the node is included in the new node-set; otherwise, it is
+not included.</p>
+<p>A predicate expression is evaluated by evaluating the expression and
+converting the result to a boolean. If the result is a number, the
+result will be converted to true if the number is equal to the context
+position and will be converted to false otherwise; if the result is
+not a number, then the result will be converted as if by a call to the
+boolean function. Thus a location path <code>para[3]</code> is equivalent to
+<code>para[position()=3]</code>.</p>
+<p>Predicates are optional.  If no predicate is provided, no filtering is
+done.</p>
+<h3 id="abbreviated-syntax">Abbreviated Syntax<a class="headerlink" href="#abbreviated-syntax" title="Permanent link">&para;</a></h3>
+<p>Here are some examples of location paths using abbreviated syntax:</p>
+<table>
+<thead>
+<tr>
+<th>Syntax</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>src</code></td>
+<td>selects the <code>src</code> object children of the context node</td>
+</tr>
+<tr>
+<td><code>*[@name='cømPℓ€×']</code></td>
+<td>selects the <code>cømPℓ€×</code> object children of the context node</td>
+</tr>
+<tr>
+<td><code>*</code></td>
+<td>selects all object children of the context node</td>
+</tr>
+<tr>
+<td><code>Person()</code></td>
+<td>selects all node children of object type <code>Person</code> of the context node and switches the context object type to <code>Person</code></td>
+</tr>
+<tr>
+<td><code>@name</code></td>
+<td>selects the name property of the context node</td>
+</tr>
+<tr>
+<td><code>@*</code></td>
+<td>selects all the property of the context node</td>
+</tr>
+<tr>
+<td><code>Issue()[1]</code></td>
+<td>selects the first child of object type <code>Issue</code> of the context node</td>
+</tr>
+<tr>
+<td><code>//foo</code></td>
+<td>selects all <code>foo</code> descendants of the context node</td>
+</tr>
+<tr>
+<td><code>//*.py</code></td>
+<td>selects all descendants of the context node whose name ends in <code>.py</code></td>
+</tr>
+<tr>
+<td><code>File()/src/main/resources//*.md</code></td>
+<td>selects all the files ending in <code>.md</code> under the <code>/src/main/resources</code> directory; if you are using this in an editor where <code>File()</code> is implicit, you do not need the leading <code>File()</code></td>
+</tr>
+<tr>
+<td><code>Repo()/@name</code></td>
+<td>selects the names of all repositories</td>
+</tr>
+<tr>
+<td><code>Issue()[@state=&quot;open&quot;]/belongsTo::Repo()[@name=&quot;rug-cli&quot;]</code></td>
+<td>selects all open issues in the repository named &ldquo;rug-cli&rdquo;</td>
+</tr>
+</tbody>
+</table>
+<h2 id="expressions">Expressions<a class="headerlink" href="#expressions" title="Permanent link">&para;</a></h2>
+<h3 id="basics">Basics<a class="headerlink" href="#basics" title="Permanent link">&para;</a></h3>
+<p>Expressions are used in predicates.  Expressions can be:</p>
+<ul>
+<li>a number</li>
+<li>a string</li>
+<li>a boolean</li>
+<li>a function call</li>
+<li>logically <code>and</code>ed and <code>or</code>ed</li>
+<li>grouped together by parentheses</li>
+</ul>
+<p>Rug path expressions do not support variables and variable references.</p>
+<h3 id="function-calls">Function Calls<a class="headerlink" href="#function-calls" title="Permanent link">&para;</a></h3>
+<p>A FunctionCall expression is evaluated by using the FunctionName to
+identify a function in the expression evaluation context function
+library, evaluating each of the Arguments, converting each argument to
+the type required by the function, and finally calling the function,
+passing it the converted arguments. It is an error if the number of
+arguments is wrong or if an argument cannot be converted to the
+required type. The result of the FunctionCall expression is the result
+returned by the function.</p>
+<p>An argument is converted to type string as if by calling the string
+function. An argument is converted to type number as if by calling the
+number function. An argument is converted to type boolean as if by
+calling the boolean function. An argument that is not of type node-set
+cannot be converted to a node-set.</p>
+<h3 id="node-sets">Node-sets<a class="headerlink" href="#node-sets" title="Permanent link">&para;</a></h3>
+<p>A location path can be used as an expression. The expression returns
+the set of nodes selected by the path.</p>
+<p>The <code>|</code> operator computes the union of its operands, which must be
+node-sets.</p>
+<p>Predicates are used to filter expressions in the same way that they
+are used in location paths. It is an error if the expression to be
+filtered does not evaluate to a node-set. The Predicate filters the
+node-set with respect to the child axis.</p>
+<h3 id="booleans">Booleans<a class="headerlink" href="#booleans" title="Permanent link">&para;</a></h3>
+<p>An object of type boolean can have one of two values, true and false.</p>
+<p>An <code>or</code> expression is evaluated by evaluating each operand and
+converting its value to a boolean as if by a call to the boolean
+function. The result is true if either value is true and false
+otherwise. The right operand is not evaluated if the left operand
+evaluates to true.</p>
+<p>An <code>and</code> expression is evaluated by evaluating each operand and
+converting its value to a boolean as if by a call to the boolean
+function. The result is true if both values are true and false
+otherwise. The right operand is not evaluated if the left operand
+evaluates to false.</p>
+<p>Equality operators, <code>=</code>, <code>!=</code>, <code>&lt;=</code>, <code>&lt;</code>, <code>&gt;=</code>, and <code>&gt;</code>, are only
+supported for string and number types.  <code>=</code> and <code>!=</code> are supported on
+boolean types.  Rug path expressions do not support comparing
+node-sets to each other or other types.</p>
+<h3 id="numbers">Numbers<a class="headerlink" href="#numbers" title="Permanent link">&para;</a></h3>
+<p>A number represents a positive integer number.</p>
+<h3 id="strings">Strings<a class="headerlink" href="#strings" title="Permanent link">&para;</a></h3>
+<p>Strings consist of a sequence of zero or more Unicode characters.</p>
+<h3 id="lexical-structure">Lexical Structure<a class="headerlink" href="#lexical-structure" title="Permanent link">&para;</a></h3>
+<p>When tokenizing, the longest possible token is always returned.</p>
+<p>For readability, whitespace may be used in expressions even though not
+explicitly allowed by the grammar</p>
+<h2 id="core-function-library">Core Function Library<a class="headerlink" href="#core-function-library" title="Permanent link">&para;</a></h2>
+<p>This section describes functions that Rug path expression
+implementations must always include in the function library that is
+used to evaluate expressions.</p>
+<p>Each function in the function library is specified using a function
+prototype, which gives the return type, the name of the function, and
+the type of the arguments. If an argument type is followed by a
+question mark, then the argument is optional; otherwise, the argument
+is required.</p>
+<h3 id="node-set-functions">Node Set Functions<a class="headerlink" href="#node-set-functions" title="Permanent link">&para;</a></h3>
+<p><strong>Function:</strong> <em>number</em> <strong>last()</strong></p>
+<p>The last function returns a number equal to the context size from the
+expression evaluation context.</p>
+<p><strong>Function:</strong> <em>number</em> <strong>position()</strong></p>
+<p>The position function returns a number equal to the context position
+from the expression evaluation context.</p>
+<p><strong>Function:</strong> <em>number</em> **count(<em>node-set</em>)**</p>
+<p>The count function returns the number of nodes in the argument
+node-set.</p>
+<p><strong>Function:</strong> <em>string</em> **name(<em>node-set?</em>)**</p>
+<p>The name function returns a string representing the name of the node
+in the argument node-set that is first in document order.</p>
+<h3 id="string-functions">String Functions<a class="headerlink" href="#string-functions" title="Permanent link">&para;</a></h3>
+<p><strong>Function:</strong> <em>string</em> <strong>string(<em>object?</em>)</strong></p>
+<p>The string function converts an object to a string as follows:</p>
+<ul>
+<li>
+<p>A node-set is converted to a string by returning the string-value
+    of the node in the node-set that is first in document order. If
+    the node-set is empty, an empty string is returned.</p>
+</li>
+<li>
+<p>A number is converted to a string as follows</p>
+<ul>
+<li>
+<p>NaN is converted to the string NaN</p>
+</li>
+<li>
+<p>positive zero is converted to the string 0</p>
+</li>
+<li>
+<p>negative zero is converted to the string 0</p>
+</li>
+<li>
+<p>positive infinity is converted to the string Infinity</p>
+</li>
+<li>
+<p>negative infinity is converted to the string -Infinity</p>
+</li>
+<li>
+<p>a number is represented in decimal form as a Number with no
+    decimal point and no leading zeros, preceded by a minus sign
+    (-) if the number is negative</p>
+</li>
+</ul>
+</li>
+<li>
+<p>The boolean false value is converted to the string false. The
+    boolean true value is converted to the string true.</p>
+</li>
+<li>
+<p>An object of a type other than the four basic types is converted
+    to a string in a way that is dependent on that type.</p>
+</li>
+</ul>
+<p>If the argument is omitted, it defaults to a node-set with the context
+node as its only member.</p>
+<p><strong>Function:</strong> <em>string</em> **concat(<em>string, string, string*</em>)**</p>
+<p>The concat function returns the concatenation of its arguments.</p>
+<p><strong>Function:</strong> <em>boolean</em> <strong>starts-with(<em>string, string</em>)</strong></p>
+<p>The starts-with function returns true if the first argument string
+starts with the second argument string, and otherwise returns false.</p>
+<p><strong>Function:</strong> <em>boolean</em> <strong>contains(<em>string, string</em>)</strong></p>
+<p>The contains function returns true if the first argument string
+contains the second argument string, and otherwise returns false.</p>
+<p><strong>Function:</strong> <em>string</em> <strong>substring-before(<em>string, string</em>)</strong></p>
+<p>The substring-before function returns the substring of the first
+argument string that precedes the first occurrence of the second
+argument string in the first argument string, or the empty string if
+the first argument string does not contain the second argument
+string. For example, substring-before(&ldquo;1999/04/01&rdquo;,&rdquo;/&rdquo;) returns 1999.</p>
+<p><strong>Function:</strong> <em>string</em> <strong>substring-after(<em>string, string</em>)</strong></p>
+<p>The substring-after function returns the substring of the first
+argument string that follows the first occurrence of the second
+argument string in the first argument string, or the empty string if
+the first argument string does not contain the second argument
+string. For example, substring-after(&ldquo;1999/04/01&rdquo;,&rdquo;/&rdquo;) returns 04/01,
+and substring-after(&ldquo;1999/04/01&rdquo;,&rdquo;19&rdquo;) returns 99/04/01.</p>
+<p><strong>Function:</strong> <em>string</em> <strong>substring(<em>string, number, number?</em>)</strong></p>
+<p>The substring function returns the substring of the first argument
+starting at the position specified in the second argument with length
+specified in the third argument. For example, substring(&ldquo;12345&rdquo;,1,3)
+returns &ldquo;234&rdquo;. If the third argument is not specified, it returns the
+substring starting at the position specified in the second argument
+and continuing to the end of the string. For example,
+substring(&ldquo;12345&rdquo;,1) returns &ldquo;2345&rdquo;.</p>
+<p>More precisely, each character in the string is considered to have a
+numeric position: the position of the first character is 0, the
+position of the second character is 1 and so on.</p>
+<p><strong>NOTE:</strong> This differs from XPath and is in line with Java and
+ECMAScript, in which the String.substring method treats the position
+of the first character as 0.</p>
+<p><strong>Function:</strong> <em>number</em> <strong>string-length(<em>string?</em>)</strong></p>
+<p>The string-length returns the number of characters in the string. If
+the argument is omitted, it defaults to the context node converted to
+a string, in other words the string-value of the context node.</p>
+<p><strong>Function:</strong> <em>string</em> <strong>trim-space(<em>string?</em>)</strong></p>
+<p>The normalize-space function returns the argument string with
+whitespace normalized by stripping leading and trailing whitespace.</p>
+<h3 id="boolean-functions">Boolean Functions<a class="headerlink" href="#boolean-functions" title="Permanent link">&para;</a></h3>
+<p><strong>Function:</strong> <em>boolean</em> <strong>boolean(<em>object</em>)</strong></p>
+<p>The boolean function converts its argument to a boolean as follows:</p>
+<ul>
+<li>a number is true if and only if it is neither positive or negative
+    zero nor NaN</li>
+<li>a node-set is true if and only if it is non-empty</li>
+<li>a string is true if and only if its length is non-zero</li>
+<li>an object of a type other than the four basic types is converted
+    to a boolean in a way that is dependent on that type</li>
+</ul>
+<p><strong>Function:</strong> <em>boolean</em> <strong>not(<em>boolean</em>)</strong></p>
+<p>The not function returns true if its argument is false, and false
+otherwise.</p>
+<p><strong>Function:</strong> <em>boolean</em> <strong>true()</strong></p>
+<p>The true function returns true.</p>
+<p><strong>Function:</strong> <em>boolean</em> <strong>false()</strong></p>
+<p>The false function returns false.</p>
+<h3 id="number-functions">Number Functions<a class="headerlink" href="#number-functions" title="Permanent link">&para;</a></h3>
+<p>Function: number number(object?)</p>
+<p>The number function converts its argument to a number as follows:</p>
+<ul>
+<li>
+<p>a string that consists of optional whitespace followed by an
+    optional minus sign followed by a Number followed by whitespace is
+    converted to the IEEE 754 number that is nearest (according to the
+    IEEE 754 round-to-nearest rule) to the mathematical value
+    represented by the string; any other string is converted to NaN</p>
+</li>
+<li>
+<p>boolean true is converted to 1; boolean false is converted to 0</p>
+</li>
+<li>
+<p>a node-set is first converted to a string as if by a call to the
+    string function and then converted in the same way as a string
+    argument</p>
+</li>
+<li>
+<p>an object of a type other than the four basic types is converted
+    to a number in a way that is dependent on that type</p>
+</li>
+</ul>
+<p>If the argument is omitted, it defaults to a node-set with the context
+node as its only member.</p>
+<h3 id="object-function">Object Function<a class="headerlink" href="#object-function" title="Permanent link">&para;</a></h3>
+<p>Certain object types will provide functions that can be called on them
+that are type dependent.  Those functions that return values that can
+be converted to boolean values can be used.  The implementation of
+each object type should document functions valid to use in Rug path
+expressions.  These functions can be called in predicates and must be
+preceded with a dot (<code>.</code>).</p>
+<h2 id="data-model">Data Model<a class="headerlink" href="#data-model" title="Permanent link">&para;</a></h2>
+<p>Rug path expressions operate on objects as a tree. This section
+describes how Rug path expressions model objects as a tree. This model is
+conceptual only and does not mandate any particular
+implementation.</p>
+<p>The tree contains nodes.  Each node has a node type and an object
+type.  The object types are extensible, but there are only three node
+types:</p>
+<ul>
+<li>root nodes</li>
+<li>object nodes</li>
+<li>property nodes</li>
+</ul>
+<p>For every type of node, there is a way of determining a string-value
+for a node of that type. For some types of node, the string-value is
+part of the node; for other types of node, the string-value is
+computed from the string-value of descendant nodes.</p>
+<p>There is an ordering of nodes, dependent on the type of node.  File
+nodes are lexically ordered, Issue nodes are ordered by issue number,
+etc.  The property nodes of an object occur before the children of
+the object.  The relative order of property nodes is
+implementation-dependent.  Reverse object order is the reverse of
+object order.</p>
+<p>Root nodes and object nodes have an ordered list of child nodes.
+Since Rug path expressions navigate a graph of relationships, it is
+possible to visit a node on the graph multiple times and therefore
+receives the same objects at multiple depths.</p>
+<h3 id="root-node">Root Node<a class="headerlink" href="#root-node" title="Permanent link">&para;</a></h3>
+<p>The root node is the root of the tree. A root node does not occur
+except as the root of the tree.  The type of a root node is dependent
+on the context in which the path expression is evaluated.</p>
+<h3 id="object-nodes">Object Nodes<a class="headerlink" href="#object-nodes" title="Permanent link">&para;</a></h3>
+<p>There is an object node for every object in the graph.</p>
+<p>The children of an object node are the object nodes with a direct
+relationship to it.</p>
+<h3 id="property-nodes">Property Nodes<a class="headerlink" href="#property-nodes" title="Permanent link">&para;</a></h3>
+<p>Each object node has an associated set of property nodes; the
+object is the parent of each of these property nodes; however, an
+property node is not a child of its parent object.</p>
+<p>Objects never share property nodes: if one object node is not the
+same node as another object node, then none of the property nodes of
+the one object node will be the same node as the property nodes of
+another object node.</p>
+<p>All object nodes will have an property named <code>name</code> that provides
+the name of the object node.</p>
+<h3 id="namespace-nodes">Namespace Nodes<a class="headerlink" href="#namespace-nodes" title="Permanent link">&para;</a></h3>
+<p>Namespaces are not supported.</p>
+<h3 id="processing-instruction-nodes">Processing Instruction Nodes<a class="headerlink" href="#processing-instruction-nodes" title="Permanent link">&para;</a></h3>
+<p>Processing instruction nodes are not supported.</p>
+<h3 id="comment-nodes">Comment Nodes<a class="headerlink" href="#comment-nodes" title="Permanent link">&para;</a></h3>
+<p>Comment nodes are not supported.</p>
+<h3 id="text-nodes">Text Nodes<a class="headerlink" href="#text-nodes" title="Permanent link">&para;</a></h3>
+<p>Text nodes are not supported.</p>
+<h2 id="conformance">Conformance<a class="headerlink" href="#conformance" title="Permanent link">&para;</a></h2>
+<p>No conformance information.</p>
+<hr />
+<h2 id="appendix">Appendix<a class="headerlink" href="#appendix" title="Permanent link">&para;</a></h2>
+<h3 id="differences-with-xpath">Differences with XPath<a class="headerlink" href="#differences-with-xpath" title="Permanent link">&para;</a></h3>
+<p>Below is a brief summary of differences between Rug path expressions
+and XPath aimed at getting those who know XPath a fast track to using
+Rug path expressions.</p>
+<ul>
+<li>
+<p>Rug path expressions distinguish between a node type, which are
+    analogous to XPath node types (e.g., root, element, and
+    attribute), and the node&rsquo;s object type, which map to the types of
+    objects in the model being traversed (e.g., Project, File, Issue,
+    and Repo).</p>
+</li>
+<li>
+<p>Rug path expressions have a different set of axis specifiers,
+    eschewing ancestor-related axes, simplifying self/descendant axes,
+    and introducing relationship axes between nodes in the graph.</p>
+</li>
+<li>
+<p>String indices start with zero (0).</p>
+</li>
+<li>
+<p>Rug path expressions do not support comparison of node sets.</p>
+</li>
+<li>
+<p>Tree nodes have an expanded set of type-specific functions that
+    can be called in predicates.</p>
+</li>
+<li>
+<p>Namespaces are not supported.</p>
+</li>
+<li>
+<p>Processing instructions are not relevant.</p>
+</li>
+</ul>
+<h3 id="legacy-content">Legacy Content<a class="headerlink" href="#legacy-content" title="Permanent link">&para;</a></h3>
+<h4 id="exposure-in-typescript">Exposure in TypeScript<a class="headerlink" href="#exposure-in-typescript" title="Permanent link">&para;</a></h4>
+<p>TreeNode hierarchy</p>
+<h4 id="possible-futures">Possible Futures<a class="headerlink" href="#possible-futures" title="Permanent link">&para;</a></h4>
+<p>XPath things we may add in future</p>
+                
+                  
+                
+              
+              
+                
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../generators/" title="Generators" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Generators
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../extensions/" title="Overview" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Overview
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            &copy; 2017 Atomist, Inc.
+          </div>
+        
+        powered by
+        <a href="http://www.mkdocs.org" title="MkDocs">MkDocs</a>
+        and
+        <a href="http://squidfunk.github.io/mkdocs-material/" title="Material for MkDocs">
+          Material for MkDocs</a>
+      </div>
+      
+        
+  <div class="md-footer-social">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+      <a href="https://the-composition.com/" class="md-footer-social__link fa fa-medium"></a>
+    
+      <a href="https://github.com/atomist" class="md-footer-social__link fa fa-github"></a>
+    
+      <a href="https://twitter.com/atomist" class="md-footer-social__link fa fa-twitter"></a>
+    
+      <a href="https://join.atomist.com/" class="md-footer-social__link fa fa-slack"></a>
+    
+  </div>
+
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../../assets/javascripts/application-7aa26ad9ec.js"></script>
+      <script>app.initialize({url:{base:"../../.."}})</script>
+      
+    
+    
+      
+      <script>!function(e,t,a,n,o,c,i){e.GoogleAnalyticsObject=o,e[o]=e[o]||function(){(e[o].q=e[o].q||[]).push(arguments)},e[o].l=1*new Date,c=t.createElement(a),i=t.getElementsByTagName(a)[0],c.async=1,c.src=n,i.parentNode.insertBefore(c,i)}(window,document,"script","https://www.google-analytics.com/analytics.js","ga"),ga("create","UA-74966852-1","auto"),ga("set","anonymizeIp",!0),ga("send","pageview");var links=document.getElementsByTagName("a");Array.prototype.map.call(links,function(e){e.host!=document.location.host&&e.addEventListener("click",function(){var t=e.getAttribute("data-md-action")||"follow";ga("send","event","outbound",t,e.href)})});var query=document.forms.search.query;query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})</script>
+      
+    
+  </body>
+</html>

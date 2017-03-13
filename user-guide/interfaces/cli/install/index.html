@@ -1,0 +1,1803 @@
+
+<!DOCTYPE html>
+<html class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentation for the Atomist Developer Platform">
+      
+      
+      
+        <meta name="author" content="The Atomist Team">
+      
+      
+        <link rel="shortcut icon" href="../../../../images/favicon.ico">
+      
+      <meta name="generator" content="mkdocs-0.16.1, mkdocs-material-1.3.0">
+    
+    
+      
+        <title>Installation - The Atomist Documentation</title>
+      
+    
+    
+      <script src="../../../../assets/javascripts/modernizr-56ade86843.js"></script>
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/application-1d1da4857d.css">
+      
+        <link rel="stylesheet" href="../../../../assets/stylesheets/application-66fa0d9bba.palette.css">
+      
+    
+    
+      
+        
+        
+        
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    
+    
+      <link rel="stylesheet" href="../../../../stylesheets/extra.css">
+    
+    
+  </head>
+  
+  
+  
+  
+    <body data-md-color-primary="green" data-md-color-accent="green">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="drawer">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search">
+    <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <a href="../../../.." title="The Atomist Documentation" class="md-logo md-header-nav__button">
+            <img src="../../../../images/atomist-logo-horiz-reversed.svg" width="24" height="24">
+          </a>
+        
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <span class="md-flex__ellipsis md-header-nav__title">
+          
+            
+              
+                <span class="md-header-nav__parent">
+                  Interfaces
+                </span>
+              
+                <span class="md-header-nav__parent">
+                  CLI
+                </span>
+              
+            
+            Installation
+          
+        </span>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="search"></label>
+          
+<div class="md-search" data-md-component="search">
+  <div class="md-search__overlay"></div>
+  <div class="md-search__inner">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" accesskey="s" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query">
+      <label class="md-icon md-search__icon" for="search"></label>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <div class="md-header-nav__source">
+          
+            
+
+
+  
+
+
+  <a href="https://github.com/atomist/rug" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      Rug
+    </div>
+  </a>
+
+          
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="drawer">
+    
+      <i class="md-logo md-nav__button">
+        <img src="../../../../images/atomist-logo-horiz-reversed.svg">
+      </i>
+    
+    The Atomist Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+
+  <a href="https://github.com/atomist/rug" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      Rug
+    </div>
+  </a>
+
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-1" type="checkbox" id="nav-1">
+    
+    <label class="md-nav__link" for="nav-1">
+      Overview
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-1">
+        Overview
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../.." title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../concepts/" title="Concepts" class="md-nav__link">
+      Concepts
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../capabilities/" title="Capabilities" class="md-nav__link">
+      Capabilities
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      Getting Started
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        Getting Started
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../getting-started/" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../getting-started/prerequisites/" title="Prerequisites" class="md-nav__link">
+      Prerequisites
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../getting-started/invite-atomist-to-slack/" title="Invite Atomist to Slack" class="md-nav__link">
+      Invite Atomist to Slack
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../getting-started/connect-atomist-to-github/" title="Connect Atomist to GitHub" class="md-nav__link">
+      Connect Atomist to GitHub
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../getting-started/putting-atomist-to-work/" title="Putting Atomist to Work" class="md-nav__link">
+      Putting Atomist to Work
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../getting-started/connect-atomist-to-ci/" title="Connect Atomist to CI" class="md-nav__link">
+      Connect Atomist to CI
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../getting-started/build-your-own-development-automation/" title="Build Your Own Development Automation" class="md-nav__link">
+      Build Your Own Development Automation
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
+    
+    <label class="md-nav__link" for="nav-3">
+      User Guide
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        User Guide
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../" title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-2" type="checkbox" id="nav-3-2">
+    
+    <label class="md-nav__link" for="nav-3-2">
+      Rug
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-2">
+        Rug
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../rug/" title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../rug/runtime/" title="Runtime" class="md-nav__link">
+      Runtime
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../rug/typescript/" title="TypeScript" class="md-nav__link">
+      TypeScript
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../rug/handlers/" title="Handlers" class="md-nav__link">
+      Handlers
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../rug/commands/" title="Commands" class="md-nav__link">
+      Commands
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../rug/editors/" title="Editors" class="md-nav__link">
+      Editors
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../rug/generators/" title="Generators" class="md-nav__link">
+      Generators
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../rug/reviewers/" title="Reviewers" class="md-nav__link">
+      Reviewers
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../rug/extensions/" title="Extensions" class="md-nav__link">
+      Extensions
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../rug/path-expressions/" title="Path Expressions" class="md-nav__link">
+      Path Expressions
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../rug/microgrammars/" title="Microgrammars" class="md-nav__link">
+      Microgrammars
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../rug/templates/" title="Templates" class="md-nav__link">
+      Templates
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../rug/tests/" title="Tests" class="md-nav__link">
+      Tests
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../rug/projects/" title="Projects" class="md-nav__link">
+      Projects
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../rug/archives/" title="Archives" class="md-nav__link">
+      Archives
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../rug/lifecycle/" title="Lifecycle" class="md-nav__link">
+      Lifecycle
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../rug/conventions/" title="Conventions" class="md-nav__link">
+      Conventions
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-3" type="checkbox" id="nav-3-3">
+    
+    <label class="md-nav__link" for="nav-3-3">
+      Integrations
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-3">
+        Integrations
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../integrations/" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../integrations/slack/" title="Slack" class="md-nav__link">
+      Slack
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../integrations/github/" title="GitHub.com" class="md-nav__link">
+      GitHub.com
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../integrations/travis-ci/" title="Travis CI" class="md-nav__link">
+      Travis CI
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../integrations/jenkins/" title="Jenkins" class="md-nav__link">
+      Jenkins
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-4" type="checkbox" id="nav-3-4" checked>
+    
+    <label class="md-nav__link" for="nav-3-4">
+      Interfaces
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-4">
+        Interfaces
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../" title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../bot/" title="Bot" class="md-nav__link">
+      Bot
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-4-3" type="checkbox" id="nav-3-4-3" checked>
+    
+    <label class="md-nav__link" for="nav-3-4-3">
+      CLI
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-3-4-3">
+        CLI
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
+    
+      
+    
+    
+    <a href="./" title="Installation" class="md-nav__link md-nav__link--active">
+      Installation
+    </a>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../using-rugs/" title="Using Rugs" class="md-nav__link">
+      Using Rugs
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../developing-rugs/" title="Developing Rugs" class="md-nav__link">
+      Developing Rugs
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      Reference Documentation
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        Reference Documentation
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../reference/" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-2" type="checkbox" id="nav-4-2">
+    
+    <label class="md-nav__link" for="nav-4-2">
+      Rug
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-2">
+        Rug
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../reference/rug/" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-2-2" type="checkbox" id="nav-4-2-2">
+    
+    <label class="md-nav__link" for="nav-4-2-2">
+      Rugs
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-4-2-2">
+        Rugs
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../reference/rug/rugs/" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../reference/rug/editors/" title="Editors" class="md-nav__link">
+      Editors
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../reference/rug/generators/" title="Generators" class="md-nav__link">
+      Generators
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../reference/rug/path-expressions/" title="Path Expressions" class="md-nav__link">
+      Path Expressions
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-2-3" type="checkbox" id="nav-4-2-3">
+    
+    <label class="md-nav__link" for="nav-4-2-3">
+      Language Extensions
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-4-2-3">
+        Language Extensions
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../reference/rug/extensions/" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../reference/rug/extensions/clj-project/" title="CljProject" class="md-nav__link">
+      CljProject
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../reference/rug/extensions/c-sharp-file/" title="CSharpFile" class="md-nav__link">
+      CSharpFile
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../reference/rug/extensions/docker-file/" title="DockerFile" class="md-nav__link">
+      DockerFile
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../reference/rug/extensions/elm-module/" title="ElmModule" class="md-nav__link">
+      ElmModule
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../reference/rug/extensions/every-pom/" title="EveryPom" class="md-nav__link">
+      EveryPom
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../reference/rug/extensions/file/" title="File" class="md-nav__link">
+      File
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../reference/rug/extensions/java-project/" title="JavaProject" class="md-nav__link">
+      JavaProject
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../reference/rug/extensions/java-source/" title="JavaSource" class="md-nav__link">
+      JavaSource
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../reference/rug/extensions/java-type/" title="JavaType" class="md-nav__link">
+      JavaType
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../reference/rug/extensions/json/" title="Json" class="md-nav__link">
+      Json
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../reference/rug/extensions/line/" title="Line" class="md-nav__link">
+      Line
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../reference/rug/extensions/pom/" title="Pom" class="md-nav__link">
+      Pom
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../reference/rug/extensions/project/" title="Project" class="md-nav__link">
+      Project
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../reference/rug/extensions/properties/" title="Properties" class="md-nav__link">
+      Properties
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../reference/rug/extensions/python-file/" title="PythonFile" class="md-nav__link">
+      PythonFile
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../reference/rug/extensions/python-requirements-txt/" title="PythonRequirementsTxt" class="md-nav__link">
+      PythonRequirementsTxt
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../reference/rug/extensions/rug-archive-project/" title="RugArchiveProject" class="md-nav__link">
+      RugArchiveProject
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../reference/rug/extensions/rug-file/" title="RugFile" class="md-nav__link">
+      RugFile
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../reference/rug/extensions/scala-file/" title="ScalaFile" class="md-nav__link">
+      ScalaFile
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../reference/rug/extensions/services/" title="Services" class="md-nav__link">
+      Services
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../reference/rug/extensions/spring-boot-project/" title="SpringBootProject" class="md-nav__link">
+      SpringBootProject
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../reference/rug/extensions/xml/" title="Xml" class="md-nav__link">
+      Xml
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../reference/rug/extensions/yml/" title="Yml" class="md-nav__link">
+      Yml
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-2-4" type="checkbox" id="nav-4-2-4">
+    
+    <label class="md-nav__link" for="nav-4-2-4">
+      DSL
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-4-2-4">
+        DSL
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../reference/rug/dsl/" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../reference/rug/dsl/syntax/" title="Syntax" class="md-nav__link">
+      Syntax
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../reference/rug/dsl/javascript/" title="Using JavaScript" class="md-nav__link">
+      Using JavaScript
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../reference/rug-cli/" title="Rug CLI" class="md-nav__link">
+      Rug CLI
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#install-the-rug-cli-on-mac-os-x-macos" title="Install the Rug CLI on Mac OS X / macOS" class="md-nav__link">
+    Install the Rug CLI on Mac OS X / macOS
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#install-the-rug-cli-on-linux" title="Install the RUG CLI on Linux" class="md-nav__link">
+    Install the RUG CLI on Linux
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#debianubuntu" title="Debian/Ubuntu" class="md-nav__link">
+    Debian/Ubuntu
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#redhatcentos" title="RedHat/CentOS" class="md-nav__link">
+    RedHat/CentOS
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#install-the-rug-cli-on-windows" title="Install the RUG CLI on Windows" class="md-nav__link">
+    Install the RUG CLI on Windows
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#docker-installation" title="Docker installation" class="md-nav__link">
+    Docker installation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#manual-installation" title="Manual installation" class="md-nav__link">
+    Manual installation
+  </a>
+  
+</li>
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  <h1>Installation</h1>
+                
+                <p>You can install the Rug command-line interface (CLI) using the
+standard developer packaging tools for your platform.  We currently
+support installing the Rug CLI on GNU/Linux Deb and RPM distributions,
+Mac OS X/macOS using <a href="http://brew.sh/">Homebrew</a>, and MS Windows
+using <a href="https://chocolatey.org/">Chocolatey</a>.</p>
+<h3 id="install-the-rug-cli-on-mac-os-x-macos">Install the Rug CLI on Mac OS X / macOS<a class="headerlink" href="#install-the-rug-cli-on-mac-os-x-macos" title="Permanent link">&para;</a></h3>
+<p>The easiest way to get start on a Mac is to install the Rug CLI using
+our <a href="http://brew.sh/">Homebrew</a> <a href="https://github.com/Homebrew/homebrew/tree/master/share/doc/homebrew#readme">tap</a> repository.</p>
+<p>Once you have Homebrew installed, it is just two easy steps:</p>
+<div class="codehilite"><pre><span></span><span class="gp">$</span> brew tap atomist/tap
+<span class="gp">$</span> brew install rug-cli
+</pre></div>
+
+
+<p>If you&rsquo;d like to stay on the latest, possible unstable and un-released, version of the CLI you can install HEAD from:</p>
+<div class="codehilite"><pre><span></span><span class="gp">$</span> brew upgrade --HEAD rug-cli --fetch-HEAD
+</pre></div>
+
+
+<h3 id="install-the-rug-cli-on-linux">Install the RUG CLI on Linux<a class="headerlink" href="#install-the-rug-cli-on-linux" title="Permanent link">&para;</a></h3>
+<p>We support installing via packages on Debian and RPM-based GNU/Linux
+distributions.</p>
+<h4 id="debianubuntu">Debian/Ubuntu<a class="headerlink" href="#debianubuntu" title="Permanent link">&para;</a></h4>
+<p>To install on a Debian-based distributions, follow the next instructions:</p>
+<ol>
+<li>
+<p>Grab the public GPG key for the repository:</p>
+<p><div class="codehilite"><pre><span></span><span class="gp">$</span> wget -qO - <span class="s1">&#39;https://atomist.jfrog.io/atomist/api/gpg/key/public&#39;</span> <span class="p">|</span> sudo apt-key add -
+</pre></div>
+
+2.  Add a new apt source entry:</p>
+<p><div class="codehilite"><pre><span></span><span class="gp">$</span> <span class="nb">echo</span> <span class="s2">&quot;deb https://atomist.jfrog.io/atomist/debian </span><span class="k">$(</span>lsb_release -c -s<span class="k">)</span><span class="s2"> main&quot;</span> <span class="p">|</span> sudo tee /etc/apt/sources.list.d/atomist.list
+</pre></div>
+
+3.  Update the metadata:</p>
+<p><div class="codehilite"><pre><span></span><span class="gp">$</span> sudo apt-get update
+</pre></div>
+
+4.  Install the CLI:</p>
+<div class="codehilite"><pre><span></span><span class="gp">$</span> sudo apt-get install rug-cli
+</pre></div>
+
+
+</li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">JDK 8 Requirement</p>
+<p>Rug and the CLI require Java 8. Until Rug CLI 0.22, the package would try
+to automatically install the appropriate JDK but different people install Java
+differently on their machine. Therefore, starting with Rug CLI 0.22, the package
+only suggests to install the dependency and emits the following message when
+running the CLI without a proper Java 8 found:</p>
+</div>
+<div class="codehilite"><pre><span></span><span class="gp">$</span> rug
+<span class="go">JAVA_HOME not set and cannot find javac to deduce location, please set JAVA_HOME.</span>
+</pre></div>
+
+
+<p>In that case, you must ensure you set the <code>JAVA_HOME</code> variable for your system
+so that it points to a valid Java 8 JDK directory. On recent, Debian/Ubuntu
+distributions, you can simply run <code>sudo apt-get install openjdk-8-jdk</code>. On older
+distributions, either install Java 8 manually and set the according variable,
+or try the following instructions:</p>
+<div class="codehilite"><pre><span></span><span class="gp">$</span> sudo add-apt-repository ppa:openjdk-r/ppa
+<span class="gp">$</span> sudo apt-get update
+<span class="gp">$</span> sudo apt-get install openjdk-8-jdk
+</pre></div>
+
+
+<h4 id="redhatcentos">RedHat/CentOS<a class="headerlink" href="#redhatcentos" title="Permanent link">&para;</a></h4>
+<p>To install on a RedHat-based distributions, follow the next instructions:</p>
+<ol>
+<li>
+<p>Add a new yum repository:</p>
+<div class="codehilite"><pre><span></span><span class="gp">$</span> cat &lt;&lt;EOF <span class="p">|</span> sudo tee /etc/yum.repos.d/atomist.repo
+<span class="go">[Atomist]</span>
+<span class="go">name=Atomist</span>
+<span class="go">baseurl=https://atomist.jfrog.io/atomist/yum/</span>
+<span class="go">enabled=1</span>
+<span class="go">gpgcheck=0</span>
+<span class="go">EOF</span>
+</pre></div>
+
+
+</li>
+<li>
+<p>Install the CLI:</p>
+<div class="codehilite"><pre><span></span><span class="gp">$</span> sudo yum install rug-cli
+</pre></div>
+
+
+</li>
+</ol>
+<p>The only required dependency is the JDK version 8 or later.</p>
+<h3 id="install-the-rug-cli-on-windows">Install the RUG CLI on Windows<a class="headerlink" href="#install-the-rug-cli-on-windows" title="Permanent link">&para;</a></h3>
+<p>We used <a href="https://docs.nuget.org/">Nuget</a> and <a href="https://chocolatey.org/">Chocolatey</a> to package and
+distribute the CLI on Windows systems (actually wherever .NET and
+Powershell run).</p>
+<p>The following steps have been tested on Windows 10, your mileage may vary.</p>
+<ol>
+<li>
+<p>Install Chocolatey on your host as per
+    the <a href="https://chocolatey.org/install">doc</a></p>
+</li>
+<li>
+<p>Install the <a href="https://chocolatey.org/packages/jdk8">jdk8</a>
+    dependency using chocolatey as an Administrator:
+    <div class="codehilite"><pre><span></span><span class="go">(admin) C:\ &gt; choco install jdk8</span>
+</pre></div>
+</p>
+</li>
+<li>
+<p>Then, install the CLI using Chocolatey as an administrator:</p>
+<div class="codehilite"><pre><span></span><span class="go">(admin) C:\ &gt; choco install rug-cli -s &quot;&#39;https://atomist.jfrog.io/atomist/api/nuget/nuget&#39;&quot;</span>
+</pre></div>
+
+
+<p>The CLI will be installed in
+<code>%programdata%\Chocolatey\lib\rug-cli</code> and available to your
+<code>%PATH%</code>. You can now run as a normal user:</p>
+<div class="codehilite"><pre><span></span><span class="go">(user) C:\ &gt; rug --version</span>
+<span class="go">rug 0.13.0</span>
+<span class="go">atomist/rug-cli.git (git revision 2cde8f5: last commit 2016-12-01)</span>
+</pre></div>
+
+
+<p>Notice, you will find the <code>.atomist</code> directory for settings and
+artifacts in <code>%USERPROFILE%\.atomist</code></p>
+</li>
+</ol>
+<p>You can keep your Rug CLI up to dat by regularly upgrading:</p>
+<div class="codehilite"><pre><span></span><span class="go">(admin) C:\ &gt; choco upgrade rug-cli -s &quot;&#39;https://atomist.jfrog.io/atomist/api/nuget/nuget&#39;&quot;</span>
+</pre></div>
+
+
+<p>You can remove the Rug CLI if you no longer want it installed:</p>
+<div class="codehilite"><pre><span></span><span class="go">(admin) C:\ &gt; choco uninstall rug-cli</span>
+</pre></div>
+
+
+<p>Files and directories in <code>%USERPROFILE%\.atomist</code> will not be
+removed. You can safely delete that directory manually if you don&rsquo;t
+intend to use the CLI any longer.</p>
+<h3 id="docker-installation">Docker installation<a class="headerlink" href="#docker-installation" title="Permanent link">&para;</a></h3>
+<p>If you cannot install using a system-wide approach, you can rely also on
+downloading the CLI through a Docker image we provide.</p>
+<div class="codehilite"><pre><span></span><span class="gp">$</span> docker pull atomist-docker.jfrog.io/rug-cli
+</pre></div>
+
+
+<p>Running the image as will give you the Rug shell:</p>
+<div class="codehilite"><pre><span></span><span class="gp">$</span> docker run --rm -it atomist-docker.jfrog.io/rug-cli
+<span class="go">Resolving dependencies for com.atomist:rug:0.12.0 completed</span>
+<span class="go">Initializing shell for com.atomist:rug:0.12.0 completed</span>
+<span class="go">Press &#39;Tab&#39; to complete. Type &#39;help&#39; and hit &#39;Return&#39; for help, and &#39;exit&#39; to quit.</span>
+<span class="go">rug →</span>
+</pre></div>
+
+
+<p>If you want to run the CLI, the image expects you to call <code>rug</code> as its first
+argument. For instance:</p>
+<div class="codehilite"><pre><span></span><span class="gp">$</span> docker run --rm -it atomist-docker.jfrog.io/rug-cli rug --version
+<span class="go">rug 0.23.0</span>
+<span class="go">https://github.com/atomist/rug-cli.git (git revision e77cf5f; last commit 2017-02-14)</span>
+</pre></div>
+
+
+<p>Notice how the CLI stores its settings <strong>inside the container</strong> under
+<code>/home/atomist/.atomist/cli.yml</code>. All the dependencies will be downloaded into
+the <code>/home/atomist/.atomist/repository</code> directory.</p>
+<p>You can persist those on your host by providing the following argument to the
+docker run command: <code>-v $HOME/.atomist:/home/atomist/.atomist</code>.</p>
+<p>To use the CLI against a project on your host, you will also need to share your
+project&rsquo;s directory with the container <code>/home/atomist/project</code> container&rsquo;s
+working directory. For example, assuming you are currently in a Rug project:</p>
+<div class="codehilite"><pre><span></span><span class="gp">$</span> docker run --rm -it <span class="se">\</span>
+    --user <span class="nv">$UID</span>:<span class="sb">`</span>id -g<span class="sb">`</span> <span class="se">\</span>
+    -v <span class="nv">$HOME</span>/.atomist:/home/atomist/.atomist <span class="se">\</span>
+    -v <span class="nv">$PWD</span>:/home/atomist/project <span class="se">\</span>
+    atomist-docker.jfrog.io/rug-cli <span class="se">\</span>
+    rug
+</pre></div>
+
+
+<p>The constraint here is the limit imposed by the management of permissions
+between your host&rsquo;s user and the user defined in the container.</p>
+<p>In the container, the CLI is not run as <code>root</code> but as a regular user that
+hopefully does not map any UID on your system. A possible workaround is
+to switch to a different user at runtime, hence the rather ugly command line
+above. Another approach is to switch to <a href="https://success.docker.com/KBase/Introduction_to_User_Namespaces_in_Docker_Engine">user namespace</a> on your host.</p>
+<h3 id="manual-installation">Manual installation<a class="headerlink" href="#manual-installation" title="Permanent link">&para;</a></h3>
+<p>If you are not on a supported platform, or just prefer to install the
+Rug CLI yourself, you can download the Rug CLI archive, unpack it, and
+simply put it its <code>bin</code> directory in your <code>PATH</code>.</p>
+<ol>
+<li>
+<p>Make sure you have Java 8 or later installed.  Run the following
+    command in a terminal and make sure you get an output something
+    like that shown.</p>
+<div class="codehilite"><pre><span></span><span class="gp">$</span> java -version
+<span class="go">java version &quot;1.8.0_66&quot;</span>
+<span class="go">Java(TM) SE Runtime Environment (build 1.8.0_66-b17)</span>
+<span class="go">Java HotSpot(TM) 64-Bit Server VM (build 25.66-b17, mixed mode)</span>
+</pre></div>
+
+
+<p>If that command is unsuccessful, see <a href="https://java.com/en/download/help/index_installing.xml?os=All+Platforms&amp;j=8&amp;n=20">Installing Java</a>
+or <a href="http://openjdk.java.net/install/">Installing OpenJDK</a>.</p>
+</li>
+<li>
+<p>Download either the <code>.tar.gz</code> or <code>.zip</code> archive from the
+    <a href="https://github.com/atomist/rug-cli/releases/latest">latest Rug CLI release</a>.</p>
+</li>
+<li>
+<p>Unpack the archive in an appropriate location.  Replace <code>VERSION</code>
+    with the version you downloaded.</p>
+<div class="codehilite"><pre><span></span><span class="gp">$</span> mkdir <span class="nv">$HOME</span>/opt
+<span class="gp">$</span> <span class="nb">cd</span> <span class="nv">$HOME</span>/opt
+<span class="gp">$</span> tar -x -z -f rug-cli-VERSION-bin.tar.gz
+<span class="gp">$</span> ln -s rug-cli-VERSION rug-cli
+</pre></div>
+
+
+<p>or</p>
+<div class="codehilite"><pre><span></span><span class="gp">$</span> mkdir <span class="nv">$HOME</span>/opt
+<span class="gp">$</span> <span class="nb">cd</span> <span class="nv">$HOME</span>/opt
+<span class="gp">$</span> unzip rug-cli-VERSION-bin.zip
+<span class="gp">$</span> ln -s rug-cli-VERSION rug-cli
+</pre></div>
+
+
+<p>On MS Windows, download the <code>.zip</code> and double-click it to extract
+its contents.</p>
+</li>
+<li>
+<p>Add the Rug CLI <code>bin</code> directory to your <code>PATH</code>.</p>
+<div class="codehilite"><pre><span></span><span class="gp">$</span> <span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="nv">$PATH</span>:<span class="nv">$HOME</span>/opt/rug-cli/bin
+</pre></div>
+
+
+<p>Add the above command to your shell startup script to ensure you
+always will have access to the Rug CLI.  On MS Windows,
+see <a href="http://www.howtogeek.com/118594/how-to-edit-your-system-path-for-easy-command-line-access/">How to Edit Your System Path</a>, adding the <code>bin</code>
+directory of the archive you unpacked in the previous step.</p>
+</li>
+</ol>
+                
+                  
+                
+              
+              
+                
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../" title="Overview" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Overview
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../using-rugs/" title="Using Rugs" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Using Rugs
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            &copy; 2017 Atomist, Inc.
+          </div>
+        
+        powered by
+        <a href="http://www.mkdocs.org" title="MkDocs">MkDocs</a>
+        and
+        <a href="http://squidfunk.github.io/mkdocs-material/" title="Material for MkDocs">
+          Material for MkDocs</a>
+      </div>
+      
+        
+  <div class="md-footer-social">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+      <a href="https://the-composition.com/" class="md-footer-social__link fa fa-medium"></a>
+    
+      <a href="https://github.com/atomist" class="md-footer-social__link fa fa-github"></a>
+    
+      <a href="https://twitter.com/atomist" class="md-footer-social__link fa fa-twitter"></a>
+    
+      <a href="https://join.atomist.com/" class="md-footer-social__link fa fa-slack"></a>
+    
+  </div>
+
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../../../assets/javascripts/application-7aa26ad9ec.js"></script>
+      <script>app.initialize({url:{base:"../../../.."}})</script>
+      
+    
+    
+      
+      <script>!function(e,t,a,n,o,c,i){e.GoogleAnalyticsObject=o,e[o]=e[o]||function(){(e[o].q=e[o].q||[]).push(arguments)},e[o].l=1*new Date,c=t.createElement(a),i=t.getElementsByTagName(a)[0],c.async=1,c.src=n,i.parentNode.insertBefore(c,i)}(window,document,"script","https://www.google-analytics.com/analytics.js","ga"),ga("create","UA-74966852-1","auto"),ga("set","anonymizeIp",!0),ga("send","pageview");var links=document.getElementsByTagName("a");Array.prototype.map.call(links,function(e){e.host!=document.location.host&&e.addEventListener("click",function(){var t=e.getAttribute("data-md-action")||"follow";ga("send","event","outbound",t,e.href)})});var query=document.forms.search.query;query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})</script>
+      
+    
+  </body>
+</html>

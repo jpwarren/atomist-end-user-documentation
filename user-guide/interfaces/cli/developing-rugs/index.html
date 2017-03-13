@@ -1,0 +1,2092 @@
+
+<!DOCTYPE html>
+<html class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentation for the Atomist Developer Platform">
+      
+      
+      
+        <meta name="author" content="The Atomist Team">
+      
+      
+        <link rel="shortcut icon" href="../../../../images/favicon.ico">
+      
+      <meta name="generator" content="mkdocs-0.16.1, mkdocs-material-1.3.0">
+    
+    
+      
+        <title>Developing Rugs - The Atomist Documentation</title>
+      
+    
+    
+      <script src="../../../../assets/javascripts/modernizr-56ade86843.js"></script>
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/application-1d1da4857d.css">
+      
+        <link rel="stylesheet" href="../../../../assets/stylesheets/application-66fa0d9bba.palette.css">
+      
+    
+    
+      
+        
+        
+        
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    
+    
+      <link rel="stylesheet" href="../../../../stylesheets/extra.css">
+    
+    
+  </head>
+  
+  
+  
+  
+    <body data-md-color-primary="green" data-md-color-accent="green">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="drawer">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search">
+    <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <a href="../../../.." title="The Atomist Documentation" class="md-logo md-header-nav__button">
+            <img src="../../../../images/atomist-logo-horiz-reversed.svg" width="24" height="24">
+          </a>
+        
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <span class="md-flex__ellipsis md-header-nav__title">
+          
+            
+              
+                <span class="md-header-nav__parent">
+                  Interfaces
+                </span>
+              
+                <span class="md-header-nav__parent">
+                  CLI
+                </span>
+              
+            
+            Developing Rugs
+          
+        </span>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="search"></label>
+          
+<div class="md-search" data-md-component="search">
+  <div class="md-search__overlay"></div>
+  <div class="md-search__inner">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" accesskey="s" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query">
+      <label class="md-icon md-search__icon" for="search"></label>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <div class="md-header-nav__source">
+          
+            
+
+
+  
+
+
+  <a href="https://github.com/atomist/rug" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      Rug
+    </div>
+  </a>
+
+          
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="drawer">
+    
+      <i class="md-logo md-nav__button">
+        <img src="../../../../images/atomist-logo-horiz-reversed.svg">
+      </i>
+    
+    The Atomist Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+
+  <a href="https://github.com/atomist/rug" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      Rug
+    </div>
+  </a>
+
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-1" type="checkbox" id="nav-1">
+    
+    <label class="md-nav__link" for="nav-1">
+      Overview
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-1">
+        Overview
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../.." title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../concepts/" title="Concepts" class="md-nav__link">
+      Concepts
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../capabilities/" title="Capabilities" class="md-nav__link">
+      Capabilities
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      Getting Started
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        Getting Started
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../getting-started/" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../getting-started/prerequisites/" title="Prerequisites" class="md-nav__link">
+      Prerequisites
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../getting-started/invite-atomist-to-slack/" title="Invite Atomist to Slack" class="md-nav__link">
+      Invite Atomist to Slack
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../getting-started/connect-atomist-to-github/" title="Connect Atomist to GitHub" class="md-nav__link">
+      Connect Atomist to GitHub
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../getting-started/putting-atomist-to-work/" title="Putting Atomist to Work" class="md-nav__link">
+      Putting Atomist to Work
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../getting-started/connect-atomist-to-ci/" title="Connect Atomist to CI" class="md-nav__link">
+      Connect Atomist to CI
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../getting-started/build-your-own-development-automation/" title="Build Your Own Development Automation" class="md-nav__link">
+      Build Your Own Development Automation
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
+    
+    <label class="md-nav__link" for="nav-3">
+      User Guide
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        User Guide
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../" title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-2" type="checkbox" id="nav-3-2">
+    
+    <label class="md-nav__link" for="nav-3-2">
+      Rug
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-2">
+        Rug
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../rug/" title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../rug/runtime/" title="Runtime" class="md-nav__link">
+      Runtime
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../rug/typescript/" title="TypeScript" class="md-nav__link">
+      TypeScript
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../rug/handlers/" title="Handlers" class="md-nav__link">
+      Handlers
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../rug/commands/" title="Commands" class="md-nav__link">
+      Commands
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../rug/editors/" title="Editors" class="md-nav__link">
+      Editors
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../rug/generators/" title="Generators" class="md-nav__link">
+      Generators
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../rug/reviewers/" title="Reviewers" class="md-nav__link">
+      Reviewers
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../rug/extensions/" title="Extensions" class="md-nav__link">
+      Extensions
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../rug/path-expressions/" title="Path Expressions" class="md-nav__link">
+      Path Expressions
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../rug/microgrammars/" title="Microgrammars" class="md-nav__link">
+      Microgrammars
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../rug/templates/" title="Templates" class="md-nav__link">
+      Templates
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../rug/tests/" title="Tests" class="md-nav__link">
+      Tests
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../rug/projects/" title="Projects" class="md-nav__link">
+      Projects
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../rug/archives/" title="Archives" class="md-nav__link">
+      Archives
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../rug/lifecycle/" title="Lifecycle" class="md-nav__link">
+      Lifecycle
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../rug/conventions/" title="Conventions" class="md-nav__link">
+      Conventions
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-3" type="checkbox" id="nav-3-3">
+    
+    <label class="md-nav__link" for="nav-3-3">
+      Integrations
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-3">
+        Integrations
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../integrations/" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../integrations/slack/" title="Slack" class="md-nav__link">
+      Slack
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../integrations/github/" title="GitHub.com" class="md-nav__link">
+      GitHub.com
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../integrations/travis-ci/" title="Travis CI" class="md-nav__link">
+      Travis CI
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../integrations/jenkins/" title="Jenkins" class="md-nav__link">
+      Jenkins
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-4" type="checkbox" id="nav-3-4" checked>
+    
+    <label class="md-nav__link" for="nav-3-4">
+      Interfaces
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-4">
+        Interfaces
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../" title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../bot/" title="Bot" class="md-nav__link">
+      Bot
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-4-3" type="checkbox" id="nav-3-4-3" checked>
+    
+    <label class="md-nav__link" for="nav-3-4-3">
+      CLI
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-3-4-3">
+        CLI
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../install/" title="Installation" class="md-nav__link">
+      Installation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../using-rugs/" title="Using Rugs" class="md-nav__link">
+      Using Rugs
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
+    
+      
+    
+    
+    <a href="./" title="Developing Rugs" class="md-nav__link md-nav__link--active">
+      Developing Rugs
+    </a>
+    
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      Reference Documentation
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        Reference Documentation
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../reference/" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-2" type="checkbox" id="nav-4-2">
+    
+    <label class="md-nav__link" for="nav-4-2">
+      Rug
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-2">
+        Rug
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../reference/rug/" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-2-2" type="checkbox" id="nav-4-2-2">
+    
+    <label class="md-nav__link" for="nav-4-2-2">
+      Rugs
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-4-2-2">
+        Rugs
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../reference/rug/rugs/" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../reference/rug/editors/" title="Editors" class="md-nav__link">
+      Editors
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../reference/rug/generators/" title="Generators" class="md-nav__link">
+      Generators
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../reference/rug/path-expressions/" title="Path Expressions" class="md-nav__link">
+      Path Expressions
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-2-3" type="checkbox" id="nav-4-2-3">
+    
+    <label class="md-nav__link" for="nav-4-2-3">
+      Language Extensions
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-4-2-3">
+        Language Extensions
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../reference/rug/extensions/" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../reference/rug/extensions/clj-project/" title="CljProject" class="md-nav__link">
+      CljProject
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../reference/rug/extensions/c-sharp-file/" title="CSharpFile" class="md-nav__link">
+      CSharpFile
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../reference/rug/extensions/docker-file/" title="DockerFile" class="md-nav__link">
+      DockerFile
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../reference/rug/extensions/elm-module/" title="ElmModule" class="md-nav__link">
+      ElmModule
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../reference/rug/extensions/every-pom/" title="EveryPom" class="md-nav__link">
+      EveryPom
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../reference/rug/extensions/file/" title="File" class="md-nav__link">
+      File
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../reference/rug/extensions/java-project/" title="JavaProject" class="md-nav__link">
+      JavaProject
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../reference/rug/extensions/java-source/" title="JavaSource" class="md-nav__link">
+      JavaSource
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../reference/rug/extensions/java-type/" title="JavaType" class="md-nav__link">
+      JavaType
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../reference/rug/extensions/json/" title="Json" class="md-nav__link">
+      Json
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../reference/rug/extensions/line/" title="Line" class="md-nav__link">
+      Line
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../reference/rug/extensions/pom/" title="Pom" class="md-nav__link">
+      Pom
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../reference/rug/extensions/project/" title="Project" class="md-nav__link">
+      Project
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../reference/rug/extensions/properties/" title="Properties" class="md-nav__link">
+      Properties
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../reference/rug/extensions/python-file/" title="PythonFile" class="md-nav__link">
+      PythonFile
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../reference/rug/extensions/python-requirements-txt/" title="PythonRequirementsTxt" class="md-nav__link">
+      PythonRequirementsTxt
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../reference/rug/extensions/rug-archive-project/" title="RugArchiveProject" class="md-nav__link">
+      RugArchiveProject
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../reference/rug/extensions/rug-file/" title="RugFile" class="md-nav__link">
+      RugFile
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../reference/rug/extensions/scala-file/" title="ScalaFile" class="md-nav__link">
+      ScalaFile
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../reference/rug/extensions/services/" title="Services" class="md-nav__link">
+      Services
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../reference/rug/extensions/spring-boot-project/" title="SpringBootProject" class="md-nav__link">
+      SpringBootProject
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../reference/rug/extensions/xml/" title="Xml" class="md-nav__link">
+      Xml
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../reference/rug/extensions/yml/" title="Yml" class="md-nav__link">
+      Yml
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-2-4" type="checkbox" id="nav-4-2-4">
+    
+    <label class="md-nav__link" for="nav-4-2-4">
+      DSL
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-4-2-4">
+        DSL
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../reference/rug/dsl/" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../reference/rug/dsl/syntax/" title="Syntax" class="md-nav__link">
+      Syntax
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../reference/rug/dsl/javascript/" title="Using JavaScript" class="md-nav__link">
+      Using JavaScript
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../reference/rug-cli/" title="Rug CLI" class="md-nav__link">
+      Rug CLI
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#installing-the-rug-cli" title="Installing the Rug CLI" class="md-nav__link">
+    Installing the Rug CLI
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#additional-dependencies" title="Additional Dependencies" class="md-nav__link">
+    Additional Dependencies
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quick-cli-tour" title="Quick CLI Tour" class="md-nav__link">
+    Quick CLI Tour
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#get-some-rugs" title="Get some Rugs" class="md-nav__link">
+    Get some Rugs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-those-rugs" title="Test those Rugs" class="md-nav__link">
+    Test those Rugs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#make-your-rugs-available" title="Make your Rugs Available" class="md-nav__link">
+    Make your Rugs Available
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#list-the-installed-editors" title="List the installed Editors" class="md-nav__link">
+    List the installed Editors
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#run-an-editor" title="Run an Editor" class="md-nav__link">
+    Run an Editor
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  <h1>Developing Rugs</h1>
+                
+                <p>The Rug CLI gives you the tooling to search, install, and run public
+and private Rugs on your local machine. It is also the tool to
+develop, test and publish your own Rugs.</p>
+<h2 id="installing-the-rug-cli">Installing the Rug CLI<a class="headerlink" href="#installing-the-rug-cli" title="Permanent link">&para;</a></h2>
+<p>You can install the Rug command-line interface using standard
+packaging tools for your operating system.
+See <a href="../install/">Rug CLI Installation</a> for instructions.</p>
+<h2 id="additional-dependencies">Additional Dependencies<a class="headerlink" href="#additional-dependencies" title="Permanent link">&para;</a></h2>
+<p>Rugs are implemented in <a href="https://www.typescriptlang.org/">TypeScript</a> and it is recommended you install
+<a href="https://docs.npmjs.com/getting-started/installing-node">npm</a>. You should also get an IDE that has good support for that
+language.</p>
+<h2 id="quick-cli-tour">Quick CLI Tour<a class="headerlink" href="#quick-cli-tour" title="Permanent link">&para;</a></h2>
+<h3 id="get-some-rugs">Get some Rugs<a class="headerlink" href="#get-some-rugs" title="Permanent link">&para;</a></h3>
+<p>To generate and edit code with Rug automation, you should become
+familiar with Rug editors, generators, and reviewers.  The best way to
+do that is to look at some examples.  Some simple examples of Rug
+editors can be found in the <a href="https://github.com/atomist-rugs/common-editors">common-editors</a> repo.  You can
+clone that repo with the following command.</p>
+<div class="codehilite"><pre><span></span><span class="gp">$</span> git clone https://github.com/atomist-rugs/common-editors.git
+<span class="gp">$</span> <span class="nb">cd</span> common-editors
+<span class="gp">$</span> ls -1F
+<span class="go">CHANGELOG.md</span>
+<span class="go">CODE_OF_CONDUCT.md</span>
+<span class="go">LICENSE</span>
+<span class="go">README.md</span>
+<span class="go">src/</span>
+</pre></div>
+
+
+<p>You cloned the repo, but where are the Rugs?  Rugs are always located
+in the <code>.atomist</code> directory at the top level of the project, i.e., the
+same directory that has the <code>.git</code> directory.</p>
+<div class="codehilite"><pre><span></span><span class="gp">$</span> ls -1F .atomist/
+<span class="go">build/</span>
+<span class="go">editors/</span>
+<span class="go">manifest.yml</span>
+<span class="go">target/</span>
+<span class="go">templates/</span>
+<span class="go">tests/</span>
+</pre></div>
+
+
+<p>Here you can see the standard layout for a Rug directory.  It has a
+<code>manifest.yml</code> describing the contents of the project.  Think of this
+as the metadata for your Rugs, i.e., the name, version, dependencies,
+etc.  The editors and generators are in the <code>editors</code> directory.  Any
+templates are in the <code>templates</code> directory.  Testing is integral to
+Rug, so we also use a <code>tests</code> directory to hold all our tests.  There
+is also a <code>build</code> directory that contains the repository&rsquo;s CI scripts
+and configurations.</p>
+<p>Let&rsquo;s see what editors we have available.</p>
+<div class="codehilite"><pre><span></span><span class="gp">$</span> awk <span class="s1">&#39;$1 == &quot;editor&quot; { print $2 }&#39;</span> .atomist/editors/*.rug
+<span class="go">AddApacheSoftwareLicense20</span>
+<span class="go">AddChangeLog</span>
+<span class="go">AddReadme</span>
+<span class="go">AddScalaMavenGitIgnore</span>
+<span class="go">ClassRenamer</span>
+<span class="go">PackageMove</span>
+<span class="go">PomParameterizer</span>
+<span class="go">RemoveApacheSoftwareLicense20</span>
+<span class="go">RemoveChangeLog</span>
+<span class="go">RemoveCodeOfConduct</span>
+</pre></div>
+
+
+<p>Feel free to look around in the <code>.atomist</code> directory to see what is
+there, investigate the Rug syntax, and see what the tests look like.</p>
+<h3 id="test-those-rugs">Test those Rugs<a class="headerlink" href="#test-those-rugs" title="Permanent link">&para;</a></h3>
+<p>It is a best practice to provide tests for your Rugs.  The first Rug
+command we are going to try will run all of the tests available in the
+common-editors repo.</p>
+<div class="codehilite"><pre><span></span><span class="gp">$</span> rug <span class="nb">test</span>
+<span class="go">Processing dependencies</span>
+<span class="go">  Downloading com/atomist/rug/maven-metadata.xml ← rug-types (0kb) succeeded</span>
+<span class="go">  Downloading com/atomist/rug-cli-root/1.0.0/rug-cli-root-1.0.0.pom ← rug-types (0kb) succeeded</span>
+<span class="go">  Downloading com/atomist/rug/maven-metadata.xml ← rug-types (2kb) succeeded</span>
+<span class="go">  Downloading com/atomist/rug/0.8.0/rug-0.8.0.pom ← rug-types (13kb) succeeded</span>
+<span class="go">  ... (more downloads)</span>
+<span class="go">  Downloading com/atomist/rug-cli-root/1.0.0/rug-cli-root-1.0.0.jar ← rug-types (1kb) succeeded</span>
+<span class="go">  Downloading org/scala-lang/scala-reflect/2.11.8/scala-reflect-2.11.8.jar ← maven-central (4466kb) succeeded</span>
+<span class="go">Resolving dependencies for atomist-rugs:common-editors:0.7.0 ← local completed</span>
+<span class="go">Loading atomist-rugs:common-editors:0.7.0 ← local into runtime completed</span>
+<span class="go">Executing scenario AddApacheSoftwareLicense20 should add a new LICENSE file according to a provided template...</span>
+<span class="go">  Testing assertion fileExists(SimpleLiteral(LICENSE))</span>
+<span class="go">  Testing assertion fileContains(SimpleLiteral(LICENSE),SimpleLiteral(Version 2.0, January 2004))</span>
+<span class="go">Executing scenario AddChangeLog should add CHANGELOG.md...</span>
+<span class="go">  Testing assertion fileExists(IdentifierFunctionArg(changelog,None))</span>
+<span class="go">  Testing assertion fileContains(IdentifierFunctionArg(changelog,None),IdentifierFunctionArg(repo_slug,None))</span>
+<span class="go">Executing scenario AddChangeLog should overwrite CHANGELOG.md...</span>
+<span class="go">  Testing assertion fileExists(IdentifierFunctionArg(changelog,None))</span>
+<span class="go">  Testing assertion fileContains(IdentifierFunctionArg(changelog,None),IdentifierFunctionArg(repo_slug,None))</span>
+<span class="go">  Testing assertion ParsedJavaScriptFunction(JavaScriptBlock( !result.fileContains(changelog, &quot;common-editor&quot;) ))</span>
+<span class="go">Executing scenario AddChangeLog should reject invalid repo_slug...</span>
+<span class="go">Executing scenario AddChangeLog should reject missing parameter...</span>
+<span class="go">Executing scenario AddScalaMavenGitIgnore should add a new .gitignore file according to a provided template...</span>
+<span class="go">  Testing assertion fileExists(SimpleLiteral(.gitignore))</span>
+<span class="go">  Testing assertion fileContains(SimpleLiteral(.gitignore),SimpleLiteral(# Created by Atomist))</span>
+<span class="go">Executing scenario AddScalaMavenGitIgnore should overwrite an existing .gitignore file according to a provided template...</span>
+<span class="go">  Testing assertion fileExists(SimpleLiteral(.gitignore))</span>
+<span class="go">  Testing assertion fileContains(SimpleLiteral(.gitignore),SimpleLiteral(# Created by Atomist))</span>
+<span class="go">Executing scenario AddScalaMavenGitIgnore should add a new .gitignore to a subdirectory...</span>
+<span class="go">  Testing assertion fileExists(SimpleLiteral(other/.gitignore))</span>
+<span class="go">  Testing assertion fileContains(SimpleLiteral(other/.gitignore),SimpleLiteral(# Created by Atomist))</span>
+<span class="go">Executing scenario AddReadme should add README.md...</span>
+<span class="go">  Testing assertion fileExists(IdentifierFunctionArg(readme,None))</span>
+<span class="go">  Testing assertion fileContains(IdentifierFunctionArg(readme,None),IdentifierFunctionArg(newName,None))</span>
+<span class="go">  Testing assertion fileContains(IdentifierFunctionArg(readme,None),IdentifierFunctionArg(newDescription,None))</span>
+<span class="go">Executing scenario AddReadme should reject invalid value name parameter...</span>
+<span class="go">Executing scenario AddReadme should reject missing parameter...</span>
+<span class="go">Executing scenario ClassRenamer should rename simple class...</span>
+<span class="go">  Testing assertion EqualsExpression(fileCount(),SimpleLiteral(1))</span>
+<span class="go">  Testing assertion fileContains(SimpleLiteral(src/main/java/Cat.java),SimpleLiteral(class Cat))</span>
+<span class="go">Executing scenario ClassRenamer should rename class and leave no references to old name...</span>
+<span class="go">  Testing assertion fileExists(SimpleLiteral(src/main/java/com/atomist/springrest/WeirdAndWonderful.java))</span>
+<span class="go">  Testing assertion ParsedJavaScriptFunction(JavaScriptBlock( !result.anyFileContains(&quot;.java&quot;, oldclass) ))</span>
+<span class="go">Executing scenario ClassRenamer should rename class but leave any additional characters on the class name...</span>
+<span class="go">  Testing assertion fileExists(SimpleLiteral(src/main/java/com/atomist/springrest/WeirdAndWonderfulConfiguration.java))</span>
+<span class="go">  Testing assertion fileExists(SimpleLiteral(src/main/java/com/atomist/springrest/WeirdAndWonderfulApplication.java))</span>
+<span class="go">  Testing assertion fileExists(SimpleLiteral(src/test/java/com/atomist/springrest/WeirdAndWonderfulApplicationTests.java))</span>
+<span class="go">  Testing assertion fileExists(SimpleLiteral(src/test/java/com/atomist/springrest/WeirdAndWonderfulOutOfContainerIntegrationTests.java))</span>
+<span class="go">  Testing assertion fileExists(SimpleLiteral(src/test/java/com/atomist/springrest/WeirdAndWonderfulWebIntegrationTests.java))</span>
+<span class="go">  Testing assertion ParsedJavaScriptFunction(JavaScriptBlock( !result.anyFileContains(&quot;.java&quot;, &quot;SpringRest&quot;) ))</span>
+<span class="go">Executing scenario PackageMove should move base package and leave no references to old packages...</span>
+<span class="go">  Testing assertion fileExists(SimpleLiteral(src/main/java/com/foo/bar/SpringRestConfiguration.java))</span>
+<span class="go">  Testing assertion ParsedJavaScriptFunction(JavaScriptBlock( !result.anyFileContains(&quot;.java&quot;, oldpack) ))</span>
+<span class="go">Executing scenario PomParameterizer should establish a new project&#39;s valid pom.xml...</span>
+<span class="go">  Testing assertion fileExists(SimpleLiteral(pom.xml))</span>
+<span class="go">  Testing assertion fileContains(SimpleLiteral(pom.xml),SimpleLiteral(&lt;artifactId&gt;mynewproject&lt;/artifactId&gt;))</span>
+<span class="go">  Testing assertion fileContains(SimpleLiteral(pom.xml),SimpleLiteral(&lt;groupId&gt;mygroup&lt;/groupId&gt;))</span>
+<span class="go">  Testing assertion fileContains(SimpleLiteral(pom.xml),SimpleLiteral(&lt;version&gt;0.0.1-SNAPSHOT&lt;/version&gt;))</span>
+<span class="go">  Testing assertion fileContains(SimpleLiteral(pom.xml),SimpleLiteral(&lt;description&gt;My project description&lt;/description&gt;))</span>
+<span class="go">Executing scenario RemoveApacheSoftwareLicense20 should remove Apache license...</span>
+<span class="go">  Testing assertion ParsedJavaScriptFunction(JavaScriptBlock( !result.fileExists(&quot;LICENSE&quot;) ))</span>
+<span class="go">Executing scenario RemoveApacheSoftwareLicense20 should not remove other license...</span>
+<span class="go">Executing scenario RemoveChangeLog should remove CHANGELOG...</span>
+<span class="go">  Testing assertion ParsedJavaScriptFunction(JavaScriptBlock( !result.fileExists(&quot;CHANGELOG.md&quot;) ))</span>
+<span class="go">Executing scenario RemoveApacheSoftwareLicense20 silently do nothing if no CHANGELOG present...</span>
+<span class="go">Executing scenario RemoveCodeOfConduct should remove CODE_OF_CONDUCT...</span>
+<span class="go">  Testing assertion ParsedJavaScriptFunction(JavaScriptBlock( !result.fileExists(&quot;CODE_OF_CONDUCT.md&quot;) ))</span>
+<span class="go">Executing scenario RemoveCodeOfConduct silently do nothing if no CODE_OF_CONDUCT present...</span>
+<span class="go">Running test scenarios in atomist-rugs:common-editors:0.7.0 ← local completed</span>
+
+<span class="go">Successfully executed 22 of 22 scenarios: Test SUCCESS</span>
+</pre></div>
+
+
+<p>The above command will download all the dependencies needed to run the
+editors defined in the common-editors repo.  Depending on the speed of
+your network connection, this may take some time.  Each dependency
+only need be downloaded once, so subsequent executions of <code>rug</code> will
+be faster.</p>
+<p>As you can see from the last line of output, all of the test scenarios
+passed.</p>
+<h3 id="make-your-rugs-available">Make your Rugs Available<a class="headerlink" href="#make-your-rugs-available" title="Permanent link">&para;</a></h3>
+<p>The next step is to create a Rug archive and install it locally so you
+can use it on local projects.  This is accomplished with the <code>install</code>
+command.</p>
+<div class="codehilite"><pre><span></span><span class="gp">$</span> rug install
+<span class="go">Resolving dependencies for atomist-rugs:common-editors:0.7.0 ← local completed</span>
+<span class="go">Loading atomist-rugs:common-editors:0.7.0 ← local into runtime completed</span>
+<span class="go">  Generated META-INF/maven/atomist-rugs/common-editors/pom.xml</span>
+<span class="go">  Generated .atomist/manifest.yml</span>
+<span class="go">  Generated .atomist/metadata.json</span>
+<span class="go">Generating archive metadata completed</span>
+<span class="go">  Installed atomist-rugs/common-editors/0.7.0/common-editors-0.7.0.zip → /Users/dd/.atomist/repository</span>
+<span class="go">  Installed atomist-rugs/common-editors/0.7.0/common-editors-0.7.0.pom → /Users/dd/.atomist/repository</span>
+<span class="go">  Installed atomist-rugs/common-editors/0.7.0/common-editors-0.7.0-metadata.json → /Users/dd/.atomist/repository</span>
+<span class="go">Installing archive into local repository completed</span>
+
+<span class="go">→ Archive</span>
+<span class="go">  ~/develop/atomist-rugs/common-editors/.atomist/target/common-editors-0.7.0.zip (39kb in 43 files)</span>
+
+<span class="go">→ Contents</span>
+<span class="go">  ├─┬ .atomist</span>
+<span class="go">  | ├─┬ build</span>
+<span class="go">  | | ├── cli-build.yml</span>
+<span class="go">  | | ├── cli-dev.yml</span>
+<span class="go">  | | └── cli-release.yml</span>
+<span class="go">  | ├─┬ editors</span>
+<span class="go">  | | ├── AddApacheSoftwareLicense20.rug</span>
+<span class="go">  | | ├── AddChangeLog.rug</span>
+<span class="go">  | | ├── AddReadme.rug</span>
+<span class="go">  | | ├── AddScalaMavenGitIgnore.rug</span>
+<span class="go">  | | ├── ClassRenamer.rug</span>
+<span class="go">  | | ├── PackageMove.rug</span>
+<span class="go">  | | ├── PomParameterizer.rug</span>
+<span class="go">  | | ├── RemoveApacheSoftwareLicense20.rug</span>
+<span class="go">  | | ├── RemoveChangeLog.rug</span>
+<span class="go">  | | └── RemoveCodeOfConduct.rug</span>
+<span class="go">  | ├── manifest.yml</span>
+<span class="go">  | ├── metadata.json</span>
+<span class="go">  | ├─┬ templates</span>
+<span class="go">  | | ├── ApacheSoftwareLicenseV20.vm</span>
+<span class="go">  | | ├── CHANGELOG.md.mustache</span>
+<span class="go">  | | ├── gitignore.vm</span>
+<span class="go">  | | └── readme.vm</span>
+<span class="go">  | └─┬ tests</span>
+<span class="go">  |   ├── AddApacheSoftwareLicense20.rt</span>
+<span class="go">  |   ├── AddChangeLog.rt</span>
+<span class="go">  |   ├── AddGitIgnore.rt</span>
+<span class="go">  |   ├── AddReadme.rt</span>
+<span class="go">  |   ├── ClassRenamer.rt</span>
+<span class="go">  |   ├── PackageMove.rt</span>
+<span class="go">  |   ├── PomParameterizer.rt</span>
+<span class="go">  |   ├── RemoveApacheSoftwareLicense20.rt</span>
+<span class="go">  |   ├── RemoveChangeLog.rt</span>
+<span class="go">  |   └── RemoveCodeOfConduct.rt</span>
+<span class="go">  ├── .atomist.yml</span>
+<span class="go">  ├── .gitignore</span>
+<span class="go">  ├── CHANGELOG.md</span>
+<span class="go">  ├── CODE_OF_CONDUCT.md</span>
+<span class="go">  ├── LICENSE</span>
+<span class="go">  ├─┬ META-INF/maven/atomist-rugs/common-editors</span>
+<span class="go">  | └── pom.xml</span>
+<span class="go">  ├── README.md</span>
+<span class="go">  ├─┬ src/main/java/com/atomist/springrest</span>
+<span class="go">  | ├── SpringRestApplication.java</span>
+<span class="go">  | └── SpringRestConfiguration.java</span>
+<span class="go">  ├─┬ src/main/resources</span>
+<span class="go">  | ├── application.properties</span>
+<span class="go">  | └── logback.xml</span>
+<span class="go">  └─┬ src/test/java/com/atomist/springrest</span>
+<span class="go">    ├── SpringRestApplicationTests.java</span>
+<span class="go">    ├── SpringRestOutOfContainerIntegrationTests.java</span>
+<span class="go">    └── SpringRestWebIntegrationTests.java</span>
+
+<span class="go">Successfully installed archive for atomist-rugs:common-editors:0.7.0</span>
+</pre></div>
+
+
+<p>This command packages up all of the Rugs in the <code>.atomist</code> directory
+and installs them in your local repository, typically
+<code>~/.atomist/repository</code>.</p>
+<h3 id="list-the-installed-editors">List the installed Editors<a class="headerlink" href="#list-the-installed-editors" title="Permanent link">&para;</a></h3>
+<p>Remember above when we ran that arcane <code>awk</code> command to list the
+editors?  There is a better way!  Now that we some editors installed
+locally, we can list our local editors.</p>
+<div class="codehilite"><pre><span></span><span class="gp">$</span> rug list
+<span class="go">Resolving dependencies for com.atomist:rug:0.8.0 completed</span>
+<span class="go">Listing local archives completed</span>
+
+<span class="go">→ Local Archives</span>
+<span class="go">  atomist-rugs:common-editors (0.7.0)</span>
+
+<span class="go">For more information on specific archive version, run:</span>
+<span class="go">  rug describe archive ARCHIVE -a VERSION</span>
+</pre></div>
+
+
+<p>Looks like the Rug Archive we installed is indeed installed.  That
+last line of the output tells us how we can get more information.
+Let&rsquo;s try that command.  Since we only have one version available, we
+can omit the <code>-a</code> command-line option.  When it is not provided, the
+latest version is used.</p>
+<div class="codehilite"><pre><span></span><span class="gp">$</span> rug describe archive atomist-rugs:common-editors
+<span class="go">Processing dependencies</span>
+<span class="go">  Downloading atomist-rugs/common-editors/maven-metadata.xml ← rugs (0kb) succeeded</span>
+<span class="go">Resolving dependencies for atomist-rugs:common-editors:latest completed</span>
+<span class="go">Loading atomist-rugs:common-editors:0.7.0 into runtime completed</span>
+
+<span class="go">atomist-rugs:common-editors:0.7.0</span>
+
+<span class="go">→ Origin</span>
+<span class="go">  atomist-rugs/common-editors.git#master (622ed10)</span>
+<span class="go">→ Archive</span>
+<span class="go">  ~/.atomist/repository/atomist-rugs/common-editors/0.7.0/common-editors-0.7.0.zip (39kb in 43 files)</span>
+
+<span class="go">→ Editors</span>
+<span class="go">  AddApacheSoftwareLicense20 (add the Apache Software License version 2.0 file)</span>
+<span class="go">  AddChangeLog (adds a new CHANGELOG)</span>
+<span class="go">  AddReadme (adds a project specific README)</span>
+<span class="go">  AddScalaMavenGitIgnore (adds a .gitignore suitable for Scala Maven projects)</span>
+<span class="go">  ClassRenamer (renames a Java class, replacing one literal pattern with another)</span>
+<span class="go">  PackageMove (renames a Java package)</span>
+<span class="go">  PomParameterizer (updates a Maven pom to a new group, artifact, version and description)</span>
+<span class="go">  RemoveApacheSoftwareLicense20 (removes an Apache Software License version 2.0 file if present)</span>
+<span class="go">  RemoveChangeLog (removes CHANGELOG file if present)</span>
+<span class="go">  RemoveCodeOfConduct (removes CODE_OF_CONDUCT file if present)</span>
+
+<span class="go">→ Requires</span>
+<span class="go">  [0.8.0,1.0.0)</span>
+
+<span class="go">To get more information on any of the Rugs listed above, run:</span>
+<span class="go">  rug describe editor|generator|executor|reviewer ARTIFACT</span>
+</pre></div>
+
+
+<p>That list of editors looks familiar, we must be doing something right!
+Again, the last line of the output tells us how we can get more
+information.  Let&rsquo;s try it.</p>
+<div class="codehilite"><pre><span></span><span class="gp">$</span> rug describe editor AddApacheSoftwareLicense20
+
+<span class="go">No valid ARTIFACT provided, no default artifact defined and not in local mode.</span>
+
+<span class="go">Run the following command for usage help:</span>
+<span class="go">  rug describe --help.</span>
+</pre></div>
+
+
+<p>Hmm, looks like something went wrong.  Fortunately the error tells us
+we either need to define a default artifact or run in local mode.  How
+do we run in local mode?  The above output tells us to run <code>rug
+describe --help</code> for usage help.  Let&rsquo;s do it.</p>
+<div class="codehilite"><pre><span></span><span class="gp">$</span> rug describe --help
+<span class="go">Usage: rug describe [OPTION]... TYPE ARTIFACT</span>
+<span class="go">Print details about an archive or Rug.</span>
+
+<span class="go">Options:</span>
+<span class="go">  -?,-h,--help          Print help information</span>
+<span class="go">  -X,--error            Print verbose error messages</span>
+<span class="go">  -o,--offline          Use only downloaded archives</span>
+<span class="go">  -q,--quiet            Do not display progress messages</span>
+<span class="go">  -r,--resolver-report  Print dependency tree</span>
+<span class="go">  -s,--settings FILE    Use settings file FILE</span>
+<span class="go">  -t,--timer            Print timing information</span>
+<span class="go">  -u,--update           Update dependency resolution</span>
+
+<span class="go">Command Options:</span>
+<span class="go">  -a,--archive-version AV  Use archive version AV</span>
+<span class="go">  -l,--local               Use local working directory as archive</span>
+
+<span class="go">TYPE should be &#39;editor&#39;, &#39;generator&#39;, &#39;executor&#39;, &#39;reviewer&#39; or</span>
+<span class="go">&#39;archive&#39; and ARTIFACT should be the full name of an artifact, e.g.,</span>
+<span class="go">&quot;atomist:spring-service:Spring Microservice&quot;.  If the name of the</span>
+<span class="go">artifact has spaces in it, you need to put quotes around it.</span>
+
+<span class="go">Please report issues at https://github.com/atomist/rug-cli</span>
+</pre></div>
+
+
+<p>The help output provides two pieces of information useful to us.
+First, it says the <code>ARTIFACT</code> should be the full name of the artifact.
+We only provided the editor name.  Perhaps we needed to prepend the
+archive name.  Second, the <code>-l</code> or <code>--local</code> command-line option tells
+the CLI to use the current directory as an archive.  In other words,
+it tries to find an <code>.atomist</code> directory and use the Rugs in it.
+Since we are in a directory that has the <code>.atomist</code> directory with the
+editor we want to run, that seems promising.</p>
+<div class="codehilite"><pre><span></span><span class="gp">$</span> rug describe -l editor AddApacheSoftwareLicense20
+<span class="go">Resolving dependencies for atomist-rugs:common-editors:0.7.0 ← local completed</span>
+<span class="go">Loading atomist-rugs:common-editors:0.7.0 ← local into runtime completed</span>
+
+<span class="go">AddApacheSoftwareLicense20</span>
+<span class="go">atomist-rugs:common-editors:0.7.0</span>
+<span class="go">add the Apache Software License version 2.0 file</span>
+
+<span class="go">→ Tags</span>
+<span class="go">  apache (apache)</span>
+<span class="go">  license (license)</span>
+<span class="go">  documentation (documentation)</span>
+<span class="go">→ Parameters</span>
+<span class="go">  no parameters needed</span>
+
+<span class="go">To invoke the AddApacheSoftwareLicense20 editor, run:</span>
+<span class="go">  rug edit &quot;atomist-rugs:common-editors:AddApacheSoftwareLicense20&quot; -a 0.7.0 -l</span>
+</pre></div>
+
+
+<p>Success!  The output from that command also tells us what the full
+name of the editor is,
+<code>atomist-rugs:common-editors:AddApacheSoftwareLicense20</code>.  We could
+have guessed that.  Since we previously installed the editor, we could
+have run the following command and gotten the same result.</p>
+<div class="codehilite"><pre><span></span><span class="gp">$</span> rug describe editor atomist-rugs:common-editors:AddApacheSoftwareLicense20
+</pre></div>
+
+
+<p>The <code>describe editor</code> output includes several pieces of useful
+information.  The description, &ldquo;adds the Apache Software License
+version 2.0 file&rdquo;, provides a slightly more verbose description than
+the already descriptive editor name.  We can see that this editor has
+three tags, <code>license</code>, <code>apache</code>, and <code>documentation</code>, and it takes no
+parameters.</p>
+<p>Adding the Apache license seems like a good thing to do.  The last
+line of the output once again gives us the information we need: how to
+run this editor.  Let&rsquo;s try it.</p>
+<h3 id="run-an-editor">Run an Editor<a class="headerlink" href="#run-an-editor" title="Permanent link">&para;</a></h3>
+<p>We will just run the command we were provided above.  We remove the
+<code>-l</code> since, having installed the archive, we do not need to run it
+from the local directory, we can run it from the installed archive.</p>
+<div class="codehilite"><pre><span></span><span class="gp">$</span> rug edit atomist-rugs:common-editors:AddApacheSoftwareLicense20 -a <span class="m">0</span>.7.0
+<span class="go">Resolving dependencies for atomist-rugs:common-editors:latest completed</span>
+<span class="go">Loading atomist-rugs:common-editors:0.7.0 into runtime completed</span>
+<span class="go">Running editor AddApacheSoftwareLicense20 of atomist-rugs:common-editors:0.7.0 completed</span>
+
+<span class="go">→ Project</span>
+<span class="go">  ~/develop/atomist-rugs/common-editors/ (282kb in 302 files)</span>
+
+<span class="go">→ Changes</span>
+<span class="go">  ├── LICENSE created 11kb</span>
+<span class="go">  └── .atomist.yml created 3kb</span>
+
+<span class="go">Successfully edited project common-editors</span>
+</pre></div>
+
+
+<p>Looks like two files were edited in the local repository.</p>
+<div class="codehilite"><pre><span></span><span class="gp">$</span> git status
+<span class="go">On branch master</span>
+<span class="go">Your branch is up-to-date with &#39;origin/master&#39;.</span>
+<span class="go">Changes not staged for commit:</span>
+<span class="go">  (use &quot;git add &lt;file&gt;...&quot; to update what will be committed)</span>
+<span class="go">  (use &quot;git checkout -- &lt;file&gt;...&quot; to discard changes in working directory)</span>
+
+<span class="go">    modified:   .atomist.yml</span>
+
+<span class="go">no changes added to commit (use &quot;git add&quot; and/or &quot;git commit -a&quot;)</span>
+</pre></div>
+
+
+<p>Hmm, git shows only one file has been modified.  Why?  Well, the
+contents of the <code>LICENSE</code> file were set to be the Apache Software
+License, but that is what the contents already were.  Git is smart.
+What is that <code>atomist.yml</code> file?</p>
+<div class="codehilite"><pre><span></span><span class="gp">$</span> cat .atomist.yml
+<span class="go">---</span>
+<span class="go">kind: &quot;operation&quot;</span>
+<span class="go">client: &quot;rug-cli 0.20.0&quot;</span>
+<span class="go">editor:</span>
+<span class="go">  name: &quot;atomist-rugs.common-editors.AddApacheSoftwareLicense20&quot;</span>
+<span class="go">  group: &quot;atomist-rugs&quot;</span>
+<span class="go">  artifact: &quot;common-editors&quot;</span>
+<span class="go">  version: &quot;0.7.0&quot;</span>
+<span class="go">  origin:</span>
+<span class="go">    repo: &quot;atomist-rugs/common-editors.git&quot;</span>
+<span class="go">    branch: &quot;master&quot;</span>
+<span class="go">    sha: &quot;622ed10&quot;</span>
+</pre></div>
+
+
+<p>Looks like it is a record of what we have done, nice!</p>
+<p>I suppose we should have guessed the editor would act on the local
+directory, but we don&rsquo;t really want to edit the current project.
+Let&rsquo;s create another project to edit.  We run the same command as
+above, except we&rsquo;ll remove the archive version command-line option.
+If you do not provide the <code>-a</code> option, the CLI will use the latest
+installed version, 0.7.0 in our case.</p>
+<div class="codehilite"><pre><span></span><span class="gp">$</span> <span class="nb">cd</span> ..
+<span class="gp">$</span> mkdir atomist-test
+<span class="gp">$</span> <span class="nb">cd</span> !$
+<span class="gp">$</span> git init
+<span class="gp">$</span> rug edit atomist-rugs:common-editors:AddApacheSoftwareLicense20
+<span class="gp">$</span> rug edit atomist-rugs:common-editors:AddApacheSoftwareLicense20
+<span class="go">Resolving dependencies for atomist-rugs:common-editors:latest completed</span>
+<span class="go">Loading atomist-rugs:common-editors:0.7.0 into runtime completed</span>
+<span class="go">Running editor AddApacheSoftwareLicense20 of atomist-rugs:common-editors:0.7.0 completed</span>
+
+<span class="go">→ Project</span>
+<span class="go">  ~/develop/atomist-rugs/atomist-test/ (15 kb in 16 files)</span>
+
+<span class="go">→ Changes</span>
+<span class="go">  ├── LICENSE created 11 kb</span>
+<span class="go">  └── .atomist.yml created 287 bytes</span>
+
+<span class="go">Successfully edited project atomist-test</span>
+<span class="gp">$</span> git status
+<span class="go">On branch master</span>
+
+<span class="go">Initial commit</span>
+
+<span class="go">Untracked files:</span>
+<span class="go">  (use &quot;git add &lt;file&gt;...&quot; to include in what will be committed)</span>
+
+<span class="go">    .atomist.yml</span>
+<span class="go">    LICENSE</span>
+
+<span class="go">nothing added to commit but untracked files present (use &quot;git add&quot; to track)</span>
+</pre></div>
+
+
+<p>That&rsquo;s more like it!  What if we decide we do not want the Apache
+Software License?  There&rsquo;s an editor for that!</p>
+<div class="codehilite"><pre><span></span><span class="gp">$</span> rug edit atomist-rugs:common-editors:RemoveApacheSoftwareLicense20
+<span class="go">Resolving dependencies for atomist-rugs:common-editors:latest completed</span>
+<span class="go">Loading atomist-rugs:common-editors:0.7.0 into runtime completed</span>
+<span class="go">Running editor RemoveApacheSoftwareLicense20 of atomist-rugs:common-editors:0.7.0 completed</span>
+
+<span class="go">→ Project</span>
+<span class="go">  ~/develop/atomist-rugs/atomist-test/ (26 kb in 15 files)</span>
+
+<span class="go">→ Changes</span>
+<span class="go">  ├── LICENSE deleted 15 kb</span>
+<span class="go">  └── .atomist.yml created 577 bytes</span>
+
+<span class="go">Successfully edited project atomist-test</span>
+<span class="gp">$</span> git status
+<span class="go">On branch master</span>
+
+<span class="go">Initial commit</span>
+
+<span class="go">Untracked files:</span>
+<span class="go">  (use &quot;git add &lt;file&gt;...&quot; to include in what will be committed)</span>
+
+<span class="go">    .atomist.yml</span>
+
+<span class="go">nothing added to commit but untracked files present (use &quot;git add&quot; to track)</span>
+</pre></div>
+
+
+<p>We see the <code>LICENSE</code> file is gone.  If we inspect the contents of the
+<code>.atomist.yml</code> file, we see a complete record of what Rug has done.</p>
+<div class="codehilite"><pre><span></span><span class="gp">$</span> cat .atomist.yml
+<span class="go">---</span>
+<span class="go">kind: &quot;operation&quot;</span>
+<span class="go">client: &quot;rug-cli 0.20.0&quot;</span>
+<span class="go">editor:</span>
+<span class="go">  name: &quot;atomist-rugs.common-editors.AddApacheSoftwareLicense20&quot;</span>
+<span class="go">  group: &quot;atomist-rugs&quot;</span>
+<span class="go">  artifact: &quot;common-editors&quot;</span>
+<span class="go">  version: &quot;0.7.0&quot;</span>
+<span class="go">  origin:</span>
+<span class="go">    repo: &quot;atomist-rugs/common-editors.git&quot;</span>
+<span class="go">    branch: &quot;master&quot;</span>
+<span class="go">    sha: &quot;622ed10&quot;</span>
+
+<span class="go">---</span>
+<span class="go">kind: &quot;operation&quot;</span>
+<span class="go">client: &quot;rug-cli 0.20.0&quot;</span>
+<span class="go">editor:</span>
+<span class="go">  name: &quot;atomist-rugs.common-editors.RemoveApacheSoftwareLicense20&quot;</span>
+<span class="go">  group: &quot;atomist-rugs&quot;</span>
+<span class="go">  artifact: &quot;common-editors&quot;</span>
+<span class="go">  version: &quot;0.7.0&quot;</span>
+<span class="go">  origin:</span>
+<span class="go">    repo: &quot;atomist-rugs/common-editors.git&quot;</span>
+<span class="go">    branch: &quot;master&quot;</span>
+<span class="go">    sha: &quot;622ed10&quot;</span>
+</pre></div>
+                
+                  
+                
+              
+              
+                
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../using-rugs/" title="Using Rugs" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Using Rugs
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../../../../reference/" title="Overview" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Overview
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            &copy; 2017 Atomist, Inc.
+          </div>
+        
+        powered by
+        <a href="http://www.mkdocs.org" title="MkDocs">MkDocs</a>
+        and
+        <a href="http://squidfunk.github.io/mkdocs-material/" title="Material for MkDocs">
+          Material for MkDocs</a>
+      </div>
+      
+        
+  <div class="md-footer-social">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+      <a href="https://the-composition.com/" class="md-footer-social__link fa fa-medium"></a>
+    
+      <a href="https://github.com/atomist" class="md-footer-social__link fa fa-github"></a>
+    
+      <a href="https://twitter.com/atomist" class="md-footer-social__link fa fa-twitter"></a>
+    
+      <a href="https://join.atomist.com/" class="md-footer-social__link fa fa-slack"></a>
+    
+  </div>
+
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../../../assets/javascripts/application-7aa26ad9ec.js"></script>
+      <script>app.initialize({url:{base:"../../../.."}})</script>
+      
+    
+    
+      
+      <script>!function(e,t,a,n,o,c,i){e.GoogleAnalyticsObject=o,e[o]=e[o]||function(){(e[o].q=e[o].q||[]).push(arguments)},e[o].l=1*new Date,c=t.createElement(a),i=t.getElementsByTagName(a)[0],c.async=1,c.src=n,i.parentNode.insertBefore(c,i)}(window,document,"script","https://www.google-analytics.com/analytics.js","ga"),ga("create","UA-74966852-1","auto"),ga("set","anonymizeIp",!0),ga("send","pageview");var links=document.getElementsByTagName("a");Array.prototype.map.call(links,function(e){e.host!=document.location.host&&e.addEventListener("click",function(){var t=e.getAttribute("data-md-action")||"follow";ga("send","event","outbound",t,e.href)})});var query=document.forms.search.query;query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})</script>
+      
+    
+  </body>
+</html>
