@@ -1,6 +1,6 @@
 Atomist can listen for CI events, correlate them with the commits that triggered the build, and show contextualized notifications in the Slack channel.
 
-To enable this, we need to connect Atomist to your CI system. Atomist currently works with Travis CI and Jenkins. Use either the [Travis CI](#travis-ci) or [Jenkins](#jenkins) section to help you configure Atomist to connect with your CI.
+To enable this, we need to connect Atomist to your CI system. Atomist currently works with Travis CI and Jenkins. Use either the [Travis CI](#travis-ci-setup) or [Jenkins](#jenkins-setup) section to help you configure Atomist to connect with your CI.
 
 ### Travis CI Setup
 
