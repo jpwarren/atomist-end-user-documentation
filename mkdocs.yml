@@ -50,17 +50,22 @@ repo_name: Rug
 repo_url: https://github.com/atomist/rug
 pages:
 - Overview:
-  - Introduction: index.md
+  - About Atomist: index.md
   - Concepts: concepts.md
   - Capabilities: capabilities.md
-- Getting Started:
-  - Overview: getting-started/index.md
-  - Prerequisites: getting-started/prerequisites.md
-  - Invite Atomist to Slack: getting-started/invite-atomist-to-slack.md
-  - Connect Atomist to GitHub: getting-started/connect-atomist-to-github.md
-  - Putting Atomist to Work: getting-started/putting-atomist-to-work.md
-  - Connect Atomist to CI: getting-started/connect-atomist-to-ci.md
-  - Build Your Own Development Automation: getting-started/build-your-own-development-automation.md
+  - Benefits: benefits.md
+- Getting Started: 
+  #- Quick Start: getting-started/quickstart.md
+  - Guided Tour:
+    - Introduction: getting-started/index.md
+    - Prerequisites: getting-started/prerequisites.md
+    - Invite Atomist to Slack: getting-started/invite-atomist-to-slack.md
+    - Connect Atomist to GitHub: getting-started/connect-atomist-to-github.md
+    - Putting Atomist to Work: getting-started/putting-atomist-to-work.md
+    - Connect Atomist to CI: getting-started/connect-atomist-to-ci.md
+    - Build Your Own Development Automation: getting-started/build-your-own-development-automation.md
+- Use Cases:
+  - How To Use Atomist: use-cases/index.md
 - User Guide:
   - Introduction: user-guide/index.md
   - Rug:
@@ -112,6 +117,8 @@ pages:
 #      - Templates: reference/rug/templates.md
 #      - Tests: reference/rug/tests.md
 #      - Archives: reference/rug/archives.md
+
+
     - Language Extensions:
       - Overview: reference/rug/extensions/index.md
       - CljProject: reference/rug/extensions/clj-project.md
@@ -142,3 +149,5 @@ pages:
       - Syntax: reference/rug/dsl/syntax.md
       - Using JavaScript: reference/rug/dsl/javascript.md
   - Rug CLI: reference/rug-cli/index.md
+- Why Atomist:
+  - Automate All The Things: why-atomist/automate-all-the-things.md

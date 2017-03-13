@@ -27,14 +27,14 @@ and by prompting the appropriate users.  In short, Atomist provides
 you with the information, context, and tooling to help you make better
 decision more quickly.
 
-## Software as a Service
+* [Everything Is Code](#everything-is-code)
+* [Events are Everything](#events-are-everything)
+* [Atomist Integrates](#integrations)
+* [Atomist Communicates](#interfaces)
 
-Atomist is offered as a service, ingesting events from various sources
-and correlating them for our users.  Atomist manages infrastructure to
-support the ingestion and storage of events from external sources.
-Atomist provides and runs the software to process these events,
-perform the appropriate operations, and respond, e.g., via the Atomist
-Bot.
+## Everything Is Code
+
+[Learn more](/everything-is-code) about how Atomist understands code like nothing else.
 
 ## Events
 
@@ -70,33 +70,11 @@ the author of the code change that led to an error in your staging
 environment but only if that commit was made within the last 24 hours
 and it is normal working hours for the author.
 
-## Rug
+[Learn more](/all-about-events) about how Atomist uses events.
 
-<!-- *That rug really tied the room together, did it not?* -->
 
-Rug is a programming model and runtime.
 
-The Rug programming model defines the interface, which is "What events
-does this program respond to?" and "How does it respond?"  Programs
-that implement this model are called Rugs, and they execute inside a
-Rug runtime.
 
-Rugs can automate and codify all manner of steps in a development or
-operations workflow.  For example, Rugs can
-
--   Alert the author whose change caused an error at runtime
--   Automate deployment by linking your CI system, your integration
-    tests, and your runtime platform
--   Identify a commit leading to a regression in production, revert
-    the commit, and release the "new" version!
-
-These are just a few ways Rugs are able to tie all the events of a
-team together into a coherent model.
-
-Atomist ships with a core set of Rugs.  Anyone using Atomist can
-implement additional Rugs for their team.  These custom Rugs are
-dynamically discovered by Atomist and used when processing all
-subsequent events.
 
 ## Integrations
 
@@ -142,3 +120,51 @@ necessary.  Put another way, Atomist is about driving to *complete*
 automation.  When every aspect of your workflow has been fully
 automated, both its "happy path" and remediations for
 error modes, you can focus on what matters: writing great code.
+
+## Software as a Service
+
+Atomist is offered as a service, ingesting events from various sources
+and correlating them for our users.  Atomist manages infrastructure to
+support the ingestion and storage of events from external sources.
+Atomist provides and runs the software to process these events,
+perform the appropriate operations, and respond, e.g., via the Atomist
+Bot.
+
+The Atomist service consumes events from your systems: source code
+repositories, continuous integration servers, deployment platforms,
+and chat.  The information from these systems is correlated together:
+pushes with builds, artifacts with deployments, stack traces with
+commits.  The correlation of these events is then used to
+automatically respond: retry a build, start an integration test,
+message a committer.
+
+[Learn more](/atomist-saas) about the Atomist service.
+
+## Rug
+
+<!-- *That rug really tied the room together, did it not?* -->
+
+Rug is a programming model and runtime.
+
+The Rug programming model defines the interface, which is "What events
+does this program respond to?" and "How does it respond?"  Programs
+that implement this model are called Rugs, and they execute inside a
+Rug runtime.
+
+Rugs can automate and codify all manner of steps in a development or
+operations workflow.  For example, Rugs can
+
+-   Alert the author whose change caused an error at runtime
+-   Automate deployment by linking your CI system, your integration
+    tests, and your runtime platform
+-   Identify a commit leading to a regression in production, revert
+    the commit, and release the "new" version!
+
+These are just a few ways Rugs are able to tie all the events of a
+team together into a coherent model.
+
+Atomist ships with a core set of Rugs.  Anyone using Atomist can
+implement additional Rugs for their team.  These custom Rugs are
+dynamically discovered by Atomist and used when processing all
+subsequent events.
+

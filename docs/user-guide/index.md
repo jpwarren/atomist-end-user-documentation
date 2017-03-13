@@ -1,7 +1,4 @@
-Welcome to the Atomist User Guide.  The Atomist User Guide contains
-documentation on all aspects of Atomist that its users, beginners
-through experts, can use to more effectively use Atomist to improve
-their processes and deliver value more quickly.
+Welcome to the Atomist User Guide.
 
 If you are not familiar with Atomist, you may want to start with
 the [Atomist Overview][overview].  If you do not have Atomist set up

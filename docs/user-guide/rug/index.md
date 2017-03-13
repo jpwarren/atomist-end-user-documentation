@@ -9,3 +9,8 @@ called "Rugs".  Specifically, its development, its life cycle, and its
 conventions.
 
 [runtime]: runtime.md
+
+!!! note "Why Rug?"
+    The name `Rug` comes from the movie *The Big Lebowski* because it
+    "Really tied the room together." The founders are fans of the movie,
+    and the name kinda stuck.
