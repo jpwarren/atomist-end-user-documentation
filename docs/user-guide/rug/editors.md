@@ -22,8 +22,9 @@ be a running Spring Boot project in its own right. Here is such a project:
     │   ├── manifest.yml
     │   ├── package.json
     │   ├── tests
-    │   │   ├── NewSpringBootService.feature
-    │   │   └── Steps.ts
+    │   │   ├── project
+    │   │   │   ├── NewSpringBootService.feature
+    │   │   └── └── Steps.ts
     │   └── tsconfig.json
     ├── .atomist.yml
     ├── .gitignore
@@ -132,7 +133,7 @@ of the editor. This the public visible and discoverable name of the Rug. This
 name, along with the editors group and repository, form the fully-qualified name 
 of the editor. The second argument of the `#!typescript @Editor` decorator is a 
 short description of the editor. The following line uses the 
-`#!typescript @Tags` decorator to apply some tags to our generator so people can 
+`#!typescript @Tags` decorator to apply some tags to our editor so people can 
 search for it more easily. Using the `#!typescript @Tags` decorator is optional 
 but highly recommended.
 
@@ -194,7 +195,8 @@ Scenario: A new controller class should be added
 The implementation of such test goes into `.atomist/tests/Steps.ts`:
 
 ```typescript
-import { Given, When, Then, Result, ProjectScenarioWorld } from "@atomist/rug/test/Core";
+import { Given, When, Then, ProjectScenarioWorld } from "@atomist/rug/test/project/Core";
+import { Result } from "@atomist/rug/test/Result";
 import { Project } from "@atomist/rug/model/Project";
 
 When("adding a new controller", (p: Project, world: ProjectScenarioWorld) => {
@@ -347,7 +349,8 @@ Scenario: A new endpoint meyhod should be added
 ```
 
 ```typescript
-import { Given, When, Then, Result, ProjectScenarioWorld } from "@atomist/rug/test/Core";
+import { Given, When, Then, ProjectScenarioWorld } from "@atomist/rug/test/project/Core";
+import { Result } from "@atomist/rug/test/Result";
 import { Project } from "@atomist/rug/model/Project";
 import { File } from "@atomist/rug/model/File";
 

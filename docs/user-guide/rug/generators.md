@@ -116,8 +116,9 @@ Once this is completed, the project should look like this:
     │   ├── manifest.yml
     │   ├── package.json
     │   ├── tests
-    │   │   ├── NewSpringBootService.feature
-    │   │   └── Steps.ts
+    │   │   ├── project
+    │   │   │   ├── NewSpringBootService.feature
+    │   │   └── └── Steps.ts
     │   └── tsconfig.json
     ├── .atomist.yml
     ├── .gitignore
@@ -322,7 +323,8 @@ Scenario: A default Spring Rest project structure should be generated
 Implemented by the steps in `.atomist/tests/Steps.ts` file:
 
 ```typescript linenums="1"
-import { Given, When, Then, Result, ProjectScenarioWorld } from "@atomist/rug/test/Core";
+import { Given, When, Then, ProjectScenarioWorld } from "@atomist/rug/test/project/Core";
+import { Result } from "@atomist/rug/test/Result";
 import { Project } from "@atomist/rug/model/Project";
 
 Given("an empty project", p => {})
