@@ -1,6 +1,6 @@
 # How To Use Atomist
 
-We've collected some common scenarios for how people at using Atomist
+We've collected some common scenarios for how people are using Atomist
 to automate their development. Why invent everything yourself when
 you can copy what works?
 
@@ -16,3 +16,5 @@ Ask `@atomist` to get a project set up using your own set of standard tools.
 
 You've chosen a new logging library or framework and want to update one or
 more projects to use the new library. Ask `@atomist` to do it for you.
+
+## 
