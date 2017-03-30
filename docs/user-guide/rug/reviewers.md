@@ -4,13 +4,13 @@ bugs. However, with the sheer size of projects, it can become highly
 tedious to track all changes properly and a balance must be found
 between thorough code reviews and the time they consume.
 
-Rug reviewers allievate some of that burden by letting your team
-codifying some of your peer reviews into automatable operations.
+Rug reviewers allievate some of that burden by 
+codifying some of your peer reviews into automated operations.
 
 ## A Basic Reviewer
 
 The following reviewer ensures each Markdown file of a MkDocs (a
-documentation builder tool) project do not override the top-level
+documentation builder tool) project does not override the top-level
 header which is set by MkDocs from its settings.
 
 ```typescript linenums="1"
@@ -22,7 +22,7 @@ import { Project } from '@atomist/rug/model/Project'
 import { Line } from '@atomist/rug/model/Line'
 
 @Reviewer("DoNotOverrideTopLevelHeaderInMkDocsProject",
-          "checks Markdown document do not have a top-level header")
+          "checks Markdown documents do not have a top-level header")
 @Tags("markdown", "documentation", "mkdocs")
 class DoNotOverrideTopLevelHeaderInMkDocsProject implements ReviewProject {
 
