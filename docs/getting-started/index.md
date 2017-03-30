@@ -1,5 +1,9 @@
-Welcome!  If you want to get started with Atomist you're in the right
-place.  This guide will walk you through setup and getting started.
+# Setup Step By Step
+
+Welcome!
+
+This guide will walk you through setting up Atomist and getting started
+with your first automation.
 
 **What this guide covers**
 
