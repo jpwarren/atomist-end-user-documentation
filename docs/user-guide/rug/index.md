@@ -11,14 +11,6 @@ runs as a service, accessible from any Slack that has invited the
 Atomist Bot (try it in [Atomist Community Slack][slack]).  There's
 also the [Rug CLI][cli] for local use, essential for Rug development.
 
-<<<<<<< HEAD
-[runtime]: runtime.md
-
-!!! note "Why Rug?"
-    The name `Rug` comes from the movie *The Big Lebowski* because it
-    "Really tied the room together." The founders are fans of the movie,
-    and the name kinda stuck.
-=======
 [ts]: https://www.typescriptlang.org/
 [slack]: https://join.atomist.com/
 [cli]: /user-guide/interfaces/cli/index.md
