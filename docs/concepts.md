@@ -70,7 +70,20 @@ the author of the code change that led to an error in your staging
 environment but only if that commit was made within the last 24 hours
 and it is normal working hours for the author.
 
+<<<<<<< HEAD
 [Learn more](/all-about-events) about how Atomist uses events.
+=======
+## Rug
+
+<!-- *That rug really tied the room together, did it not?* -->
+
+Rug is a programming model and runtime.
+
+The Rug programming model defines the interface, which is "What events
+does this program respond to?" and "How does it respond?".  Programs
+that implement this model are called Rugs, and they execute inside a
+Rug runtime.
+>>>>>>> master
 
 
 
