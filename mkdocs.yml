@@ -58,7 +58,7 @@ pages:
   - Benefits: benefits.md
 - Getting Started: 
   #- Quick Start: getting-started/quickstart.md
-  - Guided Tour:
+  - Step By Step:
     - Introduction: getting-started/index.md
     - Prerequisites: getting-started/prerequisites.md
     - Invite Atomist to Slack: getting-started/invite-atomist-to-slack.md
