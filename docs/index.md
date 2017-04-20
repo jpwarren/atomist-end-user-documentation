@@ -7,7 +7,7 @@ Atomist automates developing code.
 Instead of spending time on repetitive, boring tasks, get Atomist 
 to do them for you.
 
-You concentrate on writing new, fun code.
+You can concentrate on writing new, fun code.
 
 By automating tasks, integrating tools, and providing timely, correlated,
 and actionable information, Atomist makes software delivery faster,
@@ -15,15 +15,15 @@ more standardized, and more fun.
 
 Curious? [Learn more](/benefits) about how Atomist will make your life better.
 
-# Top Integrations
+# Integrations
 
 Atomist works with your favorite development tools. Turbocharge your
 existing development environment and make everything better.
 
-- Slack <img src="getting-started/images/slack-sign-in.png" width="150px"/>
-- Git <img src="getting-started/images/ width="150px" />
-- Travis-CI <img src="getting-started/images/ width="150px" />
-- Jenkins <img src="getting-started/images/ width="150px" />
+- [Slack](/user-guide/integrations/slack)
+- [GitHub](/user-guide/integrations/github) 
+- [Travis-CI](/user-guide/integrations/travis-ci)
+- [Jenkins](/user-guide/integrations/jenkins)
 
 # Getting Started
 

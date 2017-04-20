@@ -8,9 +8,10 @@ What's in it for me? We're glad you asked.
 
 The `@atomist` bot works like a developer on your team, but with a few important
 differences:
-- `@atomist` doesn't get bored doing tedious, repetitive work.
-- `@atomist` doesn't accidentally miss steps or make typos.
-- `@atomist` is faster than you.
+
+ * `@atomist` doesn't get bored doing tedious, repetitive work.
+ * `@atomist` doesn't accidentally miss steps or make typos.
+ * `@atomist` is faster than you.
 
 With `@atomist` working on your team, you have a robot helper who is only too eager
 to take care of all the tasks that are necessary, but tedious. It's what automation
@@ -34,13 +35,13 @@ There are plenty of tools like Puppet, Chef, or Kubernetes for automating the
 Atomist does.
 
 Atomist automates code, which means you can use Atomist with all your existing
-tools&mdash;including Puppet, Chef, or Kubernetes&mdash; by plugging Atomist
+tools&mdash;including Puppet, Chef, or Kubernetes&mdash;by plugging Atomist
 into their config files, because it's all just code.
 
 Atomist makes everything you already have *even better* by integrating with
 your tools and automating common tasks.
 
-[Learn more](/user-guide/integrations/) about the integrations Atomist supports and [how to automate common tasks](/use-cases/)
+[Learn more](/user-guide/integrations/) about the integrations Atomist supports and [how to automate common tasks](/how-to/)
 with bundled rugs.
 
 ## Save Time And Hassle
@@ -53,7 +54,7 @@ Atomist has already done all the hard work of building the tool, so you don't ha
 Same time and hassle and use what works.
 
 Read through the ever expanding library of [integrations](/user-guide/integrations/) and
-[use cases](/use-cases) for ideas on how to get more done with Atomist automation.
+[How Tos](/how-to) for ideas on how to get more done with Atomist automation.
 
 ## More Than Templates
 
